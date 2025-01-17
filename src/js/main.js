@@ -1,5 +1,5 @@
-import '/src/reset.css'
-import '/src/style.css'
+import '/src/css/reset.css'
+import '/src/css/style.css'
 
 // document.querySelector('#app').innerHTML = `
 //   <div>
