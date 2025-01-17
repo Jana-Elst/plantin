@@ -9,12 +9,16 @@
   --color-white: #FFFEF7;
 
   /*--bg textures--*/
-  --bg-green: #162113;
-  --bg-orange: #E73D00;
-  --bg-blue-15: #DDF6E6;
-  --bg-purple: #5C47A0;
-  --bg-white: #FFFEF7;
-  --bg-white-20: #FFFEF7;
+  --bg-green-30: url("/src/assets/bg-green-30.png");
+  --bg-green-100: url("/src/assets/bg-green-100.png");
+  --bg-orange-50: url("/src/assets/bg-orange-50.png");
+  --bg-orange-100: url("/src/assets/bg-orange-100.png");
+  --bg-purple-30: url("/src/assets/bg-puprle-30.png");
+  --bg-purple-100: url("/src/assets/bg-purple-100.png");
+  --bg-white-20:url("/src/assets/bg-white-20.png");
+  --bg-white-30: url("/src/assets/bg-white-30.png");
+  --bg-white-75: url("/src/assets/bg-white-75.png");
+  --bg-white-100: url("/src/assets/bg-white-100.png");
 
   /*--font-size--*/
   /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1440,24,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
