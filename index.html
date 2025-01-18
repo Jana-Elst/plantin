@@ -29,7 +29,7 @@
       </section>
 
       <section class="intro">
-        <div class="titles">
+        <div class="titles visually-hidden">
           <h2 class="section__title">1520</h2>
           <p class="section__subtitle">De beginjaren</p>
         </div>
@@ -67,10 +67,10 @@
             <p class="id-card__content">5 dochters</p>
           </li>
           <li class="id-card__img">
-            <img src="" alt="Foto van Christoffel Plantijn">
+            <img src="/src/assets/ID-plantin.png" alt="Foto van Christoffel Plantijn">
           </li>
         </ul>
-        <div class="text">
+        <div class="text intro__text">
           <h3 class="text__title">Plantin, wie?</h3>
           <p class="text__content">Op jonge leeftijd verliest Plantin zijn gezin aan de pest. Zijn vader, opvoeder in
             Lyon, blijft gespaard.
@@ -90,7 +90,7 @@
             Passer’.
           </p>
         </div>
-        <button>scroll</button>
+        <button class="intro__btn">scroll</button>
       </section>
 
       <section class="part1">
@@ -100,51 +100,64 @@
             <p class="section__subtitle">Ketters in de drukkerij</p>
           </div>
           <div class="gossip">
-            <p class="gossip__text">Heb je het nieuws gehoord?</p>
-            <p class="gossip__text">Ze zijn binnnengevallen bij Plantin.</p>
-            <p class="gossip__text">Die drukt toch voor de koning?</p>
-            <p class="gossip__text">Duizenden Calvinsitische pamfletten zijn er gevonden!</p>
-            <p class="gossip__text">Dat hij nog maar lang in Parijs blijft, de ketter!</p>
-            <p class="gossip__text">Fransmannen, niet te vertrouwen!</p>
+            <img class="gossip__img" src="/src/assets/gossip-guy-1.png" alt="mannetje in pak">
+            <div class="gossip__content">
+              <p class="gossip__title">Heb je het nieuws gehoord?</p>
+              <p class="gossip__text gossip__text--sans-serif end">Ze zijn binnnengevallen bij Plantin.</p>
+              <p class="gossip__text gossip__text--sans-serif start">Die drukt toch voor de koning?</p>
+              <p class="gossip__text gossip__text--serif end">Duizenden Calvinsitische pamfletten hebben ze gevonden!
+              </p>
+              <p class="gossip__text gossip__text--serif end">Fransmannen, niet te vertrouwen!</p>
+              <p class="gossip__text gossip__text--sans-serif start">Dat hij nog maar lang in Parijs blijft, de ketter!
+              </p>
+            </div>
           </div>
           <aside class="extra-info">
-            <p class="aside__titleside">Filips II & de ketters</p>
-            <div class="aside__content">
-              <p class="aside__title">Filips II & de ketters</p>
-              <p class="aside__text">Op het moment dat Plantijn zijn drukkerij opricht, proberen de vorsten eenheid van
-                bestuur te creëren. Ze willen meer
-                grip krijgen op het bestuur, de rechtspraak en de belastingen. Én heel het rijk moet in dezelfde
-                godsdienst volgt.</p>
-              <p class="aside__text">
-                Op hetzelfde moment klaagt Maarten Luther de werkwijze van de katholieke kerk aan. Mensen bang maken om
-                te
-                zorgen dat ze
-                aflaten, relikwieën en gebeden kopen, zodat de kerk een rijk en machtig instituut blijft? Daarin willen
-                Luther en zijn
-                volgelingen niet geloven. De corrupte, rijke en machtswellustige kerkelijke leiders zijn overbodig:
-                enkel
-                de Bijbel
-                heeft gezag. En de Bijbel moet in de eigen volkstaal gelezen kunnen worden.
-              </p>
-              <p class="aside__text">
-                Al snel ontstonden er verschillende strekkingen in het protestantisme. Naast de lutheranen ontstaan de
-                calvinisten. Zij
-                beklemtonen dat God al vooraf heeft uitgemaakt wie gered zal worden en wie niet.
-              </p>
-              <p class="aside__text">
-                Het opkomen van nieuwe geloofsovertuigingen. Dat valt niet in de smaak bij Filips II. Alles zal door hem
-                gecontroleerd
-                worden. De bevolking heeft geen inspraak en moet geloven in de katholieke kerk. Dit valt niet in goede
-                aarde
-                bij de
-                plaatselijke machtshebbers en al snel treedt er protest op. Plantijn als drukker neemt de komende jaren
-                als
-                anonieme
-                drukker de rol op zich om het nieuwe gedachtegoed snel door Antwerpen en de Nederlanden te kunnen laten
-              <p>
-              <p class="aside__source">
-                naar Memoria 4.1 & 4.2 (Pelckmans)
-              </p>
+            <div class="container">
+              <p class="aside__titleside">Filips II & de ketters</p>
+              <div class="text aside__text">
+                <p class="text__title aside__title">Filips II & de ketters</p>
+                <p class="text__content text__content aside__content">Op het moment dat Plantijn zijn drukkerij opricht,
+                  proberen de vorsten eenheid van
+                  bestuur te creëren. Ze willen meer
+                  grip krijgen op het bestuur, de rechtspraak en de belastingen. Én heel het rijk moet in dezelfde
+                  godsdienst volgt.</p>
+                <p class="text__content aside__content">
+                  Op hetzelfde moment klaagt Maarten Luther de werkwijze van de katholieke kerk aan. Mensen bang maken
+                  om
+                  te
+                  zorgen dat ze
+                  aflaten, relikwieën en gebeden kopen, zodat de kerk een rijk en machtig instituut blijft? Daarin
+                  willen
+                  Luther en zijn
+                  volgelingen niet geloven. De corrupte, rijke en machtswellustige kerkelijke leiders zijn overbodig:
+                  enkel
+                  de Bijbel
+                  heeft gezag. En de Bijbel moet in de eigen volkstaal gelezen kunnen worden.
+                </p>
+                <p class="text__content aside__content">
+                  Al snel ontstonden er verschillende strekkingen in het protestantisme. Naast de lutheranen ontstaan de
+                  calvinisten. Zij
+                  beklemtonen dat God al vooraf heeft uitgemaakt wie gered zal worden en wie niet.
+                </p>
+                <p class="text__content aside__content">
+                  Het opkomen van nieuwe geloofsovertuigingen. Dat valt niet in de smaak bij Filips II. Alles zal door
+                  hem
+                  gecontroleerd
+                  worden. De bevolking heeft geen inspraak en moet geloven in de katholieke kerk. Dit valt niet in goede
+                  aarde
+                  bij de
+                  plaatselijke machtshebbers en al snel treedt er protest op. Plantijn als drukker neemt de komende
+                  jaren
+                  als
+                  anonieme
+                  drukker de rol op zich om het nieuwe gedachtegoed snel door Antwerpen en de Nederlanden te kunnen
+                  laten
+                </p>
+                <p class="aside__source">
+                  naar Memoria 4.1 & 4.2 (Pelckmans)
+                </p>
+              </div>
             </div>
           </aside>
         </div>
@@ -197,27 +210,33 @@
         </div>
         <div class="subsection assistents">
           <aside class="extra-info">
-            <p class="aside__titleside">De landvoogdes</p>
-            <div class="aside__content">
-              <p class="aside__title">De landvoogdes</p>
-              <p class="aside__text">OFilips II, koning van het Habsburgse rijk, zet het werk van zijn vader voort. Hij
-                wil een eenheid van bestuur en trekt
-                de macht naar zich toe. Alleenheerser zijn over zo’n groot rijk is niet mogelijk, daarvoor heb je trouwe
-                ambtenaren en
-                familieleden nodig. In de Nederlanden laat hij zich vertegenwoordigen door Margaretha van Parma, zijn
-                halfzus. Zij holt
-                de macht van de plaatselijke machthebbers uit.</p>
-              <p class="aside__text">
-                De Nederlanden bestaan op dit moment uit zeventien afzonderlijke gewesten. Ieder gewest heeft zijn eigen
-                bestuur en
-                wetgeving. Eenheid is er helemaal niet. Boven die gewestelijke bestuursorganen plaats Karel V, de vader
-                van Filips II en
-                Margaretha, centrale instellingen. Die centrale instelling wordt vertegenwoordigd door een familielid,
-                de landvoogd(es).
-              </p>
-              <p class="aside__source">
-                naar Memoria 4.1 (Pelckmans)
-              </p>
+            <div class="container">
+              <p class="aside__titleside">De landvoogdes</p>
+              <div class="aside__text">
+                <p class="aside__title">De landvoogdes</p>
+                <p class="text__content aside__content">Filips II, koning van het Habsburgse rijk, zet het werk van zijn
+                  vader voort. Hij
+                  wil een eenheid van bestuur en trekt
+                  de macht naar zich toe. Alleenheerser zijn over zo’n groot rijk is niet mogelijk, daarvoor heb je
+                  trouwe
+                  ambtenaren en
+                  familieleden nodig. In de Nederlanden laat hij zich vertegenwoordigen door Margaretha van Parma, zijn
+                  halfzus. Zij holt
+                  de macht van de plaatselijke machthebbers uit.</p>
+                <p class="text__content aside__content">
+                  De Nederlanden bestaan op dit moment uit zeventien afzonderlijke gewesten. Ieder gewest heeft zijn
+                  eigen
+                  bestuur en
+                  wetgeving. Eenheid is er helemaal niet. Boven die gewestelijke bestuursorganen plaats Karel V, de
+                  vader
+                  van Filips II en
+                  Margaretha, centrale instellingen. Die centrale instelling wordt vertegenwoordigd door een familielid,
+                  de landvoogd(es).
+                </p>
+                <p class="aside__source">
+                  naar Memoria 4.1 (Pelckmans)
+                </p>
+              </div>
             </div>
           </aside>
         </div>
@@ -246,13 +265,19 @@
             <h2 class="section__title">1563</h2>
             <p class="section__subtitle">Het faillisement</p>
           </div>
-          <div class="gossip">
-            <p class="gossip__text">Heb je het nieuws gehoord?</p>
-            <p class="gossip__text">De Gulden Passer, ze zijn failliet!</p>
-            <p class="gossip__text">Ze doen een openbare verkoop.</p>
-            <p class="gossip__text">We maken geen schijn van kans ...</p>
-            <p class="gossip__text">Dat hij nog maar lang in Parijs blijft, de ketter!</p>
-            <p class="gossip__text">... Die rijke Cornelius gaat sowieso alles opkopen!</p>
+        </div>
+        <div class="gossip">
+          <img class="gossip__img" src="/src/assets/gossip-guy-1.png" alt="mannetje in pak">
+          <div class="gossip__content">
+            <p class="gossip__title">Heb je het nieuws gehoord?</p>
+            <p class="gossip__text gossip__text--sans-serif end">Ze zijn binnnengevallen bij Plantin.</p>
+            <p class="gossip__text gossip__text--sans-serif start">Die drukt toch voor de koning?</p>
+            <p class="gossip__text gossip__text--serif end">Duizenden Calvinsitische pamfletten hebben ze gevonden!
+            </p>
+            <p class="gossip__text gossip__text--serif end">Fransmannen, niet te vertrouwen!</p>
+            <p class="gossip__text gossip__text--sans-serif start">Dat hij nog maar lang in Parijs blijft, de
+              ketter!
+            </p>
           </div>
         </div>
         <div class="text">
@@ -266,7 +291,8 @@
             Twee schuldeisers staan op. Ze willen hun geld terug.
           </p>
           <p class="text__content">
-            Op de Vrijdagmarkt, de markt aan de drukkerij, wordt een openbare verkoop georganiseerd. De hele inboedel
+            Op de Vrijdagmarkt, de markt aan de drukkerij, wordt een openbare verkoop georganiseerd. De hele
+            inboedel
             van Plantijn
             wordt verkocht. </p>
         </div>
@@ -287,11 +313,13 @@
             </div>
             <div class="text">
               <h3 class="text__title">Wie kocht heel de inboedel?</h3>
-              <p class="text__content">Het faillissement van de Gulden Passer, en die openbare verkoop, dat was gewoon
+              <p class="text__content">Het faillissement van de Gulden Passer, en die openbare verkoop, dat was
+                gewoon
                 opgezet spel! De schuldeisers zijn
                 vrienden van de drukkerij. En de opkopers, dat waren de schuldeisers zelf.</p>
               <p class="text__content">
-                Door het faillissement van de drukker aan te vragen, konden ze een openbare verkoop uitlokken. Hierdoor
+                Door het faillissement van de drukker aan te vragen, konden ze een openbare verkoop uitlokken.
+                Hierdoor
                 kon er voorkomen
                 worden dat Brussel de hele inboedel zou confisqueren, als er een strafzaak voor ketterij zou worden
                 opgestart tegen
@@ -314,13 +342,18 @@
             <h2 class="section__title">1563</h2>
             <p class="section__subtitle">Een nieuwe start</p>
           </div>
-          <div class="gossip">
-            <p class="gossip__text">Heb je het nieuws gehoord?</p>
-            <p class="gossip__text">De Gulden Passer wordt een vennootschap.</p>
-            <p class="gossip__text">Het faillisement was opgezet spel?</p>
-            <p class="gossip__text">De vier rijksten van heel Antwerpen stappen mee in de vennootschap!</p>
-            <p class="gossip__text">Dat hij nog maar lang in Parijs blijft, de ketter!</p>
-            <p class="gossip__text">Nee, nee hij komt terug!</p>
+        </div>
+        <div class="gossip">
+          <img class="gossip__img" src="/src/assets/gossip-guy-1.png" alt="mannetje in pak">
+          <div class="gossip__content">
+            <p class="gossip__title">Heb je het nieuws gehoord?</p>
+            <p class="gossip__text gossip__text--sans-serif end">Ze zijn binnnengevallen bij Plantin.</p>
+            <p class="gossip__text gossip__text--sans-serif start">Die drukt toch voor de koning?</p>
+            <p class="gossip__text gossip__text--serif end">Duizenden Calvinsitische pamfletten hebben ze gevonden!
+            </p>
+            <p class="gossip__text gossip__text--serif end">Fransmannen, niet te vertrouwen!</p>
+            <p class="gossip__text gossip__text--sans-serif start">Dat hij nog maar lang in Parijs blijft, de ketter!
+            </p>
           </div>
         </div>
         <div class="subsection new-start">
@@ -328,9 +361,11 @@
             <h3 class="text__title">Een nieuwe onderneming</h3>
             <p class="text__content">OWanneer de aanklacht wegens ketterij tegen Plantijn verjaard is, keert hij samen
               met zijn familie terug naar Antwerpen.
-              Plantijn start de drukkerij opnieuw op met nieuwe financiering. De Gulden Passer wordt ondergebracht in de
+              Plantijn start de drukkerij opnieuw op met nieuwe financiering. De Gulden Passer wordt ondergebracht in
+              de
               vennootschap
-              Officina Plantiniana. Plantijn brengt zijn werkplaats en drukkersmateriaal in, de andere vennoten brengen
+              Officina Plantiniana. Plantijn brengt zijn werkplaats en drukkersmateriaal in, de andere vennoten
+              brengen
               geld in.
               Plantijn krijgt een jaarlijks loon van 400 gulden.</p>
             <p class="text__content">
@@ -353,7 +388,8 @@
               moeten gebruikt
               worden.</p>
             <p class="text__content">
-              Het boek wordt een echte bestseller. Er worden 7900 exemplaren verkocht in 3 verschillende formaten. Grote
+              Het boek wordt een echte bestseller. Er worden 7900 exemplaren verkocht in 3 verschillende formaten.
+              Grote
               afnemers van
               de bijbel zijn de Joodse gemeenschappen in Duitsland en in Noord-Afrika.
             </p>
@@ -368,45 +404,55 @@
             <p class="section__subtitle">Een drukker in dienst van de koning</p>
           </div>
           <div class="gossip">
-            <p class="gossip__text">Heb je het nieuws gehoord?</p>
-            <p class="gossip__text">Twee vennoten Plantin zijn gevlucht.</p>
-            <p class="gossip__text">Zij hebben gezorgd dat de beeldenstorm begon!</p>
-            <p class="gossip__text">Plantin doet alsof zijn neus bloed, Maar we weten allemaal dat hij de petitie heeft
-              gedrukt!</p>
-            <p class="gossip__text">En nu gaat de schijnheiligaard financiering vragen bij de koning.</p>
-            <p class="gossip__text">Zij hebben gezorgd dat de beeldenstorm begon!</p>
-          </div>
-          <aside class="extra-info">
-            <p class="aside__titleside">Het driemiljoenguldenrekest en de beeldenstorm</p>
-            <div class="aside__content">
-              <p class="aside__title">Het driemiljoenguldenrekest en de beeldenstorm</p>
-              <p class="aside__text">In 1566 starten Cornelis van Bomberghen en zijn neef, twee trotse calvinisten en
-                vennoot in de officina plantiniana, een
-                petitie om godsdienstvrijheid af te kopen in de Nederlanden. Plantijn drukt anoniem pamfletten om zijn
-                vennoten te
-                steunen.</p>
-              <p class="aside__text">
-                Filips II is niet opgezet met het idee om godsdienstvrijheid te laten afkopen. Hij wil enkel de
-                katholieke godsdienst
-                toelaten in zijn rijk.
+            <img class="gossip__img" src="/src/assets/gossip-guy-1.png" alt="mannetje in pak">
+            <div class="gossip__content">
+              <p class="gossip__title">Heb je het nieuws gehoord?</p>
+              <p class="gossip__text gossip__text--sans-serif end">Ze zijn binnnengevallen bij Plantin.</p>
+              <p class="gossip__text gossip__text--sans-serif start">Die drukt toch voor de koning?</p>
+              <p class="gossip__text gossip__text--serif end">Duizenden Calvinsitische pamfletten hebben ze gevonden!
               </p>
-              <p class="aside__text">
-                Ondertussen hebben de broers al heel wat geld ingezameld. Dit geld gebruiken ze om troepen op de been te
-                brengen.
-                Uiteindelijk ontaardt dit protest in de Beeldenstorm.
-              </p>
-              <p class="aside__text">
-                Tijdens de Beeldenstorm worden duizenden boeken, beelden, schilderijen… vernield en geroofd door de
-                calvinisten.
-              <p>
-              <p class="aside__text">
-                De vennoten Cornelis van Bomberghen en zijn neef Karel vluchten uit vrees voor eigen leven naar
-                Duitsland. De
-                vennootschap Officina Plantiniana wordt ontbonden. Gelukkig kan de drukkerij op volle toeren blijven
-                draaien.
+              <p class="gossip__text gossip__text--serif end">Fransmannen, niet te vertrouwen!</p>
+              <p class="gossip__text gossip__text--sans-serif start">Dat hij nog maar lang in Parijs blijft, de ketter!
               </p>
             </div>
-          </aside>
+            <aside class="extra-info">
+              <div class="container">
+                <p class="aside__titleside">Het driemiljoenguldenrekest en de beeldenstorm</p>
+                <div class="aside__text">
+                  <p class="aside__title">Het driemiljoenguldenrekest en de beeldenstorm</p>
+                  <p class="text__content aside__content">In 1566 starten Cornelis van Bomberghen en zijn neef, twee
+                    trotse calvinisten en
+                    vennoot in de officina plantiniana, een
+                    petitie om godsdienstvrijheid af te kopen in de Nederlanden. Plantijn drukt anoniem pamfletten om
+                    zijn
+                    vennoten te
+                    steunen.</p>
+                  <p class="text__content aside__content">
+                    Filips II is niet opgezet met het idee om godsdienstvrijheid te laten afkopen. Hij wil enkel de
+                    katholieke godsdienst
+                    toelaten in zijn rijk.
+                  </p>
+                  <p class="text__content aside__content">
+                    Ondertussen hebben de broers al heel wat geld ingezameld. Dit geld gebruiken ze om troepen op de
+                    been
+                    te
+                    brengen.
+                    Uiteindelijk ontaardt dit protest in de Beeldenstorm.
+                  </p>
+                  <p class="text__content aside__content">
+                    Tijdens de Beeldenstorm worden duizenden boeken, beelden, schilderijen… vernield en geroofd door de
+                    calvinisten.
+                  <p>
+                  <p class="text__content aside__content">
+                    De vennoten Cornelis van Bomberghen en zijn neef Karel vluchten uit vrees voor eigen leven naar
+                    Duitsland. De
+                    vennootschap Officina Plantiniana wordt ontbonden. Gelukkig kan de drukkerij op volle toeren blijven
+                    draaien.
+                  </p>
+                </div>
+              </div>
+            </aside>
+          </div>
         </div>
         <div class="text">
           <h3 class="text__title">De polyglot bijbel</h3>
@@ -433,12 +479,14 @@
           <img src="" alt="">
           <div class="text">
             <h3 class="text__title">Koninklijke titels</h3>
-            <p class="text__content">De samenwerking tussen Plantin en het Spaanse hof loopt zo goed dat Plantin al maar
+            <p class="text__content">De samenwerking tussen Plantin en het Spaanse hof loopt zo goed dat Plantin al
+              maar
               meer privileges van de koning
               krijgt.
             </p>
             <p class="text__content">
-              Hij krijgt het alleenrecht op brevieren, misboeken, psalmen, getijdenboeken ... Of in het kort: op al het
+              Hij krijgt het alleenrecht op brevieren, misboeken, psalmen, getijdenboeken ... Of in het kort: op al
+              het
               liturgisch
               materiaal.
             </p>
@@ -448,27 +496,32 @@
               koning.
             </p>
             <p class="text__content">
-              Nog een jaar later krijgt Plantin van de koning nog een monopolie. Hij mag al de Spaanstalige liturgische
+              Nog een jaar later krijgt Plantin van de koning nog een monopolie. Hij mag al de Spaanstalige
+              liturgische
               boeken
               uitgeven!
             </p>
             <p class="text__content">
-              In de Gulden Passer worden er non-stop 13 drukpersen gebruikt om al dat godsdienstig drukwerk te drukken.
+              In de Gulden Passer worden er non-stop 13 drukpersen gebruikt om al dat godsdienstig drukwerk te
+              drukken.
             </p>
           </div>
           <aside class="extra-info">
-            <p class="aside__titleside">De beste drukker van Europa!</p>
-            <div class="aside__content">
-              <p class="aside__title">De beste drukker van Europa!</p>
-              <p class="aside__text">Niemand kan dezelfde kwaliteit als Plantijn bieden.
-                Niemand Europa heeft dezelfde lettertypes als Plantijn.
-                Niemand kan Plantijn overklassen.</p>
-              <p class="aside__text">
-                En dat allemaal dankzij een sluwe strategie. Plantijn koopt vanaf bij de heropstart van de Gulden
-                Passer, niet alleen de
-                letters, maar ook de matrijzen en gietmallen. Zo bezit enkel hij de materialen om nieuwe letters bij te
-                maken!
-              </p>
+            <div class="container">
+              <p class="aside__titleside">De beste drukker van Europa!</p>
+              <div class="aside__text">
+                <p class="aside__title">De beste drukker van Europa!</p>
+                <p class="text__content aside__content">Niemand kan dezelfde kwaliteit als Plantijn bieden.
+                  Niemand Europa heeft dezelfde lettertypes als Plantijn.
+                  Niemand kan Plantijn overklassen.</p>
+                <p class="text__content aside__content">
+                  En dat allemaal dankzij een sluwe strategie. Plantijn koopt vanaf bij de heropstart van de Gulden
+                  Passer, niet alleen de
+                  letters, maar ook de matrijzen en gietmallen. Zo bezit enkel hij de materialen om nieuwe letters bij
+                  te
+                  maken!
+                </p>
+              </div>
             </div>
           </aside>
         </div>
@@ -481,25 +534,32 @@
             <p class="section__subtitle">XXX</p>
           </div>
           <div class="gossip">
-            <p class="gossip__text">Heb je het nieuws gehoord?</p>
-            <p class="gossip__text">De drukkerij van Plantin is Beroofd!</p>
-            <p class="gossip__text">En in brand gestoken!</p>
-            <p class="gossip__text">En dat allemaal door het leger van de koning ...</p>
-            <p class="gossip__text">... zijn grootste afnemer!</p>
-          </div>
-          <aside class="extra-info">
-            <p class="aside__titleside">De Spaanse furie</p>
-            <div class="aside__content">
-              <p class="aside__title">De Spaanse furie</p>
-              <p class="aside__text">Hier komt tekst</p>
+            <img class="gossip__img" src="/src/assets/gossip-guy-1.png" alt="mannetje in pak">
+            <div class="gossip__content">
+              <p class="gossip__title">Heb je het nieuws gehoord?</p>
+              <p class="gossip__text gossip__text--sans-serif end">Ze zijn binnnengevallen bij Plantin.</p>
+              <p class="gossip__text gossip__text--sans-serif start">Die drukt toch voor de koning?</p>
+              <p class="gossip__text gossip__text--serif end">Duizenden Calvinsitische pamfletten hebben ze gevonden!
+              </p>
+              <p class="gossip__text gossip__text--serif end">Fransmannen, niet te vertrouwen!</p>
+              <p class="gossip__text gossip__text--sans-serif start">Dat hij nog maar lang in Parijs blijft, de ketter!
+              </p>
             </div>
-          </aside>
-        </div>
-        <div class="outro">
-          <p>Een geplunderde en in brand gestoken drukkerij, valt daar nog iets over te vertellen?</p>
-          <p>Boeken toe dan maar, of toch niet? Ontdek het in het museum</p>
-          <a href="">Boek een ticket</a>
-        </div>
+            <aside class="extra-info">
+              <div class="container">
+                <p class="aside__titleside">De Spaanse furie</p>
+                <div class="aside__text">
+                  <p class="aside__title">De Spaanse furie</p>
+                  <p class="text__content aside__content">Hier komt tekst</p>
+                </div>
+              </div>
+            </aside>
+          </div>
+          <div class="outro">
+            <p>Een geplunderde en in brand gestoken drukkerij, valt daar nog iets over te vertellen?</p>
+            <p>Boeken toe dan maar, of toch niet? Ontdek het in het museum</p>
+            <a href="">Boek een ticket</a>
+          </div>
       </section>
     </main>
     <footer>
