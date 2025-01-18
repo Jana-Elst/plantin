@@ -13,13 +13,20 @@
   --bg-green-100: url("/src/assets/bg-green-100.png");
   --bg-orange-50: url("/src/assets/bg-orange-50.png");
   --bg-orange-100: url("/src/assets/bg-orange-100.png");
-  --bg-purple-30: url("/src/assets/bg-puprle-30.png");
+  --bg-purple-30: url("/src/assets/bg-purple-30.png");
   --bg-purple-100: url("/src/assets/bg-purple-100.png");
   --bg-white-20: url("/src/assets/bg-white-20.png");
   --bg-white-30: url("/src/assets/bg-white-30.png");
   --bg-white-75: url("/src/assets/bg-white-75.png");
   --bg-white-100: url("/src/assets/bg-white-100.png");
   --bg-blue-15: url("/src/assets/bg-blue-15.png");
+  --bg-blue-100: url("/src/assets/bg-blue-100.png");
+
+  --bg-border-orange: url("/src/assets/border-orange.svg");
+  --bg-border-green: url("/src/assets/border-green.svg");
+  --bg-border-purple: url("/src/assets/border-purple.svg");
+  --bg-border-white: url("/src/assets/border-white.svg");
+  --bg-border-white-dark: url("/src/assets/border-white-dark.svg");
 
   /*--font-size--*/
   /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1440,24,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
@@ -64,12 +71,17 @@
   /*-- rounded corners --*/
   /*code: r = rounded, n=not rounded leesrichting: tl - tr - bl - br */
   --rrrr: 1rem;
+  --rrrr-s: 0.3125rem;
+
   --nrrr: 0.125rem 1rem 1rem 1rem;
   --rnrr: 1rem 0.125rem 1rem 1rem;
   --rrnr: 1rem 1rem 0.125rem 1rem;
   --rrrn: 1rem 1rem 1rem 0.125rem;
+
   --nrnn: 0 0.3125rem 0 0;
   --nnnr: 0rem 0rem 0.3125rem 0;
+  --rrnn: 0.3125rem 0.3125rem 0 0;
+  --nnrr: 0 0 0.3125rem 0.3125rem;
 
   /*-- borders --*/
   --border: 1px solid var(--color-black);
@@ -80,6 +92,7 @@
   /*--- fonts ---*/
   --serif: garamond-premier-pro, serif;
   --sans-serif: forma-djr-text, sans-serif;
+  --write: pf-scandal, sans-serif;
 
   /*font-feature settings*/
   --ff-ss: 'ss04' on;
@@ -131,12 +144,28 @@ body {
   max-width: var(--max-width-page);
   margin: 0 auto;
 
+  background-color: var(--color-white);
+
   /*main settings bg-images*/
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 /*---------- overall css ----------*/
+/*--- button ---*/
+.button {
+  font-family: var(--serif);
+  font-size: var(--fs-3);
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--color-black);
+
+  border: none;
+  padding: var(--sp-2xs) var(--sp-s);
+  border-radius: var(--rrrr-s);
+}
+
 /*-- titles ---*/
 .titles__title {
   height: 100vh;
@@ -158,7 +187,8 @@ body {
   align-self: end;
 }
 
-.section__subtitle {
+.section__subtitle,
+.subsection__title {
   font-family: var(--serif);
   font-size: var(--sp-m);
   font-style: normal;
@@ -213,6 +243,60 @@ body {
   padding: var(--margin);
 }
 
+/*texts paper border */
+.paper-border {
+  position: relative;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.paper-border .text {
+  color: var(--color-white);
+}
+
+.paper-border::before {
+  position: absolute;
+  top: 0px;
+  padding: 0;
+}
+
+.paper-border::after {
+  position: absolute;
+  bottom: 0px;
+  padding: 0;
+
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
+.paper-border.orange .text {
+  background-image: var(--bg-orange-50);
+}
+
+.paper-border.orange::before,
+.paper-border.orange::after {
+  content: var(--bg-border-orange);
+}
+
+.paper-border.purple .text {
+  background-image: var(--bg-purple-30);
+}
+
+.paper-border.purple::before,
+.paper-border.purple::after {
+  content: var(--bg-border-purple);
+}
+
+.paper-border.green .text {
+  background-image: var(--bg-green-30);
+}
+
+.paper-border.green::before,
+.paper-border.green::after {
+  content: var(--bg-border-green);
+}
+
+/* */
 .text__title {
   /* subtitle/smartphone */
   font-family: var(--serif);
@@ -273,11 +357,24 @@ body {
   overflow: hidden;
   border-radius: var(--nnnr);
 
-    overflow: hidden;
+  overflow: hidden;
+}
+
+.aside__content {
+  line-height: 120%;
 }
 
 .aside__title+.aside__content {
   margin-top: 0;
+}
+
+/*--- subsection ---*/
+.subsection__titles {
+  padding: var(--sp-s);
+}
+
+.subsection__title+.subsection__subtitle {
+  margin-top: var(--sp-2xs);
 }
 
 /*---------- hero ----------*/
@@ -313,6 +410,8 @@ body {
   padding: var(--sp-s);
 
   background-image: var(--bg-white-30);
+
+  overflow: hidden;
 }
 
 .id-card__item {
@@ -348,4 +447,310 @@ body {
 .id-card__img {
   grid-column: 1 / 3;
   grid-row: 2 / 6;
+}
+
+/*---------- paintings ----------*/
+.paintings__list {
+  display: grid;
+  grid-template-columns: repeat(3, max(20rem));
+  overflow: scroll;
+  padding: var(--sp-l) 0;
+}
+
+.painting {
+  padding: 0 var(--sp-l);
+  display: grid;
+  grid-template-rows: max-content max-content
+}
+
+.painting__img {
+  padding: 0 var(--sp-m);
+  z-index: -1;
+}
+
+.painting__content {
+  margin-top: calc(-1*var(--sp-xl));
+  z-index: 1;
+}
+
+.painting__header {
+  color: var(--color-white);
+  background-image: var(--bg-orange-100);
+  padding: var(--sp-2xs);
+
+  border-radius: var(--rrnn);
+}
+
+.painting__name {
+  text-align: center;
+  font-family: var(--serif);
+  font-size: var(--fs-1);
+  font-style: normal;
+  font-weight: 700;
+
+  margin-bottom: var(--sp-3xs);
+}
+
+.painting__description {
+  text-align: center;
+  border-radius: var(--nnrr);
+}
+
+.painting__quote {
+  background-color: var(--color-white);
+  padding: var(--sp-xs);
+  line-height: 120%;
+}
+
+/*---------- dwangarbeid & ketterij ----------*/
+.hammer {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50% max-content max-content max-content;
+  justify-items: center
+}
+
+.hammer__img {
+  width: 200%;
+  grid-row: 2;
+  object-fit: contain;
+}
+
+.hammer__text {
+  font-family: var(--serif);
+  font-size: calc(2*var(--fs-4));
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.hammer__text.dwangarbeid {
+  grid-row: 3;
+}
+
+.hammer__text.ketterij {
+  grid-row: 4;
+}
+
+/*---------- openbare verkoop ----------*/
+/*-- poster --*/
+.sale__poster {
+  padding: var(--sp-s);
+}
+
+.poster__img {
+  padding-bottom: var(--sp-m);
+  padding-top: var(--sp-2xs);
+  background-image: var(--bg-white-30);
+  overflow: hidden;
+
+  position: relative;
+
+  border-radius: var(--rrrr);
+}
+
+.poster__img::after {
+  content: var(--bg-border-green);
+  position: absolute;
+  bottom: -5px;
+}
+
+.poster__content {
+  text-align: center;
+  font-family: var(--serif);
+  line-height: normal;
+  background-image: var(--bg-white-30);
+
+  overflow: hidden;
+  position: relative;
+  margin-top: -39px;
+
+  border-radius: var(--rrrr);
+}
+
+.poster__content::before {
+  content: var(--bg-border-white);
+  position: relative;
+}
+
+.poster__content::before {
+  content: var(--bg-border-white-dark);
+}
+
+.poster__title {
+  display: grid;
+  grid-template-rows: max-content;
+}
+
+.poster__title .title {
+  font-size: calc(2*var(--fs-0));
+  font-weight: 700;
+  grid-row: 2;
+  padding-bottom: var(--sp-2xs);
+}
+
+.poster__title .subtitle {
+  font-size: var(--fs-1);
+  font-style: italic;
+  font-weight: 700;
+}
+
+.poster__text {
+  font-size: var(--fs-0);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  padding: var(--sp-l);
+}
+
+.poster__text>p+p {
+  margin-top: var(--sp-xs);
+}
+
+.poster__btn {
+  background-image: var(--bg-blue-15);
+  padding-bottom: var(--sp-m);
+}
+
+/*---------- vennootschap / company ----------*/
+.new-start {
+  /*geen idee maar er was anders iets mis met de border...*/
+  margin-top: -1px;
+  padding-top: 1px;
+
+  background-image: var(--bg-green-30);
+}
+
+/*-- contract --*/
+.contract {
+  background-image: var(--bg-white-30);
+  border-radius: var(--rrrr);
+
+  font-family: var(--serif);
+  padding: var(--sp-s);
+
+  margin: var(--sp-s);
+}
+
+.contract__subtitle {
+  text-align: center;
+  font-size: var(--fs--2);
+  font-style: italic;
+  font-weight: 700;
+  padding: var(--sp-2xs);
+}
+
+.contract__title {
+  text-align: center;
+  font-size: var(--fs-5);
+  font-weight: 700;
+  margin-bottom: var(--sp-s-m);
+}
+
+.contract__text {
+  font-size: var(--fs-0);
+  margin-top: var(--sp-2xs);
+  line-height: 110%;
+}
+
+.contract__list {
+  margin-top: var(--sp-2xs);
+  font-size: var(--fs-0);
+  line-height: 120%;
+  padding: 0 var(--sp-l);
+
+  list-style-type: decimal;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.contract__signs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: var(--write);
+  font-size: calc(var(--fs--1));
+}
+
+.contract__sign {
+  display: grid;
+  grid-template-rows: min-content max-content;
+  gap: var(--sp-2xs);
+}
+
+.sign__img {
+  width: var(--sp-2xl);
+}
+
+/* --- join company / game */
+.join-company {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding: var(--sp-2xl) var(--sp-s);
+}
+
+.join-company__frame {
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 1;
+  border-radius: var(--rrrr-s);
+}
+
+.join-company__game {
+  grid-row: 1;
+  grid-column: 1;
+  background-image: var(--bg-white-20);
+  border-radius: var(--rrrr);
+
+  padding: var(--sp-xl);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+}
+
+.join-company__title {
+  color: var(--color-purple);
+
+  text-align: center;
+  font-family: var(--serif);
+  font-size: var(--fs-5);
+  font-weight: 700;
+  line-height: 110%;
+}
+
+.join-company__game-1 {
+  display: grid;
+  justify-items: center;
+  align-items: start;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content min-content;
+  row-gap: var(--sp-l);
+}
+
+.join-company__btn {
+  background-image: var(--bg-purple-30);
+  color: var(--color-white);
+}
+
+/*---------- the polyglot bible ----------*/
+.polyglot-bible-book {
+}
+
+/*--- royal titles ---*/
+.royal-titles .text{
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+}
+
+.royal-titles__img {
+  grid-row: 2;
+}
+
+/* ------------------------------------------------------ */
+.hidden {
+  display: none;
 }
