@@ -11,23 +11,44 @@
 
 <body>
   <div class="website">
-    <header>
-      <nav>
-        <ul>
-          <li>1562 <span>Ketters in de drukkerij</span></li>
-          <li>1563 <span>Het faillisement</span></li>
-          <li>1563 <span>Een nieuwe start</span></li>
-          <li>1566 <span>In dienst van de koning</span></li>
+    <header class="header">
+      <nav class="navigation">
+        <img class="logo" src="/src/assets/logo.png" alt="">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--active"><span class="nav__item--year">1562</span><span class="nav__item--description">Ketters in
+              de drukkerij</span></li>
+          <li class="nav__item"><span class="nav__item--year">1563</span><span class="nav__item--description">Het
+              faillisement</span></li>
+          <li class="nav__item"><span class="nav__item--year">1563</span><span class="nav__item--description">Een nieuwe
+              start</span></li>
+          <li class="nav__item"><span class="nav__item--year">1566</span><span class="nav__item--description">In dienst
+              van de koning</span></li>
         </ul>
+        <button class="button button--nav">tickets</button>
       </nav>
+
+      <section class="hero">
+        <div class="hero__img">
+          <div class="hero__title">
+            <img src="/src/assets/header-title.png" alt="">
+            <h1 class="visually-hidden">Een drukker met met pit</h1>
+            <p class="visually-hidden">Ontdek de wereld van Plantin</p>
+          </div>
+          <div class="light-switch">
+            <img src="/src/assets/light-switch.png" alt="">
+            <img src="/src/assets/light-switch-btn.png" alt="">
+            <img src="/src/assets/light-switch-icon.svg" alt="">
+          </div>
+        </div>
+
+        <div class="instruction">
+          <p class="instruction__title">Doe het licht aan.</p>
+          <p class="instruction__description">In het donker blijven Plantins boeken en geheimen beter bewaard.</p>
+        </div>
+      </section>
     </header>
 
     <main>
-      <section class="hero">
-        <h1 class="hero__title">Een drukker met met pit</h1>
-        <p class="hero__subtitle">Ontdek de wereld van Plantin</p>
-      </section>
-
       <section class="intro">
         <div class="titles visually-hidden">
           <h2 class="section__title">1520</h2>
@@ -633,15 +654,48 @@
           </div>
         </aside>
 
-        <div class="subsection outro">
-          <p>Een geplunderde en in brand gestoken drukkerij, valt daar nog iets over te vertellen?</p>
-          <p>Boeken toe dan maar, of toch niet? Ontdek het in het museum</p>
-          <a href="">Boek een ticket</a>
+        <div class="subsection outro outro--part1">
+          <div class="outro__text">
+            <p>Een geplunderde en in brand gestoken drukkerij, valt daar nog iets over te vertellen?</p>
+            <p>Boeken toe dan maar, of toch niet?</p>
+          </div>
+
+          <div class="light-switch">
+            <img src="/src/assets/light-switch.png" alt="">
+            <img src="/src/assets/light-switch-btn.png" alt="">
+            <img src="/src/assets/light-switch-icon.svg" alt="">
+          </div>
+
+          <div class="instruction">
+            <p class="instruction__title">Doe het licht uit.</p>
+            <p class="instruction__description">In het donker blijven Plantins boeken en geheimen beter bewaard.</p>
+          </div>
+        </div>
+
+        <div class="subsection outro outro--part2">
+          <div class="outro__text">
+            <p>Ontdek het volledige verhaal van de drukkerij in het museum.</p>
+            <button class="button button--outro">Boek een ticket</button>
+          </div>
         </div>
       </section>
     </main>
-    <footer>
-      <p>HIER KOMT EEN FOOOTER!!!!</p>
+    <footer class="footer">
+      <div class="stories">
+        <h2 class="stories__title">Ontdek de andere verhalen</h2>
+        <ul class="stories__list">
+          <li class="stories__item"><img class="story__img" src="" alt="">De eerste Moretus</li>
+          <li class="stories__item"><img class="story__img" src="" alt="">De laatste Moretus</li>
+          <li class="stories__item"><img class="story__img" src="" alt="">Een meertalige drukkerij</li>
+          <li class="stories__item"><img class="story__img" src="" alt="">Een drukker met pit</li>
+          <li class="stories__item"><img class="story__img" src="" alt="">Een nieuwe status, "adel"</li>
+        </ul>
+      </div>
+
+      <div class="footer__footer">
+        <img class="footer__img logo" src="/src/assets/logo.png" alt="">
+        <p class="footer__text">Deze website is onderdeel van de werking van het <a href="https://museumplantinmoretus.be/nl">Plantin Moretus Museum</a>.</p>
+      </div>
     </footer>
   </div>
   <script type="module" src="/src/js/main.js"></script>
