@@ -75,8 +75,8 @@
 
   --nrrr: 0.125rem 1rem 1rem 1rem;
   --rnrr: 1rem 0.125rem 1rem 1rem;
-  --rrnr: 1rem 1rem 0.125rem 1rem;
-  --rrrn: 1rem 1rem 1rem 0.125rem;
+  --rrnr: 1rem 1rem 1rem 0.125rem;
+  --rrrn: 1rem 1rem 0.125rem 1rem;
 
   --nrnn: 0 0.3125rem 0 0;
   --nnnr: 0rem 0rem 0.3125rem 0;
@@ -221,7 +221,15 @@ body {
   display: grid;
   grid-template-rows: auto;
   row-gap: var(--sp-s);
-  justify-items: end;
+  justify-items: center;
+}
+
+.gossip__content .end {
+  justify-self: end;
+}
+
+.gossip__content .start {
+  justify-self: start;
 }
 
 .gossip__title {
@@ -237,11 +245,37 @@ body {
   padding: var(--sp-2xs);
 }
 
+.gossip__text--sans-serif.start {
+  border-radius: var(--rrnr);
+}
+
 .gossip__text--serif {
   font-family: var(--serif);
   font-size: var(--fs-1);
   font-style: italic;
   font-weight: 400;
+}
+
+
+.gossip__text.purple,
+.gossip__title.purple,
+.titles__title.purple {
+  color: var(--color-purple);
+  border-color: var(--color-purple);
+}
+
+.gossip__text.orange,
+.gossip__title.orange,
+.titles__title.orange {
+  color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.gossip__text.green,
+.gossip__title.green,
+.titles__title.green {
+  color: var(--color-green);
+  border-color: var(--color-green);
 }
 
 /*-- texts --*/
@@ -455,7 +489,7 @@ body {
 }
 
 .nav__item--active:hover {
-    background: var(--color-orange);
+  background: var(--color-orange);
 }
 
 .nav__item--active:hover>.nav__item--description {
@@ -656,9 +690,9 @@ body {
 }
 
 .hammer__img {
-  width: 200%;
+  height: 200%;
   grid-row: 2;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .hammer__text {
