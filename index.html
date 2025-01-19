@@ -9,43 +9,73 @@
   <title>Christoffel Plantin</title>
 </head>
 
-<body>
+<body class="body">
   <div class="website">
     <header class="header">
+      <svg width="50" height="50" style="display:none">
+        <symbol id="navicon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M87.026 55.3996L87.026 44.6004L12.9741 44.6004L12.9741 55.3996L87.026 55.3996Z" fill="#FFFEF7" />
+          <path d="M87.026 30.6004L87.026 19.8012L12.9741 19.8012L12.9741 30.6004L87.026 30.6004Z" fill="#FFFEF7" />
+          <path d="M87.026 80.1989V69.3997H12.9741V80.1989H87.026Z" fill="#FFFEF7" />
+        </symbol>
+        <symbol id="close" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M72.3631 79.9995L79.9993 72.3633L27.6367 20.0008L20.0005 27.637L72.3631 79.9995Z" fill="#FFFEF7" />
+          <path d="M79.9993 27.6366L72.3631 20.0004L20.0005 72.363L27.6367 79.9992L79.9993 27.6366Z" fill="#FFFEF7" />
+      </svg>
+      </symbol>
+      </svg>
+
       <nav class="navigation">
         <img class="logo" src="/src/assets/logo.png" alt="">
-        <ul class="nav__list">
-          <li class="nav__item nav__item--active"><span class="nav__item--year">1562</span><span class="nav__item--description">Ketters in
-              de drukkerij</span></li>
-          <li class="nav__item"><span class="nav__item--year">1563</span><span class="nav__item--description">Het
-              faillisement</span></li>
-          <li class="nav__item"><span class="nav__item--year">1563</span><span class="nav__item--description">Een nieuwe
-              start</span></li>
-          <li class="nav__item"><span class="nav__item--year">1566</span><span class="nav__item--description">In dienst
-              van de koning</span></li>
-        </ul>
-        <button class="button button--nav">tickets</button>
+
+        <div class="nav__open">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--active"><span class="nav__item--year">1562</span><span
+                class="nav__item--description">Ketters in
+                de drukkerij</span></li>
+            <li class="nav__item"><span class="nav__item--year">1563</span><span class="nav__item--description">Het
+                faillisement</span></li>
+            <li class="nav__item"><span class="nav__item--year">1563</span><span class="nav__item--description">Een
+                nieuwe
+                start</span></li>
+            <li class="nav__item"><span class="nav__item--year">1566</span><span class="nav__item--description">In
+                dienst
+                van de koning</span></li>
+          </ul>
+        </div>
+
+        <button class="button button--nav nav__open">tickets</button>
+
+        <button class="nav__button button hidden" aria-label="Navigation menu" aria-expanded="false"
+          aria-controls="nav__list">
+          <svg role="img" aria-labelledby="svg-title" focusable="false">
+            <title id="svg-title">Menu</title>
+            <use id="iconlink" xlink:href="#navicon"></use>
+          </svg>
+        </button>
       </nav>
 
-      <section class="hero">
-        <div class="hero__img">
-          <div class="hero__title">
-            <img src="/src/assets/header-title.png" alt="">
-            <h1 class="visually-hidden">Een drukker met met pit</h1>
-            <p class="visually-hidden">Ontdek de wereld van Plantin</p>
-          </div>
-          <div class="light-switch">
-            <img src="/src/assets/light-switch.png" alt="">
-            <img src="/src/assets/light-switch-btn.png" alt="">
-            <img src="/src/assets/light-switch-icon.svg" alt="">
-          </div>
+      <div class="hero__img">
+        <div class="hero__title">
+          <img src="/src/assets/header-title.svg" alt="">
+          <h1 class="visually-hidden">Een drukker met met pit</h1>
+          <p class="visually-hidden">Ontdek de wereld van Plantin</p>
         </div>
+        <div class="hero__subtitle">
+          <img src="/src/assets/header-subtitle.svg" alt="">
+          <p class="visually-hidden">Doe het licht aan.</p>
+        </div>
+        <div class="light-switch">
+          <img src="/src/assets/light-switch.png" alt="">
+          <img src="/src/assets/lightswitch-btn.png" alt="">
+          <img src="/src/assets/light-switch-icon.svg" alt="">
+        </div>
+      </div>
 
-        <div class="instruction">
-          <p class="instruction__title">Doe het licht aan.</p>
-          <p class="instruction__description">In het donker blijven Plantins boeken en geheimen beter bewaard.</p>
-        </div>
-      </section>
+      <div class="hero__instruction">
+        <p class="instruction__title">Doe het licht aan.</p>
+        <p class="instruction__description">In het donker blijven Plantins boeken en geheimen beter bewaard.</p>
+      </div>
     </header>
 
     <main>
@@ -54,43 +84,48 @@
           <h2 class="section__title">1520</h2>
           <p class="section__subtitle">De beginjaren</p>
         </div>
-        <ul class="id-card">
-          <li class="id-card__item">
-            <p class="id-card__title">Naam</p>
-            <p class="id-card__content">Plantijn</p>
-          </li>
-          <li class="id-card__item">
-            <p class="id-card__title">Voornaam</p>
-            <p class="id-card__content">Christoffel</p>
-          </li>
-          <li class="id-card__item">
-            <p class="id-card__title">Geslacht</p>
-            <p class="id-card__content">M</p>
-          </li>
-          <li class="id-card__item">
-            <p class="id-card__title">Nationaliteit</p>
-            <p class="id-card__content">Frans</p>
-          </li>
-          <li class="id-card__item">
-            <p class="id-card__title">Geboortedatum</p>
-            <p class="id-card__content">? / 05 / 1520</p>
-          </li>
-          <li class="id-card__item">
-            <p class="id-card__title">Beroep</p>
-            <p class="id-card__content">Uitgever</p>
-          </li>
-          <li class="id-card__item">
-            <p class="id-card__title">Burgelijke staat</p>
-            <p class="id-card__content">Gehuwd</p>
-          </li>
-          <li class="id-card__item">
-            <p class="id-card__title">Kinderen</p>
-            <p class="id-card__content">5 dochters</p>
-          </li>
-          <li class="id-card__img">
-            <img src="/src/assets/ID-plantin.png" alt="Foto van Christoffel Plantijn">
-          </li>
-        </ul>
+        <div class="intro__img">
+          <img class="hand hand--id" src="/src/assets/hand.png" alt="" width="559" height="247">
+          <div class="container id-card__container">
+            <ul class="id-card">
+              <li class="id-card__item">
+                <p class="id-card__title">Naam</p>
+                <p class="id-card__content">Plantijn</p>
+              </li>
+              <li class="id-card__item">
+                <p class="id-card__title">Voornaam</p>
+                <p class="id-card__content">Christoffel</p>
+              </li>
+              <li class="id-card__item">
+                <p class="id-card__title">Geslacht</p>
+                <p class="id-card__content">M</p>
+              </li>
+              <li class="id-card__item">
+                <p class="id-card__title">Nationaliteit</p>
+                <p class="id-card__content">Frans</p>
+              </li>
+              <li class="id-card__item">
+                <p class="id-card__title">Geboortedatum</p>
+                <p class="id-card__content">? / 05 / 1520</p>
+              </li>
+              <li class="id-card__item">
+                <p class="id-card__title">Beroep</p>
+                <p class="id-card__content">Uitgever</p>
+              </li>
+              <li class="id-card__item">
+                <p class="id-card__title">Burgelijke staat</p>
+                <p class="id-card__content">Gehuwd</p>
+              </li>
+              <li class="id-card__item">
+                <p class="id-card__title">Kinderen</p>
+                <p class="id-card__content">5 dochters</p>
+              </li>
+              <li class="id-card__img">
+                <img src="/src/assets/ID-plantin.png" alt="Foto van Christoffel Plantijn">
+              </li>
+            </ul>
+          </div>
+        </div>
         <div class="text intro__text">
           <h3 class="text__title">Plantin, wie?</h3>
           <p class="text__content">Op jonge leeftijd verliest Plantin zijn gezin aan de pest. Zijn vader, opvoeder in
@@ -126,10 +161,12 @@
               <p class="gossip__title purple">Heb je het nieuws gehoord?</p>
               <p class="gossip__text gossip__text--sans-serif end orange">Ze zijn binnnengevallen bij Plantin.</p>
               <p class="gossip__text gossip__text--sans-serif start orange">Die drukt toch voor de koning?</p>
-              <p class="gossip__text gossip__text--serif end purple">Duizenden Calvinsitische pamfletten hebben ze gevonden!
+              <p class="gossip__text gossip__text--serif end purple">Duizenden Calvinsitische pamfletten hebben ze
+                gevonden!
               </p>
               <p class="gossip__text gossip__text--serif end purple">Fransmannen, niet te vertrouwen!</p>
-              <p class="gossip__text gossip__text--sans-serif start orange">Dat hij nog maar lang in Parijs blijft, de ketter!
+              <p class="gossip__text gossip__text--sans-serif start orange">Dat hij nog maar lang in Parijs blijft, de
+                ketter!
               </p>
             </div>
           </div>
@@ -302,7 +339,8 @@
             <p class="gossip__title orange">Heb je het nieuws gehoord?</p>
             <p class="gossip__text gossip__text--sans-serif end green">Ze zijn binnnengevallen bij Plantin.</p>
             <p class="gossip__text gossip__text--sans-serif start green">Die drukt toch voor de koning?</p>
-            <p class="gossip__text gossip__text--serif end orange">Duizenden Calvinsitische pamfletten hebben ze gevonden!
+            <p class="gossip__text gossip__text--serif end orange">Duizenden Calvinsitische pamfletten hebben ze
+              gevonden!
             </p>
             <p class="gossip__text gossip__text--serif end orange">Fransmannen, niet te vertrouwen!</p>
             <p class="gossip__text gossip__text--sans-serif start green">Dat hij nog maar lang in Parijs blijft, de
@@ -383,10 +421,12 @@
             <p class="gossip__title orange">Heb je het nieuws gehoord?</p>
             <p class="gossip__text gossip__text--sans-serif green end">Ze zijn binnnengevallen bij Plantin.</p>
             <p class="gossip__text gossip__text--sans-serif green start">Die drukt toch voor de koning?</p>
-            <p class="gossip__text gossip__text--serif orange end">Duizenden Calvinsitische pamfletten hebben ze gevonden!
+            <p class="gossip__text gossip__text--serif orange end">Duizenden Calvinsitische pamfletten hebben ze
+              gevonden!
             </p>
             <p class="gossip__text gossip__text--serif orange end">Fransmannen, niet te vertrouwen!</p>
-            <p class="gossip__text gossip__text--sans-serif green start">Dat hij nog maar lang in Parijs blijft, de ketter!
+            <p class="gossip__text gossip__text--sans-serif green start">Dat hij nog maar lang in Parijs blijft, de
+              ketter!
             </p>
           </div>
         </div>
@@ -491,10 +531,12 @@
             <p class="gossip__title orange">Heb je het nieuws gehoord?</p>
             <p class="gossip__text gossip__text--sans-serif purple end">Ze zijn binnnengevallen bij Plantin.</p>
             <p class="gossip__text gossip__text--sans-serif purple start">Die drukt toch voor de koning?</p>
-            <p class="gossip__text gossip__text--serif orange end">Duizenden Calvinsitische pamfletten hebben ze gevonden!
+            <p class="gossip__text gossip__text--serif orange end">Duizenden Calvinsitische pamfletten hebben ze
+              gevonden!
             </p>
             <p class="gossip__text gossip__text--serif orange end">Fransmannen, niet te vertrouwen!</p>
-            <p class="gossip__text gossip__text--sans-serif purple start">Dat hij nog maar lang in Parijs blijft, de ketter!
+            <p class="gossip__text gossip__text--sans-serif purple start">Dat hij nog maar lang in Parijs blijft, de
+              ketter!
             </p>
           </div>
         </div>
@@ -647,10 +689,12 @@
             <p class="gossip__title purple">Heb je het nieuws gehoord?</p>
             <p class="gossip__text gossip__text--sans-serif orange end">Ze zijn binnnengevallen bij Plantin.</p>
             <p class="gossip__text gossip__text--sans-serif orange start">Die drukt toch voor de koning?</p>
-            <p class="gossip__text gossip__text--serif purple end">Duizenden Calvinsitische pamfletten hebben ze gevonden!
+            <p class="gossip__text gossip__text--serif purple end">Duizenden Calvinsitische pamfletten hebben ze
+              gevonden!
             </p>
             <p class="gossip__text gossip__text--serif purple end">Fransmannen, niet te vertrouwen!</p>
-            <p class="gossip__text gossip__text--sans-serif orange start">Dat hij nog maar lang in Parijs blijft, de ketter!
+            <p class="gossip__text gossip__text--sans-serif orange start">Dat hij nog maar lang in Parijs blijft, de
+              ketter!
             </p>
           </div>
         </div>
@@ -705,7 +749,8 @@
 
       <div class="footer__footer">
         <img class="footer__img logo" src="/src/assets/logo.png" alt="">
-        <p class="footer__text">Deze website is onderdeel van de werking van het <a href="https://museumplantinmoretus.be/nl">Plantin Moretus Museum</a>.</p>
+        <p class="footer__text">Deze website is onderdeel van de werking van het <a
+            href="https://museumplantinmoretus.be/nl">Plantin Moretus Museum</a>.</p>
       </div>
     </footer>
   </div>
