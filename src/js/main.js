@@ -5,6 +5,7 @@ import '/src/css/header.css'
 import '/src/css/navigation.css'
 import '/src/css/intro.css'
 import '/src/css/paintings.css'
+import '/src/css/gossip.css'
 
 const $body = document.querySelector('.body');
 $body.classList.add("has-js");

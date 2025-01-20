@@ -220,7 +220,7 @@ body {
 }
 
 /*-- gossip --*/
-.gossip {
+/* .gossip {
   height: 100vh;
   padding: var(--margin);
   padding-bottom: var(--sp-2xl);
@@ -299,7 +299,7 @@ body {
 .titles__title.green {
   color: var(--color-green);
   border-color: var(--color-green);
-}
+} */
 
 /*-- texts --*/
 .text {
