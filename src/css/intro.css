@@ -13,10 +13,6 @@
 
     overflow: hidden;
     border-radius: var(--rrrr);
-
-    /* max-width: 37rem; */
-
-    /* aspect-ratio: 3/4; */
 }
 
 .id-card__container {
@@ -135,13 +131,15 @@
     object-position: right top;
 }
 
-@container (min-width: 32rem) {
+@container (min-width: 39rem) {
     .intro__img {
         display: grid;
         grid-template-columns: minmax(12.5rem, 15rem) minmax(20rem, 37rem);
         grid-template-rows: 1fr;
 
-        /* transform: rotate(15deg); */
+        transform: rotate(15deg);
+        margin-left: -3rem;
+        margin-top: var(--sp-s);
     }
 
     .id-card__container {
@@ -158,18 +156,17 @@
         justify-self: left;
         margin-top: 2.5rem;
         height: 10rem;
-        width: 15rem;
+        width: 20rem;
         z-index: 1;
         object-fit: cover;
         object-position: right top;
-
-        overflow: hidden;
     }
 }
 
 /*------------------------- intro -------------------------*/
 .intro {
     background-image: var(--bg-blue-15);
+    min-height: 100vh;
 }
 
 .intro__text {
