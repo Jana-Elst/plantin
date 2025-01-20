@@ -440,20 +440,6 @@ body {
   margin-top: var(--sp-2xs);
 }
 
-/*---------- intro ----------*/
-.intro {
-  background-image: var(--bg-blue-15);
-}
-
-.intro__text {
-  padding: var(--sp-m) var(--sp-m);
-  padding-bottom: var(--sp-l);
-}
-
-.intro__btn {
-  display: none;
-}
-
 /*---------- paintings ----------*/
 .paintings__list {
   display: grid;
