@@ -4,6 +4,11 @@ export function hamburgerMenu(element) {
   const $btnTickets = document.querySelector('.button--nav')
   const $iconLink = document.querySelector('#iconlink');
   const listItems = $navList.querySelectorAll("li a");
+  const $nav = document.querySelector('.navigation');
+
+  const $main = document.querySelector('.main');
+  const $footer = document.querySelector('.footer');
+  const $header = document.querySelector('.header');
 
   $navButton.classList.remove('hidden');
   $navList.classList.add("hidden-nav");
@@ -14,6 +19,11 @@ export function hamburgerMenu(element) {
     $iconLink.setAttribute("xlink:href", "#close");
     $navList.classList.remove("hidden-nav");
     $btnTickets.classList.remove("hidden-nav");
+
+    //add overlay
+    $main.classList.add("overlay-nav");
+    $footer.classList.add("overlay-nav");
+    $header.classList.add("no-overlay");
   }
 
   const closeNavigation = () => {
@@ -21,6 +31,11 @@ export function hamburgerMenu(element) {
     $iconLink.setAttribute("xlink:href", "#navicon");
     $navList.classList.add("hidden-nav");
     $btnTickets.classList.add("hidden-nav");
+
+    //add overlay
+    $main.classList.remove("overlay-nav");
+    $footer.classList.remove("overlay-nav");
+    $header.classList.remove("no-overlay");
   }
 
   const toggleNavigation = () => {
@@ -44,6 +59,13 @@ export function hamburgerMenu(element) {
   window.addEventListener("keyup", (e) => {
     if (e.key === "Escape") {
       $navButton.focus();
+      closeNavigation();
+    }
+  });
+
+  window.addEventListener('click', (e) => {
+    // Check if the click target is not the nav or a child of the nav
+    if (!$nav.contains(e.target)) {
       closeNavigation();
     }
   });

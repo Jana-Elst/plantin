@@ -1,5 +1,5 @@
 /*--- header ---*/
-.header {
+.hero {
     background-image: var(--bg-green-30);
     background-size: cover;
     background-repeat: no-repeat;
@@ -7,15 +7,17 @@
     padding: var(--sp-s);
 
     display: grid;
-    grid-template-rows: min-content 1fr min-content;
+    grid-template-rows: 17rem 1fr min-content;
     align-items: center;
 
-    /* height: 100vh; */
+    height: 100vh;
 }
 
 
 /*--- hero ---*/
 .hero__img {
+    grid-row: 2;
+
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: min-content;

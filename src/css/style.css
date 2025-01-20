@@ -70,18 +70,21 @@
 
   /*-- rounded corners --*/
   /*code: r = rounded, n=not rounded leesrichting: tl - tr - bl - br */
+  --fluid-radius: clamp(0.3125rem, 0.2232rem + 0.4464vw, 0.625rem);
+
   --rrrr: 1rem;
-  --rrrr-s: 0.3125rem;
+  --rrrr-s: var(--fluid-radius);
 
   --nrrr: 0.125rem 1rem 1rem 1rem;
   --rnrr: 1rem 0.125rem 1rem 1rem;
   --rrnr: 1rem 1rem 1rem 0.125rem;
   --rrrn: 1rem 1rem 0.125rem 1rem;
 
-  --nrnn: 0 0.3125rem 0 0;
-  --nnnr: 0rem 0rem 0.3125rem 0;
-  --rrnn: 0.3125rem 0.3125rem 0 0;
-  --nnrr: 0 0 0.3125rem 0.3125rem;
+  --nrnn: 0 var(--fluid-radius) 0 0;
+  --nnnr: 0rem 0rem var(--fluid-radius) 0;
+  --rrnn: var(--fluid-radius) var(--fluid-radius) 0 0;
+  --nnrr: 0 0 var(--fluid-radius) var(--fluid-radius);
+  --rnrn: var(--fluid-radius) 0 0 var(--fluid-radius);
 
   /*-- borders --*/
   --border: 1px solid var(--color-black);
@@ -160,6 +163,19 @@ body {
 }
 
 /*---------- overall css ----------*/
+/*--- overlay ---*/
+.overlay-nav {
+  opacity: 0.5;
+  filter: blur(15px);
+  z-index: 1;
+}
+
+.no-overlay {
+  filter: none;
+  opacity: 1;
+  z-index: 1000;
+}
+
 /*--- button ---*/
 .button {
   font-family: var(--serif);
