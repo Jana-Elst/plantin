@@ -1,0 +1,277 @@
+/*---------- paintings ----------*/
+.paintings__list {
+    display: grid;
+    grid-template-columns: repeat(3, 100%);
+    overflow: scroll;
+    padding: var(--sp-s) 0;
+
+    position: relative;
+}
+
+.painting {
+    padding: 0 var(--sp-l);
+    display: grid;
+    grid-template-rows: max-content max-content;
+    grid-template-columns: 100%;
+    justify-items: center;
+}
+
+/* --- als er js ---*/
+
+.has-js .paintings__list {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr;
+}
+
+.has-js .paintings__list::before {
+    position: absolute;
+    content: url("/src/assets/painting-arrow.svg");
+    background-repeat: no-repeat;
+    left: var(--sp-s);
+    top: 50%;
+}
+
+.has-js .paintings__list::after {
+    position: absolute;
+    content: url("/src/assets/painting-arrow.svg");
+    background-repeat: no-repeat;
+    right: var(--sp-s);
+    top: 50%;
+    transform: rotate(180deg);
+}
+
+.has-js .painting {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+
+/* ---- ----*/
+
+.painting__img {
+    padding: 0 var(--sp-m);
+    z-index: -1;
+}
+
+.painting__img--horizontal {
+    display: none;
+}
+
+.painting__img--normal {
+    display: none;
+}
+
+.painting__content {
+    margin-top: calc(-1*var(--sp-xl));
+    z-index: 1;
+}
+
+.painting__header {
+    color: var(--color-white);
+    background-image: var(--bg-orange-100);
+    padding: var(--sp-2xs);
+
+    border-radius: var(--rrnn);
+}
+
+.painting__name {
+    text-align: center;
+    font-family: var(--serif);
+    font-size: var(--fs-1);
+    font-style: normal;
+    font-weight: 700;
+
+    margin-bottom: var(--sp-3xs);
+}
+
+.painting__description {
+    text-align: center;
+    border-radius: var(--nnrr);
+}
+
+.painting__quote {
+    background-color: var(--color-white);
+    padding: var(--sp-xs);
+    line-height: 120%;
+}
+
+
+@media (min-width: 41rem) {
+    .painting__img--horizontal {
+        display: block;
+    }
+
+    .painting__img--vertical {
+        display: none;
+    }
+
+    .painting__img {
+        padding: 0;
+        z-index: 1;
+    }
+
+    .painting__content {
+        padding: 0 var(--sp-m);
+        z-index: -1;
+        margin-top: 0;
+        margin-top: calc(-1*var(--sp-s));
+    }
+
+    .painting__header {
+        padding-top: var(--sp-m);
+    }
+}
+
+@media (min-width: 44rem) {
+    .painting__img {
+        z-index: -1;
+    }
+
+    .painting__content {
+        z-index: 1;
+    }
+
+    .painting__header {
+        padding: var(--sp-2xs);
+    }
+
+}
+
+@media (min-width: 62rem) {
+    .has-js .paintings__list::before, .has-js .paintings__list::after {
+        content: none;
+    }
+    
+    .has-js .painting {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .paintings__list {
+        justify-items: start;
+    }
+
+    .painting__img {
+        z-index: 1;
+    }
+
+    .painting__img--horizontal {
+        display: none;
+    }
+
+    .painting__img--vertical {
+        display: none;
+    }
+
+    .pierre-porret .painting__img--normal,
+    .jeanne-riviere .painting__img--vertical,
+    .magdalena-plantin .painting__img--horizontal {
+        display: block;
+    }
+
+    .painting__content {
+        z-index: -1;
+    }
+
+    .paintings__list {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, min-content);
+        margin: var(--sp-s);
+    }
+
+    .painting {
+        grid-template-columns: max-content max(26rem);
+        grid-template-rows: max-content;
+        justify-items: start;
+        padding: 0;
+    }
+
+    .painting__content {
+        margin: 0;
+        margin-top: var(--sp-s);
+        padding: 0;
+        margin-left: calc(-1 * var(--sp-s));
+    }
+
+    .painting__header {
+        padding-left: calc(var(--sp-s) + var(--sp-2xs));
+    }
+
+    .painting__quote {
+        padding-left: calc(var(--sp-s) + var(--sp-xs));
+    }
+
+    /*--- tekst onder img ---*/
+    .magdalena-plantin {
+        grid-template-rows: max-content max-content;
+        max-width: 60%;
+        margin-left: -15rem;
+    }
+
+    .magdalena-plantin .painting__img {
+        grid-row: 1;
+        margin-top: calc(-1 * var(--sp-s));
+    }
+
+    .magdalena-plantin .painting__content {
+        grid-row: 2;
+        margin: 0;
+        margin-top: calc(-1 * var(--sp-s));
+        max-width: 30rem;
+        justify-self: center;
+    }
+
+    .magdalena-plantin .painting__header {
+        padding-top: calc(var(--sp-s) + var(--sp-2xs));
+    }
+
+    /*--- tekst switch ---*/
+    .pierre-porret {
+        justify-self: end;
+        /* grid-template-columns: min-content max-content; */
+    }
+
+    /*-- overlapping schilderijen ---*/
+    .magdalena-plantin {
+        margin-top: -15rem;
+        justify-self: end;
+    }
+
+    .jeanne-riviere {
+        margin-top: -10rem;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 83rem) {
+
+    /*--- switch kant tekst ---*/
+    .magdalena-plantin {
+        grid-template-columns: 30% max-content;
+    }
+
+    .magdalena-plantin .painting__img {
+        margin-right: calc(-1 * var(--sp-s));
+        grid-column: 2;
+    }
+
+    .magdalena-plantin .painting__content {
+        margin-right: calc(-1 * var(--sp-s));
+        margin-top: var(--sp-2xs);
+        margin-left: -10rem;
+        grid-column: 1;
+        grid-row: 1;
+        max-width: 30rem;
+    }
+
+    .magdalena-plantin .painting__header {
+        padding: var(--sp-2xs);
+        padding-right: calc(var(--sp-s) + var(--sp-2xs));
+    }
+
+    .magdalena-plantin .painting__quote {
+        padding-right: calc(var(--sp-s) + var(--sp-xs));
+    }
+}

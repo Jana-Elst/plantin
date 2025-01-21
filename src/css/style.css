@@ -219,6 +219,27 @@ body {
   line-height: 120%;
 }
 
+/*--- part intro ---*/
+.has-js .titles {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.has-js .titles__title{
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.has-js .gossip {
+  grid-row: 1;
+  grid-column: 1;
+
+  z-index: -1;
+
+  overflow: hidden;
+}
+
 /*-- gossip --*/
 /* .gossip {
   height: 100vh;
@@ -444,59 +465,6 @@ body {
 
 .subsection__title+.subsection__subtitle {
   margin-top: var(--sp-2xs);
-}
-
-/*---------- paintings ----------*/
-.paintings__list {
-  display: grid;
-  grid-template-columns: repeat(3, max(20rem));
-  overflow: scroll;
-  padding: var(--sp-l) 0;
-}
-
-.painting {
-  padding: 0 var(--sp-l);
-  display: grid;
-  grid-template-rows: max-content max-content
-}
-
-.painting__img {
-  padding: 0 var(--sp-m);
-  z-index: -1;
-}
-
-.painting__content {
-  margin-top: calc(-1*var(--sp-xl));
-  z-index: 1;
-}
-
-.painting__header {
-  color: var(--color-white);
-  background-image: var(--bg-orange-100);
-  padding: var(--sp-2xs);
-
-  border-radius: var(--rrnn);
-}
-
-.painting__name {
-  text-align: center;
-  font-family: var(--serif);
-  font-size: var(--fs-1);
-  font-style: normal;
-  font-weight: 700;
-
-  margin-bottom: var(--sp-3xs);
-}
-
-.painting__description {
-  text-align: center;
-  border-radius: var(--nnrr);
-}
-
-.painting__quote {
-  background-color: var(--color-white);
-  padding: var(--sp-xs);
-  line-height: 120%;
 }
 
 /*---------- dwangarbeid & ketterij ----------*/
