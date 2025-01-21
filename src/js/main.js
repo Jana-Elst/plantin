@@ -12,6 +12,8 @@ import '/src/css/contract.css'
 import '/src/css/part3.css'
 import '/src/css/join-company.css'
 import '/src/css/polyglot.css'
+import '/src/css/outro.css'
+import '/src/css/footer.css'
 
 const $body = document.querySelector('.body');
 $body.classList.add("has-js");

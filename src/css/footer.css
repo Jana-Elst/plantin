@@ -1,0 +1,108 @@
+.footer {
+    /* min-height: 100vh; */
+    background-image: var(--bg-green-30);
+    padding: var(--sp-s);
+    gap: var(--sp-s);
+    display: grid;
+    grid-template-rows: max-content min-content;
+}
+
+.stories,
+.footer__footer {
+    background-image: var(--bg-white-30);
+    padding: var(--sp-xs);
+    border-radius: var(--rrrr-s);
+
+    overflow: hidden;
+}
+
+.stories {
+    padding-bottom: var(--sp-xl);
+}
+
+.stories__title {
+    text-align: center;
+    font-family: var(--serif);
+    font-size: var(--fs-3);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+
+    padding: var(--sp-l) 0;
+}
+
+.stories__list {
+    display: grid;
+    grid-template-columns: repeat(5, 15rem);
+    gap: var(--sp-s);
+    max-width: calc(100vw - 2 * var(--sp-s));
+    overflow: scroll;
+}
+
+.stories__item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: end;
+    border-radius: var(--rrrr);
+}
+
+.stories__item p {
+    text-align: center;
+    color: var(--color-white);
+    font-family: var(--serif);
+    font-size: var(--fs-0);
+    font-style: italic;
+    font-weight: 700;
+    background-color: var(--color-orange);
+
+    grid-row: 1;
+    grid-column: 1;
+    padding: var(--sp-2xs);
+    padding-top: var(--sp-xs);
+    border-radius: var(--rrrr);
+}
+
+.story__img {
+    grid-row: 1;
+    grid-column: 1;
+
+    border-radius: var(--rrrr);
+}
+
+.footer__footer {
+    display: grid;
+    grid-template-rows: 4rem min-content;
+    justify-items: center;
+    align-items: center;
+    gap: var(--sp-2xs);
+}
+
+.logo {
+    height: 3rem;
+    width: 3rem;
+}
+
+.footer__text {
+    text-align: center;
+    font-family: var(--sans-serif);
+    font-size: var(--fs--1);
+    line-height: 120%;
+}
+
+.footer__text a {
+    color: var(--color-black);
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: 8%;
+    text-underline-offset: 12%;
+    text-underline-position: from-font;
+}
+
+@media (min-width: 43rem) {
+    .stories__list {
+        justify-content: center;
+        grid-template-columns: repeat(auto-fill, 15rem);
+    }
+}

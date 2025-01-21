@@ -431,36 +431,7 @@ body {
 }
 
 /*---------- outro ----------*/
-.outro {
-  padding: var(--margin);
-}
-
-.outro--part1 {
-  background-image: var(--bg-blue-15);
-}
-
-.outro__text {
-  color: var(--color-purple);
-  text-align: center;
-  font-family: var(--serif);
-  font-size: var(--fs-2);
-  font-weight: 700;
-  line-height: 120%;
-
-  padding: var(--sp-2xl) 0;
-}
-
-.outro__text p+p {
-  margin-top: var(--sp-l);
-}
-
-.outro .instruction {
-  padding-top: var(--sp-2xl);
-  padding-bottom: var(--sp-s);
-  color: var(--color-purple);
-}
-
-.outro--part2 {
+/* .outro--part2 {
   height: 100vh;
   background-image: var(--bg-green-30);
   display: grid;
@@ -477,10 +448,10 @@ body {
 
 .button--outro {
   background-image: var(--bg-white-30);
-}
+} */
 
 /*---------- footer ----------*/
-.footer {
+/* .footer {
   height: 100vh;
   background-image: var(--bg-green-30);
   padding: var(--sp-s);
@@ -533,7 +504,7 @@ body {
   text-decoration-thickness: 8%;
   text-underline-offset: 12%;
   text-underline-position: from-font;
-}
+} */
 
 /* ------------------------------------------------------ */
 .hidden {
