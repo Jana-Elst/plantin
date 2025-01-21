@@ -1,0 +1,43 @@
+.new-start {
+    display: grid;
+    grid-template-rows: max-content;
+    align-items: center;
+}
+
+.contract__container.left {
+    display: none;
+}
+
+@media (min-width: 61rem) {
+    .contract__container.left {
+        display: grid;
+    }
+
+    .new-start {
+        grid-template-columns: 50% 50%;
+    }
+
+    .new-company,
+    .hebrew-bible {
+        align-self: center;
+    }
+
+    .new-company {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .join-company {
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    .hebrew-bible {
+        grid-column: 2;
+    }
+
+    .contract__container.left {
+        grid-row: 2;
+        grid-column: 1;
+    }
+}

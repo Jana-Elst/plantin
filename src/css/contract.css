@@ -1,0 +1,169 @@
+/*-- contract --*/
+.contract {
+    background-image: var(--bg-white-30);
+    border-radius: var(--rrrr);
+
+    font-family: var(--serif);
+    padding: var(--sp-s);
+    margin: var(--sp-s);
+
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.contract__content--signs {
+    align-self: end;
+    padding-bottom: var(--sp-s);
+}
+
+.contract__subtitle {
+    text-align: center;
+    font-size: var(--fs--2);
+    font-style: italic;
+    font-weight: 700;
+    padding: var(--sp-2xs);
+}
+
+.contract__title {
+    text-align: center;
+    font-size: var(--fs-5);
+    font-weight: 700;
+    margin-bottom: var(--sp-s-m);
+}
+
+.contract__text {
+    font-size: var(--fs-0);
+    margin-top: var(--sp-2xs);
+    line-height: 110%;
+}
+
+.contract__list {
+    margin-top: var(--sp-2xs);
+    font-size: var(--fs-0);
+    line-height: 120%;
+    padding: 0 var(--sp-l);
+
+    list-style-type: decimal;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.contract__signs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: var(--write);
+    font-size: calc(var(--fs--2));
+}
+
+.contract__sign {
+    display: grid;
+    grid-template-rows: min-content var(--sp-s);
+    gap: var(--sp-2xs);
+}
+
+.sign__img {
+    width: var(--sp-l);
+    justify-self: end;
+}
+
+@container (min-width: 30rem) {
+    /* .contract {
+        margin: var(--sp-s) 12.5%;
+        /* aspect-ratio: 3/4;
+    } */
+
+    .contract__title {
+        font-size: var(--fs-2);
+    }
+
+    .contract__text,
+    .contract__list {
+        font-size: var(--fs--1);
+    }
+
+    .contract__signs {
+        font-size: var(--fs--2);
+    }
+}
+
+/*------------------------- hand -------------------------*/
+.contract__container {
+    display: grid;
+    justify-items: center;
+}
+
+.hand--contract {
+    justify-self: center;
+    margin-top: 2.5rem;
+    height: 10rem;
+    width: 15rem;
+    transform: rotate(90deg);
+    z-index: 1;
+    object-fit: cover;
+    object-position: right top;
+}
+
+@container (min-width: 39rem) {
+    .contract__container {
+        display: grid;
+        grid-template-columns: 12.5rem auto;
+        grid-template-rows: 1fr;
+
+        /* transform: rotate(15deg); */
+        /* margin-top: var(--sp-xl); */
+    }
+
+    .contract {
+        margin-left: -1.2rem;
+        justify-items: start;
+        max-width: 39rem;
+    }
+
+    .hand--contract {
+        transform: rotate(0deg);
+
+        justify-self: left;
+        margin-top: 2.5rem;
+        height: 10rem;
+        width: 20rem;
+        z-index: 1;
+        object-fit: cover;
+        object-position: right top;
+    }
+
+    /*-- rechts --*/
+    .contract__container.right {
+        grid-template-columns: auto 12.5rem;
+        grid-template-rows: 1fr;
+
+        /* transform: rotate(-15deg); */
+        /* margin-right: -3rem; */
+    }
+
+    .right .contract {
+        justify-self: end;
+
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: var(--sp-s);
+        margin-left: var(--sp-xl);
+        margin-right: -1.2rem;
+        justify-items: start;
+        max-width: 39rem;
+    }
+
+    .right .hand--contract {
+        grid-column: 2;
+
+        transform: rotate(0deg);
+        transform: scaleX(-1);
+        /* justify-self: end; */
+        height: 10rem;
+        width: 20rem;
+        z-index: 1;
+        object-fit: cover;
+        /* object-position: right top; */
+    }
+}

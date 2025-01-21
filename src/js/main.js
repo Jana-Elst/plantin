@@ -8,6 +8,9 @@ import '/src/css/gossip.css'
 import '/src/css/paintings.css'
 import '/src/css/hammer.css'
 import '/src/css/poster-auction.css'
+import '/src/css/contract.css'
+import '/src/css/part3.css'
+import '/src/css/join-company.css'
 
 const $body = document.querySelector('.body');
 $body.classList.add("has-js");

@@ -318,7 +318,7 @@ body {
   line-height: 120%;
 }
 
-.text__title+.content__paragraph {
+.text__title+.content__paragraph, .text__title+.text__content{
   margin-top: var(--sp-s);
 }
 
@@ -402,119 +402,6 @@ body {
   background-image: var(--bg-green-30);
 }
 
-/*-- contract --*/
-.contract {
-  background-image: var(--bg-white-30);
-  border-radius: var(--rrrr);
-
-  font-family: var(--serif);
-  padding: var(--sp-s);
-
-  margin: var(--sp-s);
-}
-
-.contract__subtitle {
-  text-align: center;
-  font-size: var(--fs--2);
-  font-style: italic;
-  font-weight: 700;
-  padding: var(--sp-2xs);
-}
-
-.contract__title {
-  text-align: center;
-  font-size: var(--fs-5);
-  font-weight: 700;
-  margin-bottom: var(--sp-s-m);
-}
-
-.contract__text {
-  font-size: var(--fs-0);
-  margin-top: var(--sp-2xs);
-  line-height: 110%;
-}
-
-.contract__list {
-  margin-top: var(--sp-2xs);
-  font-size: var(--fs-0);
-  line-height: 120%;
-  padding: 0 var(--sp-l);
-
-  list-style-type: decimal;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.contract__signs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  font-family: var(--write);
-  font-size: calc(var(--fs--1));
-}
-
-.contract__sign {
-  display: grid;
-  grid-template-rows: min-content max-content;
-  gap: var(--sp-2xs);
-}
-
-.sign__img {
-  width: var(--sp-2xl);
-}
-
-/* --- join company / game */
-.join-company {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  padding: var(--sp-2xl) var(--sp-s);
-}
-
-.join-company__frame {
-  grid-row: 1;
-  grid-column: 1;
-  z-index: 1;
-  border-radius: var(--rrrr-s);
-}
-
-.join-company__game {
-  grid-row: 1;
-  grid-column: 1;
-  background-image: var(--bg-white-20);
-  border-radius: var(--rrrr);
-
-  padding: var(--sp-xl);
-
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  align-items: center;
-}
-
-.join-company__title {
-  color: var(--color-purple);
-
-  text-align: center;
-  font-family: var(--serif);
-  font-size: var(--fs-5);
-  font-weight: 700;
-  line-height: 110%;
-}
-
-.join-company__game-1 {
-  display: grid;
-  justify-items: center;
-  align-items: start;
-
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content min-content;
-  row-gap: var(--sp-l);
-}
-
-.join-company__btn {
-  background-image: var(--bg-purple-30);
-  color: var(--color-white);
-}
 
 /*---------- the polyglot bible ----------*/
 .polyglot-bible-book {}
