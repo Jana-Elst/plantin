@@ -1,0 +1,159 @@
+/*---------- openbare verkoop ----------*/
+/*-- poster --*/
+.sale {
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+}
+
+.poster__sale {
+    padding: var(--sp-s);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% max-content;
+}
+
+/*-- met js --*/
+.has-js .poster__text {
+    grid-row: 2;
+    grid-column: 1;
+
+    display: grid;
+    grid-template-columns: 100%
+}
+
+.has-js .poster__sale .text {
+    grid-row: 2;
+    grid-column: 1;
+    z-index: -1;
+}
+
+/*--  --*/
+
+.poster__img {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 1;
+
+    padding-bottom: var(--sp-m);
+    padding-top: var(--sp-2xs);
+    background-image: var(--bg-white-30);
+    overflow: hidden;
+
+    position: relative;
+    justify-self: center;
+
+    border-radius: var(--rrrr);
+}
+
+.poster__img img {
+    aspect-ratio: 1 / 1;
+    width: min(40vh, 100%);
+    justify-self: center;
+}
+
+/* .poster__img::after {
+    content: var(--bg-border-green);
+    position: absolute;
+    bottom: -5px;
+} */
+
+.poster__text {
+    text-align: center;
+    font-family: var(--serif);
+    line-height: normal;
+    background-image: var(--bg-white-30);
+
+    overflow: hidden;
+    margin-top: -39px;
+
+    border-radius: var(--rrrr);
+    position: relative;
+
+    padding: var(--sp-s);
+}
+
+.poster__text::before {
+    content: var(--bg-border-white);
+    position: relative;
+}
+
+.poster__title {
+    display: grid;
+    grid-template-rows: max-content;
+}
+
+.poster__title .title {
+    font-size: calc(2*var(--fs-0));
+    font-weight: 700;
+    grid-row: 2;
+    padding-bottom: var(--sp-2xs);
+}
+
+.poster__title .subtitle {
+    font-size: var(--fs-1);
+    font-style: italic;
+    font-weight: 700;
+}
+
+.poster__content {
+    font-size: var(--fs-0);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    padding: var(--sp-l);
+}
+
+.poster__content>p+p {
+    margin-top: var(--sp-xs);
+}
+
+.poster__btn {
+    background-image: var(--bg-blue-15);
+    padding-bottom: var(--sp-m);
+
+    display: none;
+}
+
+.has-js .poster__btn {
+    justify-self: center;
+    display: block;
+    padding: var(--sp-2xs) var(--sp-s);
+}
+
+@media (min-width: 33rem) {
+    .poster__sale {
+        grid-template-columns: 50% 1fr;
+        grid-template-rows: max-content;
+    }
+
+    /*-- met js --*/
+    .poster__img {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: 50%;
+    }
+
+    .poster__text,
+    .has-js .poster__text {
+        grid-row: 1;
+        grid-column: 2;
+        margin-top: 0;
+        margin: auto 0;
+    }
+
+    .poster__sale .text {
+        grid-row: 1;
+        grid-column: 2;
+        z-index: -1;
+        display: none
+    }
+
+    .poster__img::after,
+    .poster__text::before {
+        content: none;
+    }
+}

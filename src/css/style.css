@@ -178,6 +178,7 @@ body {
 
 /*--- button ---*/
 .button {
+  color: var(--color-green);
   font-family: var(--serif);
   font-size: var(--fs-3);
   font-style: italic;
@@ -390,86 +391,6 @@ body {
 .balance {
   height: 100vh;
   background-color: #C8B8F7;
-}
-
-/*---------- openbare verkoop ----------*/
-/*-- poster --*/
-.sale__poster {
-  padding: var(--sp-s);
-}
-
-.poster__img {
-  padding-bottom: var(--sp-m);
-  padding-top: var(--sp-2xs);
-  background-image: var(--bg-white-30);
-  overflow: hidden;
-
-  position: relative;
-
-  border-radius: var(--rrrr);
-}
-
-.poster__img::after {
-  content: var(--bg-border-green);
-  position: absolute;
-  bottom: -5px;
-}
-
-.poster__content {
-  text-align: center;
-  font-family: var(--serif);
-  line-height: normal;
-  background-image: var(--bg-white-30);
-
-  overflow: hidden;
-  position: relative;
-  margin-top: -39px;
-
-  border-radius: var(--rrrr);
-}
-
-.poster__content::before {
-  content: var(--bg-border-white);
-  position: relative;
-}
-
-.poster__content::before {
-  content: var(--bg-border-white-dark);
-}
-
-.poster__title {
-  display: grid;
-  grid-template-rows: max-content;
-}
-
-.poster__title .title {
-  font-size: calc(2*var(--fs-0));
-  font-weight: 700;
-  grid-row: 2;
-  padding-bottom: var(--sp-2xs);
-}
-
-.poster__title .subtitle {
-  font-size: var(--fs-1);
-  font-style: italic;
-  font-weight: 700;
-}
-
-.poster__text {
-  font-size: var(--fs-0);
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  padding: var(--sp-l);
-}
-
-.poster__text>p+p {
-  margin-top: var(--sp-xs);
-}
-
-.poster__btn {
-  background-image: var(--bg-blue-15);
-  padding-bottom: var(--sp-m);
 }
 
 /*---------- vennootschap / company ----------*/
