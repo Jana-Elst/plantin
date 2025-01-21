@@ -227,7 +227,7 @@ body {
   grid-template-rows: 1fr;
 }
 
-.has-js .titles__title{
+.has-js .titles__title {
   grid-row: 1;
   grid-column: 1;
 }
@@ -318,7 +318,8 @@ body {
   line-height: 120%;
 }
 
-.text__title+.content__paragraph, .text__title+.text__content{
+.text__title+.content__paragraph,
+.text__title+.text__content {
   margin-top: var(--sp-s);
 }
 
@@ -404,16 +405,29 @@ body {
 
 
 /*---------- the polyglot bible ----------*/
-.polyglot-bible-book {}
-
 /*--- royal titles ---*/
-.royal-titles .text {
-  display: grid;
-  grid-template-rows: repeat(3, min-content);
+
+@media (min-width: 35rem) {
+  .royal-titles {
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    align-items: center
+  }
 }
 
-.royal-titles__img {
-  grid-row: 2;
+@media (min-width: 40rem) {
+  .royal-titles {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (min-width: 63rem) {
+  .royal-titles {
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
 }
 
 /*---------- outro ----------*/
