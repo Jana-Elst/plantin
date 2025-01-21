@@ -240,88 +240,6 @@ body {
   overflow: hidden;
 }
 
-/*-- gossip --*/
-/* .gossip {
-  height: 100vh;
-  padding: var(--margin);
-  padding-bottom: var(--sp-2xl);
-
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content 1fr;
-
-  align-items: center;
-
-  background-image: var(--bg-white-20);
-}
-
-.gossip__img {
-  height: 30vh;
-  margin-left: -1rem;
-}
-
-.gossip__content {
-  padding-bottom: var(--sp-s);
-  display: grid;
-  grid-template-rows: auto;
-  row-gap: var(--sp-s);
-  justify-items: center;
-}
-
-.gossip__content .end {
-  justify-self: end;
-}
-
-.gossip__content .start {
-  justify-self: start;
-}
-
-.gossip__title {
-  text-align: center;
-  font-family: var(--serif);
-  font-size: var(--fs-3);
-  font-weight: 700;
-}
-
-.gossip__text--sans-serif {
-  border-radius: var(--rnrr);
-  border: var(--border);
-  padding: var(--sp-2xs);
-}
-
-.gossip__text--sans-serif.start {
-  border-radius: var(--rrnr);
-}
-
-.gossip__text--serif {
-  font-family: var(--serif);
-  font-size: var(--fs-1);
-  font-style: italic;
-  font-weight: 400;
-}
-
-
-.gossip__text.purple,
-.gossip__title.purple,
-.titles__title.purple {
-  color: var(--color-purple);
-  border-color: var(--color-purple);
-}
-
-.gossip__text.orange,
-.gossip__title.orange,
-.titles__title.orange {
-  color: var(--color-orange);
-  border-color: var(--color-orange);
-}
-
-.gossip__text.green,
-.gossip__title.green,
-.titles__title.green {
-  color: var(--color-green);
-  border-color: var(--color-green);
-} */
-
 /*-- texts --*/
 .text {
   padding: var(--margin);
@@ -467,35 +385,11 @@ body {
   margin-top: var(--sp-2xs);
 }
 
-/*---------- dwangarbeid & ketterij ----------*/
-.hammer {
+
+/* calvinsitische ketter */
+.balance {
   height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 50% max-content max-content max-content;
-  justify-items: center
-}
-
-.hammer__img {
-  height: 200%;
-  grid-row: 2;
-  object-fit: cover;
-}
-
-.hammer__text {
-  font-family: var(--serif);
-  font-size: calc(2*var(--fs-4));
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.hammer__text.dwangarbeid {
-  grid-row: 3;
-}
-
-.hammer__text.ketterij {
-  grid-row: 4;
+  background-color: #C8B8F7;
 }
 
 /*---------- openbare verkoop ----------*/

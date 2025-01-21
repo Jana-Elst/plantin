@@ -1,0 +1,30 @@
+.hammer {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto max-content max-content max-content auto;
+    justify-items: center;
+    overflow: hidden;
+    padding: var(--sp-xl) 0;
+}
+
+.hammer__img {
+    grid-row: 2;
+    margin-left: calc(-50% - 30%);
+}
+
+.hammer__text {
+    font-family: var(--serif);
+    font-size: calc(2*var(--fs-4));
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--color-orange);
+}
+
+.hammer__text.dwangarbeid {
+    grid-row: 3;
+}
+
+.hammer__text.ketterij {
+    grid-row: 4;
+}
