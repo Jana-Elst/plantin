@@ -306,6 +306,12 @@ body {
   padding: var(--margin);
 }
 
+@container (min-width: 39rem) {
+  .text__content {
+    column-count: 2;
+  }
+}
+
 /*texts paper border */
 .paper-border {
   position: relative;
@@ -368,15 +374,15 @@ body {
   line-height: normal;
 }
 
-.text__content {
+.content__paragraph {
   line-height: 120%;
 }
 
-.text__title+.text__content {
+.text__title+.content__paragraph {
   margin-top: var(--sp-s);
 }
 
-.text__content~.text__content {
+.content__paragraph~.content__paragraph {
   margin-top: var(--sp-xs);
 }
 
