@@ -11,7 +11,6 @@
 
 <body class="body">
   <div class="website">
-    <div class=""></div>
     <header class="header">
       <svg width="50" height="50" style="display:none">
         <symbol id="navicon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,8 +70,9 @@
           </div>
           <div class="light-switch">
             <img src="/src/assets/light-switch.png" alt="">
-            <img src="/src/assets/lightswitch-btn.png" alt="">
-            <img src="/src/assets/light-switch-icon.svg" alt="">
+            <img class="light-switch__button" src="/src/assets/lightswitch-btn.png" alt="">
+            <img class="light-switch__icon" src="/src/assets/light-switch-icon.svg" alt="">
+            <img class="light-switch__button--transparant" src="/src/assets/lightswitch-btn.png" alt="">
           </div>
         </div>
         <div class="hero__instruction">
@@ -86,7 +86,7 @@
           <h2 class="section__title">1520</h2>
           <p class="section__subtitle">De beginjaren</p>
         </div>
-        <div class="container">
+        <div class="container intro__container">
           <div class="intro__img">
             <img class="hand hand--id" src="/src/assets/hand.png" alt="" width="559" height="247">
             <div class="container id-card__container">
@@ -162,32 +162,40 @@
       </section>
 
       <section class="part1">
-        <div class="titles">
+        <div class="titles titles-part1" data-trigger="part1">
           <div class="titles__title purple">
-            <h2 class="section__title">1562</h2>
-            <p class="section__subtitle">Ketters in de drukkerij</p>
+            <h2 class="section__title section__title-part1">1562</h2>
+            <p class="section__subtitle section__subtitle-part1">Ketters in de drukkerij</p>
           </div>
           <div class="gossip">
-            <div class="container">
-              <div class="gossip__imgs">
-                <img class="gossip__img gossip__img--1" src="/src/assets/gossip-guy-1.png" alt="mannetje in pak">
-                <img class="gossip__img gossip__img--2" src="/src/assets/gossip-guy-2.png" alt="mannetje in pak">
-                <img class="gossip__img gossip__img--3" src="/src/assets/gossip-guy-3.png" alt="mannetje in pak">
-              </div>
-              <div class="gossip__content">
-                <p class="gossip__title purple">Heb je het nieuws gehoord?</p>
-                <p class="gossip__text gossip__text--sans-serif end orange">Ze zijn binnnengevallen bij Plantin.</p>
-                <p class="gossip__text gossip__text--sans-serif start orange">Duizenden Calvinsitische pamfletten
-                  hebben
-                  ze
-                  gevonden!
-                </p>
-                <p class="gossip__text gossip__text--serif end purple">Die drukt toch voor de koning?</p>
-                <p class="gossip__text gossip__text--serif start purple">Fransmannen, niet te vertrouwen!</p>
-                <p class="gossip__text gossip__text--sans-serif end orange">Dat hij nog maar lang in Parijs blijft, de
-                  ketter!
-                </p>
-              </div>
+            <div class="container ss-orange s-purple">
+
+              <img class="gossip__img gossip__img--1 gossip__img--1-part1" src="/src/assets/gossip-guy-1.png"
+                alt="mannetje in pak" width="496" height="414">
+              <img class="gossip__img gossip__img--2 gossip__img--2-part1" src="/src/assets/gossip-guy-2.png"
+                alt="mannetje in pak" width="478" height="394">
+              <img class="gossip__img gossip__img--3 gossip__img--3-part1" src="/src/assets/gossip-guy-3.png"
+                alt="mannetje in pak" width="426" height="619">
+
+
+              <p class="gossip__title gossip-title-part1 purple">Heb je het nieuws gehoord?</p>
+              <p class="gossip__text gossip__text-part1 gossip__text--sans-serif end desk-ss desk-tr orange">Ze zijn binnnengevallen bij
+                Plantin.</p>
+              <p class="gossip__text gossip__text-part1 gossip__text--sans-serif start desk-s orange">Duizenden Calvinsitische
+                pamfletten
+                hebben
+                ze
+                gevonden!
+              </p>
+              <p class="gossip__text gossip__text-part1 gossip__text--serif end desk-s purple">Die drukt toch voor de koning?
+              </p>
+              <p class="gossip__text gossip__text-part1 gossip__text--serif start desk-ss desk-bl purple">Fransmannen, niet te
+                vertrouwen!</p>
+              <p class="gossip__text gossip__text-part1 gossip__text--sans-serif end desk-ss desk-tl orange">Dat hij nog maar lang in
+                Parijs blijft, de
+                ketter!
+              </p>
+
             </div>
           </div>
           <aside class="extra-info hidden">
@@ -309,7 +317,7 @@
       </li>
     </ul>
   </div>
-  <div class="subsection balance">
+  <div class="subsection balance hidden">
     <div class="subsection__titles">
       <h3 class="subsection__title">Is Plantin een heilig boontje of toch een calvinistische ketter?</h3>
       <p class="subsection__subtitle">Wat denk jij? Balanceer de weegschaal naar de juiste kant.</p>
@@ -350,8 +358,14 @@
   </div>
   <div class="subsection hammer">
     <img class="hammer__img" src="/src/assets/hammer.png" alt="">
-    <p class="hammer__text dwangarbeid">dwangarbeid</p>
-    <p class="hammer__text ketterij">ketterij</p>
+    <div class="hammer__text dwangarbeid">
+      <p class="dwangarbeid-1">dwang</p>
+      <p class="dwangarbeid-2">arbeid</p>
+    </div>
+    <div class="hammer__text ketterij">
+      <p class="ketterij-1">kett</p>
+      <p class="ketterij-2">erij</p>
+    </div>
   </div>
   <div class="paper-border orange container">
     <div class="text">
@@ -429,17 +443,19 @@
       <div class="poster__sale">
         <div class="poster__img"><img src="/src/assets/stockverkoop.png" alt=""></div>
 
-        <div class="poster__text">
-          <div class="poster__title">
-            <p class="title">Openbare verkoop</p>
-            <p class="subtitle">23 januari 1563</p>
-            <p class="subtitle">Vrijdagsmarkt, Antwerpen</p>
+        <div class="container__poster-text">
+          <div class="poster__text">
+            <div class="poster__title">
+              <p class="title">Openbare verkoop</p>
+              <p class="subtitle">23 januari 1563</p>
+              <p class="subtitle">Vrijdagsmarkt, Antwerpen</p>
+            </div>
+            <div class="poster__content">
+              <p>De Gulden Passer, de drukkerij van Christoffel Plantin is failliet.</p>
+              <p>Een openbare verkoop zal worden georganiseerd zodat de eigenaar zijn schulden kan afbetalen.</p>
+            </div>
+            <button class="button poster__btn">bied mee</button>
           </div>
-          <div class="poster__content">
-            <p>De Gulden Passer, de drukkerij van Christoffel Plantin is failliet.</p>
-            <p>Een openbare verkoop zal worden georganiseerd zodat de eigenaar zijn schulden kan afbetalen.</p>
-          </div>
-          <button class="button poster__btn">bied mee</button>
         </div>
 
         <div class="text">
@@ -876,11 +892,21 @@
     <div class="stories">
       <h2 class="stories__title">Ontdek de andere verhalen</h2>
       <ul class="stories__list">
-        <li class="stories__item"><img class="story__img" src="/src/assets/other-story-1.png" alt=""><p>De eerste Moretus</p></li>
-        <li class="stories__item"><img class="story__img" src="/src/assets/other-story-1.png" alt=""><p>De laatste Moretus</p></li>
-        <li class="stories__item"><img class="story__img" src="/src/assets/other-story-1.png" alt=""><p>Een meertalige drukkerij</p></li>
-        <li class="stories__item"><img class="story__img" src="/src/assets/other-story-1.png" alt=""><p>Een drukker met pit</p></li>
-        <li class="stories__item"><img class="story__img" src="/src/assets/other-story-1.png" alt=""><p>Een nieuwe status, "adel"</p></li>
+        <li class="stories__item"><img class="story__img" src="/src/assets/other-story-1.png" alt="">
+          <p>De eerste Moretus</p>
+        </li>
+        <li class="stories__item"><img class="story__img" src="/src/assets/other-story-1.png" alt="">
+          <p>De laatste Moretus</p>
+        </li>
+        <li class="stories__item"><img class="story__img" src="/src/assets/other-story-1.png" alt="">
+          <p>Een meertalige drukkerij</p>
+        </li>
+        <li class="stories__item"><img class="story__img" src="/src/assets/other-story-1.png" alt="">
+          <p>Een drukker met pit</p>
+        </li>
+        <li class="stories__item"><img class="story__img" src="/src/assets/other-story-1.png" alt="">
+          <p>Een nieuwe status, "adel"</p>
+        </li>
       </ul>
     </div>
 
@@ -891,6 +917,9 @@
     </div>
   </footer>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
   <script type="module" src="/src/js/main.js"></script>
 </body>
 

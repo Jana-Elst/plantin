@@ -28,3 +28,8 @@
 .hammer__text.ketterij {
     grid-row: 4;
 }
+
+.has-js .hammer__text {
+    grid-row: 3;
+    grid-column: 1;
+}

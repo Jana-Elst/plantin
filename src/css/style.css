@@ -128,6 +128,10 @@ img {
   display: none;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -200,7 +204,7 @@ body {
 
   padding: var(--margin);
 
-  background-image: var(--bg-white-20);
+  /* background-image: var(--bg-white-20); */
 }
 
 .section__title {
@@ -225,6 +229,8 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+
+  background-image: var(--bg-white-20);
 }
 
 .has-js .titles__title {
@@ -236,7 +242,7 @@ body {
   grid-row: 1;
   grid-column: 1;
 
-  z-index: -1;
+  z-index: 1;
 
   overflow: hidden;
 }
@@ -505,6 +511,49 @@ body {
   text-underline-offset: 12%;
   text-underline-position: from-font;
 } */
+
+/* ----- gsap chizzle -------*/
+.pin {
+  position: fixed;
+  z-index: 10;
+  width: var(--max-width-page);
+  margin: 0;
+  padding: 0;
+}
+
+.has-js .navigation.pin {
+  position: fixed;
+}
+
+.light-switch__button--transparant {
+  opacity: 0%;
+  z-index: 2;
+}
+
+.has-no-scroll {
+  overflow: hidden;
+  z-index: -10;
+}
+
+.overlay-light {
+  opacity: 100;
+  filter: blur(0px);
+  z-index: 1;
+}
+
+.intro {
+  overflow: hidden;
+}
+
+.hammer__text {
+  display: flex;
+}
+
+.hero--absolute {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
 
 /* ------------------------------------------------------ */
 .hidden {

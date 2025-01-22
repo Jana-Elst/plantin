@@ -166,7 +166,7 @@
 /*------------------------- intro -------------------------*/
 .intro {
     background-image: var(--bg-blue-15);
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .intro__text {
@@ -218,14 +218,33 @@
     }
 }
 
+/*heeft js */
+/* .has-js .intro {
+    display: grid;
+    grid-template-rows: max-content;
+}
+
+.has-js .intro__container {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.has-js .intro__text {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end
+} */
+
 @media (min-width: 80rem) {
     .intro {
+        min-height: 100vh;
         grid-template-columns: 45rem 1fr;
     }
 }
 
 @media (min-width: 57rem) and (orientation: portrait) {
     .intro {
+        min-height: 100vh;
         grid-template-rows: 1fr min-content 1fr;
         grid-template-columns: 1fr;
         align-items: center;

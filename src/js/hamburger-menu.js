@@ -9,6 +9,7 @@ export function hamburgerMenu(element) {
   const $main = document.querySelector('.main');
   const $footer = document.querySelector('.footer');
   const $header = document.querySelector('.header');
+  const $body = document.querySelector('.website');
 
   $navButton.classList.remove('hidden');
   $navList.classList.add("hidden-nav");
@@ -19,6 +20,8 @@ export function hamburgerMenu(element) {
     $iconLink.setAttribute("xlink:href", "#close");
     $navList.classList.remove("hidden-nav");
     $btnTickets.classList.remove("hidden-nav");
+
+    $body.classList.add('no-scroll');
 
     //add overlay
     $main.classList.add("overlay-nav");
@@ -31,6 +34,9 @@ export function hamburgerMenu(element) {
     $iconLink.setAttribute("xlink:href", "#navicon");
     $navList.classList.add("hidden-nav");
     $btnTickets.classList.add("hidden-nav");
+
+    $body.classList.remove('no-scroll');
+
 
     //add overlay
     $main.classList.remove("overlay-nav");
@@ -67,6 +73,35 @@ export function hamburgerMenu(element) {
     // Check if the click target is not the nav or a child of the nav
     if (!$nav.contains(e.target)) {
       closeNavigation();
+    }
+  });
+
+
+  //codepen link: https://codepen.io/devonkiss/pen/NWXpeyo //
+  // Initial state
+  let scrollPos = document.body.getBoundingClientRect().top;
+  // adding scroll event
+  window.addEventListener('scroll', (e) => {
+    // detects new state and compares it with the new one
+    if (document.body.getBoundingClientRect().top > scrollPos) {
+      console.log('up');
+      gsap.to($nav, {
+        y: 0,
+        duration: 0.4,
+        ease: "power1.out",
+      });
+    }
+    
+    else {
+      console.log('down');
+      // saves the new position for iteration.
+      gsap.to($nav, {
+        y: -$nav.offsetHeight-50, // Move out of view (adjust this value as needed)
+        duration: 0.2, // Animation duration
+        ease: "power1.out",
+      });
+
+      scrollPos = document.body.getBoundingClientRect().top;
     }
   });
 }

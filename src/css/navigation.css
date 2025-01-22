@@ -101,7 +101,7 @@
     grid-template-columns: 1fr 1fr;
     padding: var(--sp-2xs);
 
-    position: absolute;
+    position: fixed;
     width: min(calc(100% - 2*var(--sp-s)), calc(var(--max-width-page) - 2*var(--sp-s)));
     transform-origin: top left;
     top: var(--sp-s);

@@ -135,3 +135,8 @@
         align-self: end;
     }
 }
+
+/*------ extra's voor gsap -----------*/
+.light-switch__icon {
+    z-index: 1;
+}

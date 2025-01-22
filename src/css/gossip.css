@@ -1,5 +1,5 @@
 .gossip {
-    background-image: var(--bg-white-20);
+    /* background-image: var(--bg-white-20); */
     min-height: 100vh;
     /* background-image: var(--bg-purple-100); */
 }
@@ -43,32 +43,32 @@
     justify-self: start;
 }
 
-.gossip__title {
+/* .gossip__title {
     text-align: center;
     font-family: var(--serif);
     font-size: var(--fs-3);
     font-weight: 700;
-}
+} */
 
-.gossip__text--sans-serif {
+/* .gossip__text--sans-serif {
     border-radius: var(--rnrr);
     border: var(--border);
     padding: var(--sp-2xs);
-}
+} */
 
-.gossip__text--sans-serif.start {
+/* .gossip__text--sans-serif.start {
     border-radius: var(--rrnr);
-}
+} */
 
-.gossip__text--serif {
+/* .gossip__text--serif {
     font-family: var(--serif);
     font-size: var(--fs-1);
     font-style: italic;
     font-weight: 400;
-}
+} */
 
 
-.gossip__text.purple,
+/* .gossip__text.purple,
 .gossip__title.purple,
 .titles__title.purple {
     color: var(--color-purple);
@@ -87,7 +87,7 @@
 .titles__title.green {
     color: var(--color-green);
     border-color: var(--color-green);
-}
+} */
 
 @media (min-width: 35rem) {
     .gossip .container {
@@ -162,9 +162,10 @@
         /* position: center; */
     }
 
-    .gossip__text--sans-serif.orange {
+    /* .gossip__text--sans-serif.orange {
         color: var(--color-white);
         background-image: var(--bg-orange-100);
+        background-size: contain;
         line-height: 120%;
     }
 
@@ -178,7 +179,7 @@
         color: var(--color-white);
         background-image: var(--bg-green-100);
         line-height: 120%;
-    }
+    } */
 
     .gossip__text:nth-child(3) {
         font-family: var(--serif);
