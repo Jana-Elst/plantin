@@ -85,6 +85,7 @@
   --rrnn: var(--fluid-radius) var(--fluid-radius) 0 0;
   --nnrr: 0 0 var(--fluid-radius) var(--fluid-radius);
   --rnrn: var(--fluid-radius) 0 0 var(--fluid-radius);
+  --nrnr: 0 var(--fluid-radius) var(--fluid-radius) 0;
 
   /*-- borders --*/
   --border: 1px solid var(--color-black);
@@ -205,6 +206,7 @@ body {
   padding: var(--margin);
 
   /* background-image: var(--bg-white-20); */
+  overflow: hidden;
 }
 
 .section__title {
@@ -528,11 +530,6 @@ body {
 .light-switch__button--transparant {
   opacity: 0%;
   z-index: 2;
-}
-
-.has-no-scroll {
-  overflow: hidden;
-  z-index: -10;
 }
 
 .overlay-light {

@@ -16,7 +16,7 @@ const handID = () => {
             trigger: $introImg,
             start: "top top",
             end: "bottom 0%",
-            markers: true,
+            // markers: true,
             // pin: $section,
             scrub: 1,
         }
@@ -104,7 +104,7 @@ const titles = (part) => {
             pin: $titles,
             scrub: 1,
 
-            markers: true,
+            // markers: true,
         }
     });
 

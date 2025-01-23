@@ -3,7 +3,7 @@
 .sale {
     /* min-height: 100vh; */
     display: grid;
-    align-items: stretch;
+    /* align-items: stretch; */
 }
 
 .poster__sale {
@@ -49,11 +49,12 @@
 }
 
 .poster__img img {
-    height: 100%;
+    height: 30vh;
     width: auto;
     /* width: min(40vh, 100%); */
     justify-self: center;
     object-fit: contain;
+    margin: 0 auto;
 }
 
 /* .poster__img::after {
@@ -117,6 +118,7 @@
     padding-bottom: var(--sp-m);
 
     display: none;
+    margin: 0 auto
 }
 
 .has-js .poster__btn {

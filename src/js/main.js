@@ -1,6 +1,7 @@
 import { hamburgerMenu } from './hamburger-menu'
 import {animations} from './animations'
 import { header } from './header'
+import { auctionGame } from './auction-game'
 import '/src/css/reset.css'
 import '/src/css/style.css'
 import '/src/css/header.css'
@@ -16,6 +17,7 @@ import '/src/css/join-company.css'
 import '/src/css/polyglot.css'
 import '/src/css/outro.css'
 import '/src/css/footer.css'
+import '/src/css/auction-game.css'
 
 
 const $body = document.querySelector('.body');
@@ -27,3 +29,4 @@ gsap.registerPlugin(TextPlugin);
 hamburgerMenu();
 //header();
 animations();
+auctionGame();
