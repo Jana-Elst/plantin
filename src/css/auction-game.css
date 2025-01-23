@@ -7,16 +7,21 @@
     z-index: -100;
 }
 
-.sale__game {
-    position: absolute;
-    height: 100vh;
+.game,
+.display-auction-close {
+    top: 0;
+    position: fixed;
     width: 100%;
-
+    z-index: 10;
+    height: 100dvh;
     background-image: var(--bg-white-30);
-    z-index: 3;
+}
 
+.sale__game {
     padding: var(--sp-s);
     padding-bottom: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .show-desktop {
@@ -78,9 +83,11 @@
 }
 
 /*------------------ intro ------------------*/
-.display-intro-auction {
+.display-intro-auction .sale__game {
+    display: grid;
     grid-template-columns: 1fr 5rem;
     grid-template-rows: 5rem 1fr max-content;
+    height: 100%;
 }
 
 .intro-auction__description {
@@ -108,17 +115,21 @@
 }
 
 /*------------------ overlay-close ------------------*/
-.sale__game.display-auction-close {
+.display-auction-close {
     background-image: none;
+    height: 100%;
+    z-index: 15;
 }
 
-.display-auction-close {
-    position: absolute;
-    z-index: 5;
-
+.display-auction-close .sale__game {
     display: grid;
     grid-template-rows: auto min-content 3.5rem auto;
+    height: 100%;
 
+    padding: 0;
+    padding: var(--sp-s);
+    align-content: center;
+    gap: 0;
 }
 
 .display-auction-close p {
@@ -158,7 +169,7 @@
     padding: 0;
 }
 
-.sale-game__auction {
+.display-auction .sale__game {
     display: grid;
     grid-template-rows: 1rem 5rem 1fr max-content max-content;
     grid-template-columns: 1fr 5rem calc(5rem + var(--sp-s));
@@ -186,6 +197,7 @@
 .display-auction .auction-btn {
     grid-row: 5;
     grid-column: 1 / 4;
+    padding: 0 var(--sp-s);
 }
 
 .container__aankopen {
@@ -219,7 +231,7 @@
 }
 
 .total-money__icon {
-    width: 3rem;
+    width: 2rem;
     height: auto;
 }
 
@@ -271,6 +283,7 @@
 .intro-auction .display-intro-auction,
 .auction-auction .display-auction,
 .end-auction .display-end-auction {
-    display: grid;
+    display: block;
     width: 100%;
+    height: 100%;
 }

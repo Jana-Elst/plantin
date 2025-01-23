@@ -132,7 +132,7 @@
         grid-template-columns: 50% 1fr;
         /* grid-template-rows: max-content; */
         /* grid-template-rows: minmax(80vh, auto); */
-        grid-template-rows: 80vh;
+        grid-template-rows: 80dvh;
     }
 
     .container__poster-text {

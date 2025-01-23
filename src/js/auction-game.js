@@ -6,6 +6,7 @@ const $price = document.querySelector('.article__price');
 const $totalMoney = document.querySelector('.total-money__content');
 const $boards = document.querySelectorAll('.board--computer');
 const $boardUser = document.querySelectorAll('.board--user');
+const $game = document.querySelector('.game');
 
 //--- buttons ---//
 const $btnStart = document.querySelector('.poster__btn');
@@ -43,6 +44,9 @@ let currentPrice = 0;
 let money = 900;
 let bidUser;
 
+//--- saveScrollPos ---//
+let scrollPos = 0;
+
 //--- setup ---//
 let state = STATE_start;
 let prevState;
@@ -67,8 +71,13 @@ const setState = (value) => {
 /* ---------------------------------- FUNCTION / STATE ----------------------------------*/
 const intro = () => {
     setState(STATE_intro);
+
+    scrollPos = document.documentElement.scrollTop;
+    console.log(scrollPos);
+
     document.documentElement.classList.add('no-scroll');
     $nav.classList.add('hide-nav');
+    $game.classList.remove('hidden');
 }
 
 const auction = () => {
@@ -152,7 +161,7 @@ const bied = () => {
 }
 
 const getInfoLot = () => {
-    
+
 }
 
 const addAankoop = () => {
@@ -183,6 +192,7 @@ const addAankoop = () => {
 
 /* ---------------------------------- OVERLAYS ----------------------------------*/
 const openOverlayClose = () => {
+    console.log('test');
     $overlayClose.classList.remove('hidden');
 }
 
@@ -194,6 +204,9 @@ const backToStart = () => {
     $overlayClose.classList.add('hidden');
     $nav.classList.remove('hide-nav');
     document.documentElement.classList.remove('no-scroll');
+    // document.documentElement.scrollTop = scrollPos;
+    document.documentElement.scrollTo({top: scrollPos, behavior: "instant"});
+    $game.classList.add('hidden');
     setState(STATE_start);
 }
 
