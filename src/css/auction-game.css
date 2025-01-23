@@ -68,14 +68,16 @@
 }
 
 .close-btn,
-.close-btn--overlay {
+.close-btn--overlay,
+.close-end-btn {
     background-image: var(--bg-orange-50);
     background-size: cover;
     box-shadow: var(--shadow-s);
     padding: 1rem;
 }
 
-.confirm-btn {
+.confirm-btn,
+.again-btn {
     background-image: var(--bg-blue-15);
     background-size: cover;
     box-shadow: var(--shadow-s);
@@ -90,7 +92,8 @@
     height: 100%;
 }
 
-.intro-auction__description {
+.intro-auction__description,
+.display-auction-end .end__title {
     text-align: center;
     font-family: var(--serif);
     font-size: var(--fs-1);
@@ -167,16 +170,17 @@
 /*------------------ auction ------------------*/
 .display-auction {
     padding: 0;
+    height: 100dvh;
 }
 
 .display-auction .sale__game {
     display: grid;
-    grid-template-rows: 1rem 5rem 1fr max-content max-content;
+    grid-template-rows: 1rem 5rem min-content 1fr max-content;
     grid-template-columns: 1fr 5rem calc(5rem + var(--sp-s));
     gap: var(--sp-s);
 
+    height: 100dvh;
     padding: 0;
-    padding-top: var(--sp-s);
 }
 
 .display-auction .close-btn {
@@ -269,8 +273,231 @@
 }
 
 .bidding-hands {
+    /* position: relative; */
+    grid-row: 1 / 4;
+    grid-column: 1 / 4;
+    justify-self: left;
+}
+
+.user-hand,
+.computer-hand {
     position: absolute;
 }
+
+.board {
+    position: relative;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-s);
+    padding: 0.5rem 1rem;
+    border-radius: var(--rrrr-s);
+
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    z-index: 1;
+}
+
+.board--user {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+}
+
+.user-hand {
+    bottom: 10rem;
+    right: 1rem;
+    transform: rotate(-10deg);
+}
+
+.board::before {
+    content: '';
+    background-image: url('/src/assets/hand-board.png');
+    background-size: contain;
+    position: absolute;
+    background-repeat: no-repeat;
+
+    width: 6rem;
+    height: 20rem;
+
+    left: -1.1rem;
+    top: 4.8rem;
+
+    z-index: -1;
+}
+
+.user-hand .board::before {
+    transform: scaleX(-1);
+    left: 1.8rem;
+}
+
+.computer-hand-1 {
+    bottom: 8rem;
+    left: 1rem;
+    transform: rotate(10deg);
+}
+
+.computer-hand-2 {
+    bottom: 16rem;
+    left: 9rem;
+
+    writing-mode: vertical-rl;
+    transform: rotate(70deg) scale(-1);
+}
+
+.computer-hand-2 .board::before {
+    transform: scale(-1);
+    left: 1rem;
+    top: -20rem;
+}
+
+.computer-hand-3 {
+    bottom: 23rem;
+    left: 8rem;
+
+    writing-mode: vertical-rl;
+    transform: rotate(90deg) scale(-1);
+}
+
+.computer-hand-3 .board::before {
+    transform: scale(-1);
+    left: 1rem;
+    top: -20rem;
+}
+
+.articles__list {
+    grid-column: 1 / 4;
+    grid-row: 4;
+}
+
+.article {
+    display: grid;
+    grid-template-columns: 1fr min-content min-content 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    margin: 0 var(--sp-s);
+
+    justify-self: center;
+    align-self: center;
+
+    justify-items: center;
+    align-items: center;
+
+    column-gap: var(--sp-s);
+    row-gap: var(--sp-2xs);
+
+    height: 100%;
+}
+
+.article__title {
+    grid-column: 2;
+
+    font-family: var(--serif);
+    font-size: var(--fs-4);
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    line-height: 100%;
+    align-self: end;
+}
+
+.article__price {
+    grid-column: 1 / 5;
+    white-space: nowrap;
+
+    font-family: var(--serif);
+    font-size: var(--fs-2);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.article__price span {
+    color: var(--color-orange);
+}
+
+.article__img {
+    grid-column: 1 / 5;
+    grid-row: 3;
+    width: min(100%, 30dvh);
+    object-fit: contain;
+}
+
+.article__number {
+    grid-row: 1;
+    grid-column: 3;
+    white-space: nowrap;
+    align-self: end;
+
+    font-family: "Garamond Premier Pro";
+    font-size: 0.875rem;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.progressBar {
+    grid-column: 1 / 4;
+    grid-row: 1;
+}
+
+/*------------------ auction End ------------------*/
+.display-auction-end .sale__game {
+    display: grid;
+    grid-template-columns: 1fr 5rem;
+    grid-template-rows: 5rem 1fr min-content min-content 3rem 1fr;
+    height: 100dvh;
+    padding: var(--sp-s);
+    row-gap: var(--sp-m);
+}
+
+.display-auction-end .close-btn {
+    grid-column: 2;
+}
+
+.display-auction-end .end__content {
+    grid-column: 1 / 3;
+    grid-row: 3;
+
+    justify-self: center;
+}
+
+.display-auction-end .end__subtitle {
+    padding-top: var(--sp-2xs);
+    grid-column: 1 / 3;
+    grid-row: 3;
+    justify-self: center;
+}
+
+.display-auction-end .container {
+    grid-column: 1 / 3;
+    grid-row: 4;
+    border-radius: var(--rrrr-s);
+}
+
+.display-auction-end .container .aankopen {
+    border-radius: var(--rrrr-s);
+}
+
+.display-auction-end .buttons {
+    grid-column: 1 / 3;
+    grid-row: 5;
+    justify-self: center;
+
+    display: grid;
+    grid-template-columns: 3rem 3rem;
+    grid-template-rows: 3rem;
+
+    column-gap: var(--sp-s);
+}
+
+.display-auction-end .again-btn, .display-auction-end .close-end-btn {
+    padding: 0;
+}
+
+
+
 
 
 /* ------------------ show correct things ------------------*/
@@ -282,7 +509,7 @@
 
 .intro-auction .display-intro-auction,
 .auction-auction .display-auction,
-.end-auction .display-end-auction {
+.end-auction .display-auction-end {
     display: block;
     width: 100%;
     height: 100%;

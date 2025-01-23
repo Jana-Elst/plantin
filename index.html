@@ -498,6 +498,7 @@
 
       <div class="display-auction hidden">
         <div class="sale__game">
+          <canvas class="progressBar" width="1440" height="16"></canvas>
           <button class="button close-btn"><img src="/src/assets/close-btn.svg" alt=""></button>
           <button class="button info-btn"><img src="/src/assets/info-btn.svg" alt=""></button>
           <div class="total-money">
@@ -518,28 +519,54 @@
               </ul>
             </div>
           </div>
-          <div class="article">
-            <p class="article__title">Tafel</p>
-            <p class="article__price">biedprijs:</p>
-            <p class="article__number">lotnr. 1/5</p>
-            <img class="article__img" src="" alt="">
-          </div>
+          <ul class="articles__list">
+            <li class="article">
+              <p class="article__title">Tafel</p>
+              <p class="article__price">biedprijs: <span></span></p>
+              <p class="article__number">lotnr. 1/5</p>
+              <img class="article__img" src="/src/assets/auction-table.png" alt="" width="860" height="860">
+            </li>
+
+            <li class="article hidden">
+              <p class="article__title">Stoel</p>
+              <p class="article__price">biedprijs: <span></span></p>
+              <p class="article__number">lotnr. 2/5</p>
+              <img class="article__img" src="/src/assets/auction-table.png" alt="">
+            </li>
+
+            <li class="article hidden">
+              <p class="article__title">Vaas</p>
+              <p class="article__price">biedprijs: <span></span></p>
+              <p class="article__number">lotnr. 3/5</p>
+              <img class="article__img" src="/src/assets/auction-table.png" alt="">
+            </li>
+
+            <li class="article hidden">
+              <p class="article__title">Pen</p>
+              <p class="article__price">biedprijs: <span></span></p>
+              <p class="article__number">lotnr. 4/5</p>
+              <img class="article__img" src="/src/assets/auction-table.png" alt="">
+            </li>
+
+            <li class="article hidden">
+              <p class="article__title">Bijbel</p>
+              <p class="article__price">biedprijs: <span></span></p>
+              <p class="article__number">lotnr. 5/5</p>
+              <img class="article__img" src="/src/assets/auction-table.png" alt="">
+            </li>
+          </ul>
           <div class="bidding-hands">
             <div class="user-hand">
               <p class="board board--user"></p>
-              <img class="hand" src="" alt="">
             </div>
-            <div class="computer-hand-1">
+            <div class="computer-hand computer-hand-1 hidden">
               <p class="board board--computer"></p>
-              <img class="hand" src="" alt="">
             </div>
-            <div class="computer-hand-2">
+            <div class="computer-hand computer-hand-2 hidden">
               <p class="board board--computer"></p>
-              <img class="hand board--computer" src="" alt="">
             </div>
-            <div class="computer-hand-3">
-              <p class="board"></p>
-              <img class="hand" src="" alt="">
+            <div class="computer-hand computer-hand-3 hidden">
+              <p class="board board--computer"></p>
             </div>
           </div>
           <button class="button auction-btn">
@@ -553,30 +580,34 @@
         </div>
       </div>
 
-      <div class="sale__game display-auction-end hidden">
-        <button class="button close-btn"><img src="" alt=""></button>
-        <p>Proficiat met je aankopen!</p>
-        <p>De bieding is afgelopen.</p>
-        <div class="container">
-          <div class="aankopen">
-            <p class="aankopen__title">aankopen</p>
-            <ul class="aankopen__list">
-              <li class="container">
-                <div class="aankoop__item">
-                  <p class="aankoop__name"></p>
-                  <p class="aankoop__price"></p>
-                  <img class="aankoop__img" src="" alt="">
-                </div>
-              </li>
-            </ul>
+      <div class="display-auction-end hidden">
+        <div class="sale__game">
+          <button class="button close-btn"><img src="/src/assets/close-btn.svg" alt=""></button>
+          <div class="end__content">
+            <p class="end__title">Proficiat met je aankopen!</p>
+            <p class="end__subtitle">De bieding is afgelopen.</p>
+          </div>
+          <div class="container">
+            <div class="aankopen">
+              <p class="aankopen__title">aankopen</p>
+              <ul class="aankopen__list">
+                <li class="container">
+                  <div class="aankoop__item">
+                    <p class="aankoop__name"></p>
+                    <p class="aankoop__price"></p>
+                    <img class="aankoop__img" src="" alt="">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="button again-btn"><img src="/src/assets/again-btn.svg" alt="">
+            </button>
+            <button class="button close-end-btn"><img src="/src/assets/close-btn.svg" alt="">
+            </button>
           </div>
         </div>
-        <button class="button again-btn"><img src="" alt="">
-          <p class="show-desktop">begin opnieuw</p>
-        </button>
-        <button class="button close-end-btn"><img src="" alt="">
-          <p class="show-desktop">sluit af</p>
-        </button>
       </div>
 
       <div class="display-auction-close hidden">
@@ -587,8 +618,8 @@
                 alt=""></button>
             <button class="button close-btn--overlay"><img src="/src/assets/close-btn.svg" alt=""></button>
           </div>
-                </div>
         </div>
+      </div>
     </div>
 
     <section class="part3">

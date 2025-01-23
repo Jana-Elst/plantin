@@ -2,11 +2,15 @@
 //--- html selections ---//
 const $nav = document.querySelector('.navigation');
 const $overlayClose = document.querySelector('.display-auction-close');
-const $price = document.querySelector('.article__price');
+const $price = document.querySelectorAll('.article__price span');
 const $totalMoney = document.querySelector('.total-money__content');
 const $boards = document.querySelectorAll('.board--computer');
-const $boardUser = document.querySelectorAll('.board--user');
+const $boardUser = document.querySelector('.board--user');
 const $game = document.querySelector('.game');
+const $computerHands = document.querySelectorAll('.computer-hand');
+const $userHand = document.querySelector('.user-hand');
+const $body = document.querySelector('.body');
+const $articles = document.querySelectorAll('.article');
 
 //--- buttons ---//
 const $btnStart = document.querySelector('.poster__btn');
@@ -16,8 +20,8 @@ const $btnConfirmClose = document.querySelector('.confirm-btn--overlay-close');
 // const $btnInfo = document.querySelectorAll('.info-btn');
 const $btnIntro = document.querySelector('.start-btn');
 const $btnBid = document.querySelector('.auction-btn');
-// const $btnAgain = document.querySelector('.again-btn');
-// const $btnCloseEnd = document.querySelector('.close-end-btn');
+const $btnAgain = document.querySelector('.again-btn');
+const $btnCloseEnd = document.querySelector('.close-end-btn');
 
 
 //--- states ---//
@@ -34,15 +38,23 @@ const ALL_STATES = [
 ];
 
 //--- variable game ---//
-let bids = [];
-let timeInBetweenBids = [];
-let totalBids = 0;
-let currentBid;
-let price;
+//vars computermensen
+let bids = []; //aangemaakte biedingen door de computer
+let timeInBetweenBids = []; //tijd tussen de =! biedingen van de computer
+let totalBids = 0; //het aantal biedingen van de computer, check waar in de array je zit
+let currentBoard = -1; //bordje van de computer dat getoond wordt
 
-let currentPrice = 0;
-let money = 900;
-let bidUser;
+//vars om het spel te runnen
+let currentBid = 0; //prijs van de bieding op dit moment
+let currentPrice = 0; //prijs die gevraagd wordt voor object (altijd 15 hoger dan laatste bieding);
+let currentItem = 0;
+
+//vars user
+let money = 900; //totaal aantal geld user
+let bidUser; //laatste bieding van de user
+
+//time
+let currentWidthCanvas = 0;
 
 //--- saveScrollPos ---//
 let scrollPos = 0;
@@ -50,9 +62,6 @@ let scrollPos = 0;
 //--- setup ---//
 let state = STATE_start;
 let prevState;
-
-// const auction = () => {}
-// const end = () => {}
 
 /* ---------------------------------- SHOW CORRECT STATE ----------------------------------*/
 // show correct state
@@ -73,7 +82,6 @@ const intro = () => {
     setState(STATE_intro);
 
     scrollPos = document.documentElement.scrollTop;
-    console.log(scrollPos);
 
     document.documentElement.classList.add('no-scroll');
     $nav.classList.add('hide-nav');
@@ -85,14 +93,30 @@ const auction = () => {
     auctionSetup();
 }
 
+const setEnd = () => {
+    setState(STATE_end);
+}
+
 /* ---------------------------------- EXTRA FUNCTIONS STATE AUCTION ----------------------------------*/
 const auctionSetup = () => {
+    bids = []; //aangemaakte biedingen door de computer
+    timeInBetweenBids = []; //tijd tussen de =! biedingen van de computer
+    totalBids = 0; //het aantal biedingen van de computer, check waar in de array je zit
+    currentBoard = -1; //bordje van de computer dat getoond wordt
+
+    //vars om het spel te runnen
+    currentBid = 0; //prijs van de bieding op dit moment
+    currentPrice = 0; //prijs die gevraagd wordt voor object (altijd 15 hoger dan laatste bieding);
+
+    //vars user
+    bidUser; //laatste bieding van de user
+
     const participants = getRandomInt(3, 15);
     createBids(participants);
-    console.log(bids);
     setCurrentPrice();
     totalMoney();
     showNextBid();
+    draw();
 }
 
 const createBids = (participants) => {
@@ -116,8 +140,8 @@ const getRandomInt = (min, max) => {
 }
 
 const setCurrentPrice = () => {
-    price = currentBid + 15;
-    $price.innerText = `biedprijs: ${price} gulden`;
+    currentPrice = currentBid + 15;
+    $price[currentItem].innerText = `${currentPrice} gulden`;
 }
 
 const totalMoney = () => {
@@ -128,20 +152,38 @@ const showNextBid = () => {
     if (totalBids < bids.length) {
         currentBid = bids[totalBids];
 
-        if (currentBid < price) {
+        if (currentBid < currentPrice) {
             totalBids++;
             showNextBid();
         } else {
-            console.log(currentBid); // Display the current bid
-            $boards[0].innerText = currentBid;
+            chooseBoard(currentBid);
             totalBids++;
 
             setCurrentPrice();
+            currentWidthCanvas = 0;
             setTimeout((showNextBid), timeInBetweenBids[totalBids - 1] * 1000);
         }
     } else {
         checkHighstBid();
     }
+}
+
+const chooseBoard = (currentBid) => {
+    let newBoard = getRandomInt(0, 2);
+    while (newBoard === currentBoard) {
+        newBoard = getRandomInt(0, 2);
+    }
+
+    $computerHands[newBoard].classList.remove('hidden');
+    $boards[newBoard].innerText = currentBid;
+
+    if (currentBoard > -1) {
+        $computerHands[currentBoard].classList.add('hidden');
+    }
+
+    $userHand.classList.add('hidden');
+
+    currentBoard = newBoard;
 }
 
 const checkHighstBid = () => {
@@ -153,18 +195,57 @@ const checkHighstBid = () => {
 }
 
 const bied = () => {
-    console.log('bied');
-    $boards[0].innerText = price;
-    bidUser = price;
+    bidUser = currentPrice;
+    currentBid = currentPrice;
+    $boardUser.innerText = bidUser;
+    $userHand.classList.remove('hidden');
+
+    if (currentBoard > -1) {
+        $computerHands[currentBoard].classList.add('hidden');
+    }
+
+    currentWidthCanvas = 0;
     setCurrentPrice();
     totalMoney();
 }
 
-const getInfoLot = () => {
+const verkocht = () => {
+    if (bidUser === currentBid && bidUser < money) {
+        console.log('IK KOOP!');
+        addAankoop();
+    }
 
+    $userHand.classList.add('hidden');
+    nextItem();
+    auctionSetup();
+}
+
+const nextItem = () => {
+    if (currentItem < $articles.length - 1) {
+        console.log('next item');
+        $articles[currentItem].classList.add('hidden');
+        $articles[currentItem + 1].classList.remove('hidden');
+        currentItem++;
+    } else {
+        setEnd();
+    }
+}
+
+const getInfoLot = () => {
+    const article = $articles[currentItem];
+    const title = article.querySelector('.article__title').textContent;
+    const price = article.querySelector('.article__price span').textContent;
+    const imgSrc = article.querySelector('.article__img').src;
+
+    return {
+        title, price, imgSrc
+    }
 }
 
 const addAankoop = () => {
+    console.log('ik word toegevoegd');
+    const info = getInfoLot();
+
     const listItem = document.createElement('li');
     listItem.className = 'container';
 
@@ -173,14 +254,16 @@ const addAankoop = () => {
 
     const aankoopName = document.createElement('p');
     aankoopName.className = 'aankoop__name';
+    aankoopName.textContent = info.name;
 
 
     const aankoopPrice = document.createElement('p');
     aankoopPrice.className = 'aankoop__price';
+    aankoopPrice.textContent = info.price;
 
     const aankoopImg = document.createElement('img');
     aankoopImg.className = 'aankoop__img';
-    aankoopImg.src = imgSrc;
+    aankoopImg.src = info.imgSrc;
     aankoopImg.alt = '';
 
     aankoopItem.appendChild(aankoopName);
@@ -190,9 +273,37 @@ const addAankoop = () => {
     listItem.appendChild(aankoopItem);
 }
 
+//--- progresbar ---//
+const $canvas = document.querySelector('.progressBar');
+const ctx = $canvas.getContext('2d');
+
+$canvas.width = $body.offsetWidth + 16;
+$canvas.height = 8;
+
+const duration = 10; // tijd in seconds
+const totalWidth = $canvas.width;
+const increment = totalWidth / (duration * 60); // Calculate increment per frame (approx 60 FPS)
+
+const draw = () => {
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, $canvas.width, $canvas.height);
+
+    ctx.fillStyle = "blue"; // Color of the filling rectangle
+    ctx.fillRect(0, 0, currentWidthCanvas, $canvas.height);
+
+    //Update the current width
+    if (currentWidthCanvas < totalWidth) {
+        currentWidthCanvas += increment; // Increase the width
+
+        requestAnimationFrame(draw);
+    } else {
+        currentWidthCanvas = 0;
+        verkocht();
+    }
+}
+
 /* ---------------------------------- OVERLAYS ----------------------------------*/
 const openOverlayClose = () => {
-    console.log('test');
     $overlayClose.classList.remove('hidden');
 }
 
@@ -205,7 +316,7 @@ const backToStart = () => {
     $nav.classList.remove('hide-nav');
     document.documentElement.classList.remove('no-scroll');
     // document.documentElement.scrollTop = scrollPos;
-    document.documentElement.scrollTo({top: scrollPos, behavior: "instant"});
+    document.documentElement.scrollTo({ top: scrollPos, behavior: "instant" });
     $game.classList.add('hidden');
     setState(STATE_start);
 }
@@ -221,11 +332,12 @@ export function auctionGame(element) {
 
     $btnCloseOverlay.addEventListener('click', () => { closeOverlayClose() });
     $btnConfirmClose.addEventListener('click', () => { backToStart() });
-    // $btnInfo.addEventListener('click', event);
     $btnIntro.addEventListener('click', () => { auction() });
     $btnBid.addEventListener('click', () => { bied() });
-    // $btnAgain.addEventListener('click', event);
-    // $btnCloseEnd.addEventListener('click', event);
+
+    // $btnInfo.addEventListener('click', event);
+    $btnAgain.addEventListener('click', () => { auction() });
+    $btnCloseEnd.addEventListener('click', () => { backToStart() });
 
     setState(state);
 }
