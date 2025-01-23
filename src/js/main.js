@@ -27,6 +27,6 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
 hamburgerMenu();
-//header();
+header();
 animations();
 auctionGame();

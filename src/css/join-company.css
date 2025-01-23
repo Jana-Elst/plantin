@@ -62,3 +62,19 @@
     color: var(--color-white);
     font-size: var(--fs-jc-2);
 }
+
+/* ------------------ show correct things ------------------*/
+.frame-hidden {
+    display: none;
+}
+
+.frame-1 .join-company__game-1,
+.frame-2 .join-company__game-2,
+.frame-3 .join-company__game-3,
+.frame-4 .join-company__game-4,
+.frame-5 .join-company__game-5,
+.frame-6 .join-company__game-6,
+.frame-7 .join-company__game-7 {
+    display: grid;
+    width: 100%;
+}

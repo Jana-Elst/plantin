@@ -10,7 +10,7 @@
     grid-template-rows: 5.5rem 1fr min-content;
     align-items: center;
 
-    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
 }
 
@@ -26,7 +26,7 @@
     grid-template-rows: min-content;
     justify-items: center;
 
-    width: min(75vw, 50vh);
+    width: min(75vw, 50dvh);
     height: auto;
 }
 
@@ -83,7 +83,7 @@
 
 @media (min-aspect-ratio: 0.70) {
     .hero {
-        grid-template-rows: 5.5rem calc((100vh - 2 * var(--sp-s)) - 11rem) 5.5rem;
+        grid-template-rows: 5.5rem calc((100dvh - 2 * var(--sp-s)) - 11rem) 5.5rem;
         overflow: hidden;
     }
 
@@ -97,7 +97,7 @@
 
         overflow: hidden;
         /* align-self: end; */
-        width: calc(80vh - 10rem);
+        width: calc(80dvh - 10rem);
         /* margin-bottom: -15%; */
 
         /* background-color: pink; */
@@ -106,11 +106,11 @@
 
 @media (min-width: 73rem) {
     .hero {
-        grid-template-rows: 5.5rem calc(100vh - 5.5rem - 1 * var(--sp-s) - var(--sp-m));
+        grid-template-rows: 5.5rem calc(100dvh - 5.5rem - 1 * var(--sp-s) - var(--sp-m));
         row-gap: var(--sp-m);
 
         display: grid;
-        grid-template-columns: (calc(min(100vh, calc(100vh - 5.5rem - 2 * var(--sp-s))))) 1fr;
+        grid-template-columns: (calc(min(100dvh, calc(100dvh - 5.5rem - 2 * var(--sp-s))))) 1fr;
     }
 
     .hero__instruction {
@@ -129,8 +129,8 @@
         grid-column: 1 / 3;
         z-index: 1;
 
-        width: min(100vh, calc(100vh - 5.5rem - 2 * var(--sp-s)));
-        height: calc(100vh - 5.5rem - 2 * var(--sp-s) - var(--sp-m));
+        width: min(100dvh, calc(100dvh - 5.5rem - 2 * var(--sp-s)));
+        height: calc(100dvh - 5.5rem - 2 * var(--sp-s) - var(--sp-m));
         object-fit: contain;
         align-self: end;
     }

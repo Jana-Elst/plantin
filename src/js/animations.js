@@ -6,27 +6,14 @@ const handID = () => {
     const $introImg = document.querySelector('.intro__img');
     const $introText = document.querySelector('.intro__text');
 
-    /*mobile*/
-    // gsap.set($introImg, {
-    //     zIndex: 5,
-    // });
-
     const tlIntro = gsap.timeline({
         scrollTrigger: {
             trigger: $introImg,
             start: "top top",
             end: "bottom 0%",
-            // markers: true,
-            // pin: $section,
             scrub: 1,
         }
     });
-
-    // tlIntro
-    // .to($intro, {
-    //     y: -$introImg.offsetHeight,
-    //     opacity: 100,
-    // })
 
     /*desktop*/
     mm.add("(min-width: 80rem)", () => {
@@ -42,47 +29,6 @@ const handID = () => {
                 duration: 0.5,
             }, "<");
     });
-}
-
-const setupMessagesTitles = () => {
-    // const $end = document.querySelectorAll('gossip__text--sans-serif.end');
-    // const $start = document.querySelectorAll('gossip__text--sans-serif.start');
-    // const $deskTl = document.querySelectorAll('.desk-tl');
-    // const $deskTr = document.querySelectorAll('.desl-tr');
-    // const $deskBl = document.querySelectorAll('.desl-bl');
-
-    // $end.forEach(element => {
-    //     gsap.set(element, {
-    //         transformOrigin: 'top right',
-    //     });
-    // });
-
-    // $start.forEach(element => {
-    //     gsap.set(element, {
-    //         transformOrigin: 'bottom left',
-    //     });
-    // });
-
-    // /*desktop*/
-    // mm.add("(min-width: 50rem) and (orientation: landscape)", () => {
-    //     $deskTl.forEach(element => {
-    //         gsap.set(element, {
-    //             transformOrigin: 'top left',
-    //         });
-    //     });
-
-    //     $deskTr.forEach(element => {
-    //         gsap.set(element, {
-    //             transformOrigin: 'top right',
-    //         });
-    //     });
-
-    //     $deskBl.forEach(element => {
-    //         gsap.set(element, {
-    //             transformOrigin: 'bottom left',
-    //         });
-    //     });
-    // });
 }
 
 const titles = (part) => {
@@ -103,8 +49,6 @@ const titles = (part) => {
             end: "bottom 0%",
             pin: $titles,
             scrub: 1,
-
-            // markers: true,
         }
     });
 
@@ -231,8 +175,8 @@ const titles = (part) => {
 
     titlesTl
         .add(tlTitle)
-        .add(tlGossip, "<1.3")
-        .add(tlGossipDesktop, "<1.3");
+        .add(tlGossip, "<2")
+        .add(tlGossipDesktop, "<2");
 
     /*desktop*/
     mm.add("(min-width: 50rem) and (orientation: landscape)", () => {

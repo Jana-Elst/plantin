@@ -39,12 +39,13 @@ let totalBids = 0;
 let currentBid;
 let price;
 
-//--- setup ---//
-let prevState;
-let state = STATE_start;
 let currentPrice = 0;
 let money = 900;
 let bidUser;
+
+//--- setup ---//
+let state = STATE_start;
+let prevState;
 
 // const auction = () => {}
 // const end = () => {}
@@ -134,9 +135,11 @@ const showNextBid = () => {
     }
 }
 
-checkHighstBid = () => {
+const checkHighstBid = () => {
     if (bidUser > currentBid) {
-
+        money = money - bidUser;
+        totalMoney();
+        addAankoop();
     }
 }
 
@@ -146,6 +149,36 @@ const bied = () => {
     bidUser = price;
     setCurrentPrice();
     totalMoney();
+}
+
+const getInfoLot = () => {
+    
+}
+
+const addAankoop = () => {
+    const listItem = document.createElement('li');
+    listItem.className = 'container';
+
+    const aankoopItem = document.createElement('div');
+    aankoopItem.className = 'aankoop__item';
+
+    const aankoopName = document.createElement('p');
+    aankoopName.className = 'aankoop__name';
+
+
+    const aankoopPrice = document.createElement('p');
+    aankoopPrice.className = 'aankoop__price';
+
+    const aankoopImg = document.createElement('img');
+    aankoopImg.className = 'aankoop__img';
+    aankoopImg.src = imgSrc;
+    aankoopImg.alt = '';
+
+    aankoopItem.appendChild(aankoopName);
+    aankoopItem.appendChild(aankoopPrice);
+    aankoopItem.appendChild(aankoopImg);
+
+    listItem.appendChild(aankoopItem);
 }
 
 /* ---------------------------------- OVERLAYS ----------------------------------*/

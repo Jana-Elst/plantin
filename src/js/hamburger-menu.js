@@ -9,7 +9,7 @@ export function hamburgerMenu(element) {
   const $main = document.querySelector('.main');
   const $footer = document.querySelector('.footer');
   const $header = document.querySelector('.header');
-  const $body = document.querySelector('.website');
+  const $body = document.querySelector('.body');
 
   $navButton.classList.remove('hidden');
   $navList.classList.add("hidden-nav");
@@ -79,11 +79,10 @@ export function hamburgerMenu(element) {
 
   //codepen link: https://codepen.io/devonkiss/pen/NWXpeyo //
   // Initial state
-  let scrollPos = document.body.getBoundingClientRect().top;
-  // adding scroll event
+  let scrollPos = document.documentElement.scrollTop;
   window.addEventListener('scroll', (e) => {
     // detects new state and compares it with the new one
-    if (document.body.getBoundingClientRect().top > scrollPos) {
+    if (document.documentElement.scrollTop < scrollPos) {
       console.log('up');
       gsap.to($nav, {
         y: 0,
@@ -91,17 +90,16 @@ export function hamburgerMenu(element) {
         ease: "power1.out",
       });
     }
-    
+
     else {
       console.log('down');
-      // saves the new position for iteration.
       gsap.to($nav, {
-        y: -$nav.offsetHeight-50, // Move out of view (adjust this value as needed)
-        duration: 0.2, // Animation duration
+        y: -$nav.offsetHeight - 50,
+        duration: 0.2,
         ease: "power1.out",
       });
 
-      scrollPos = document.body.getBoundingClientRect().top;
     }
+    scrollPos = document.documentElement.scrollTop;
   });
 }

@@ -1,97 +1,157 @@
+const $nav = document.querySelector('.navigation');
+const $hero = document.querySelector('.hero');
+const $intro = document.querySelector('.intro');
+const $body = document.querySelector('.body');
+const $intro__img = document.querySelector('.intro__img');
+const $main = document.querySelector('.main');
+let heroCopy = document.createElement('div');
+
+let countBtnClickStart = 0;
+let countBtnClickSecond = 0;
+
 let mm = gsap.matchMedia();
 
 const scaleButton = () => {
-    const $button = document.querySelector('.light-switch__button');
-    gsap.set($button, {
-        transformOrigin: '50% 63%'
-    })
+    const $buttonScale = document.querySelectorAll('.light-switch__button');
 
-    gsap.to($button, {
-        scale: 0.91,
-        duration: 0.9,
-        yoyo: true,
-        repeat: -1, //blijft herhalen
-        ease: "power1.inOut",
+    $buttonScale.forEach(button => {
+        gsap.set(button, {
+            transformOrigin: '50% 63%'
+        })
+
+        gsap.to(button, {
+            scale: 0.91,
+            duration: 0.9,
+            yoyo: true,
+            repeat: -1, //blijft herhalen
+            ease: "power1.inOut",
+        });
     });
 }
 
-const start = () => {
-    const $body = document.querySelector('.body');
-    const $button = document.querySelector('.light-switch__button--transparant');
-    const $hero = document.querySelector('.hero');
-    const $intro = document.querySelector('.intro');
-    const $intro__img = document.querySelector('.intro__img');
-    const $nav = document.querySelector('.navigation');
-    const $introText = document.querySelector('.intro__text');
-
-    /*zorg dat positie altijd boven is */
-    window.scrollTo(0, 0);
-
-    /*geen scroll zonder op knop te drukken*/
-    $body.classList.add('no-scroll');
-    $hero.classList.add('hero--absolute');
-
-    $button.addEventListener('click', (e) => {
-        console.log('click');
-
-        $body.classList.remove('no-scroll');
-
-        const tlLightOn = gsap.timeline({});
-        tlLightOn
-            .to($nav, {
-                y: -$nav.offsetHeight - 50, // Move out of view (adjust this value as needed)
-                duration: 0.2, // Animation duration
-                ease: "power1.out",
-            })
-            .to($hero, {
-                opacity: 0,
-                duration: 1.5,
-                ease: "power1.out",
-            })
-            .from($intro, {
-                opacity: 0,
-                duration: 1.5,
-                ease: "power1.out"
-            }, "<0.5");
-
-        const tlIntro = gsap.timeline({});
-        tlIntro.from($intro__img, {
-            y: - $intro__img.offsetHeight,
-            duration: 0.5,
-        })
-
-        const tlMaster = gsap.timeline({
-            onComplete: () => {
-                // gsap.set($hero, {
-                //     opacity: 100,
-                // });
-                ;
-                // $hero.classList.remove('hero--absolute');
+const buttonClick = () => {
+    const $button = document.querySelectorAll('.light-switch__button--transparant');
+    console.log($button);
+    $button.forEach(button => {
+        button.addEventListener('click', () => {
+            console.log('klik');
+            if (countBtnClickStart === 0) {
+                console.log('klik1');
+                countBtnClickStart ++;
+                buttonClickStart();
+            } else if (countBtnClickSecond === 1) {
+                countBtnClickSecond ++;
+                buttonClickSecond();
             }
         });
-        tlMaster
-            .add(tlLightOn)
-            .add(tlIntro, "<0.5");
-
-        mm.add("(min-width: 80rem)", () => {
-            console.log('test');
-            const tlIntroText = gsap.timeline({})
-
-            tlIntroText.from($introText, {
-                x: 700,
-                duration: 0.8,
-            })
-
-            tlMaster.add(tlIntroText, '<');
-        });
     });
+}
+
+const buttonClickStart = () => {
+    const tlMaster = gsap.timeline({
+        onComplete: () => {
+            heroCopy.remove();
+            $body.classList.remove('no-scroll');
+            buttonClick();
+            countBtnClickSecond ++;
+        }
+    });
+
+    tlMaster
+        .add(animationLightOn())
+        .add(animationHandID());
+}
+
+const buttonClickSecond = () => {
+    const $button = document.querySelectorAll('.light-switch__button--transparant');
+    countBtnClickSecond++;
+
+    copyHero();
+    console.log('click2dekeer');
+    gsap.set(heroCopy, {
+        opacity: 1
+    });
+
+    gsap.set($intro, {
+        opacity: 0
+    });
+
+    scrollToIntro();
+
+    gsap.set($intro, {
+        opacity: 100
+    });
+
+    const tlMaster = gsap.timeline({
+        onComplete: () => {
+            heroCopy.remove();
+            buttonClick();
+            countBtnClickSecond = 1;
+        }
+    });
+
+    tlMaster
+        .add(animationLightOn())
+        .add(animationHandID());
+}
+
+const copyHero = () => {
+    heroCopy = document.createElement('div');
+    const htmlHero = $hero.innerHTML;
+    heroCopy.classList.add('hero');
+    heroCopy.classList.add('hero-copy');
+    heroCopy.innerHTML = htmlHero;
+    $main.appendChild(heroCopy);
+    heroCopy.classList.add('position-fixed');
+}
+
+const animationHandID = () => {
+    const tlHandId = gsap.timeline({});
+    tlHandId.from($intro__img, {
+        y: - $intro__img.offsetHeight,
+        duration: 1.5,
+    })
+
+    return (tlHandId);
+}
+
+const animationLightOn = () => {
+    const tlLightOn = gsap.timeline({});
+    tlLightOn
+        .to($nav, {
+            y: -$nav.offsetHeight - 50,
+            duration: 0.2,
+            ease: "power1.out",
+        })
+        .to(heroCopy, {
+            opacity: 0,
+            duration: 1.5,
+            ease: "power1.out",
+        })
+        .from($intro, {
+            opacity: 0,
+            duration: 1.5,
+            ease: "power1.out"
+        }, "<0.5");
+
+    return (tlLightOn);
+}
+
+const scrollToIntro = () => {
+    $intro.scrollIntoView({
+        behavior: "instant",
+    })
 }
 
 export function header(element) {
-    console.log('header');
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(TextPlugin);
 
-    start();
+    $body.classList.add('no-scroll');
+    scrollToIntro();
+    copyHero();
+    buttonClick();
     scaleButton();
+
+    window.addEventListener('unload', () => { scrollToIntro() });
 }
