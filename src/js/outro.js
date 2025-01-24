@@ -10,7 +10,7 @@ const $outro1 = document.querySelector('.outro__text');
 const $outroText = document.querySelector('.outro__content');
 const $outro2 = document.querySelector('.outro__img');
 const $footer = document.querySelector('.outro--part2');
-const $footer2 = document.querySelector('.stories');
+const $footer2 = document.querySelector('.footer');
 
 let countBtnClick = 0;
 let isScroll = true;
