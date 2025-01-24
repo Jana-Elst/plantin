@@ -5,6 +5,7 @@ export function hamburgerMenu(element) {
   const $iconLink = document.querySelector('#iconlink');
   const listItems = $navList.querySelectorAll("li a");
   const $nav = document.querySelector('.navigation');
+  const $navItem = document.querySelectorAll('.nav-select-js');
 
   const $main = document.querySelector('.main');
   const $footer = document.querySelector('.footer');
@@ -27,6 +28,14 @@ export function hamburgerMenu(element) {
     $main.classList.add("overlay-nav");
     $footer.classList.add("overlay-nav");
     $header.classList.add("no-overlay");
+
+    //close nav when click on nav item
+    $navItem.forEach(item => {
+      item.addEventListener('click', (e) => {
+        console.log('ga naar sectie');
+        closeNavigation();
+      });
+    });
   }
 
   const closeNavigation = () => {
@@ -82,23 +91,23 @@ export function hamburgerMenu(element) {
   let scrollPos = document.documentElement.scrollTop;
   window.addEventListener('scroll', (e) => {
     // detects new state and compares it with the new one
-    if (document.documentElement.scrollTop < scrollPos) {
-      console.log('up');
-      gsap.to($nav, {
-        y: 0,
-        duration: 0.4,
-        ease: "power1.out",
-      });
-    }
-
-    else {
+    if (document.documentElement.scrollTop > scrollPos) {
       console.log('down');
       gsap.to($nav, {
         y: -$nav.offsetHeight - 50,
         duration: 0.2,
         ease: "power1.out",
       });
+    }
 
+    else {
+      console.log('up');
+      gsap.to($nav, {
+        y: 0,
+        duration: 0.4,
+        ease: "power1.out",
+      });
+      scrollPos = scrollPos + 1; //zorgen dat die niet direct wegscrollt als je je vinger een beetje beweegt op het scherm
     }
     scrollPos = document.documentElement.scrollTop;
   });

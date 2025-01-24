@@ -114,9 +114,7 @@
 }
 
 .poster__btn {
-    background-image: var(--bg-blue-15);
     padding-bottom: var(--sp-m);
-
     display: none;
     margin: 0 auto
 }

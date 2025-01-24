@@ -10,6 +10,7 @@
     border-radius: var(--rrrr-s);
     background-image: var(--bg-white-30);
     padding: var(--sp-m) var(--sp-2xs);
+    box-shadow: var(--shadow-s);
 }
 
 .button--nav {

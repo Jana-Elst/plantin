@@ -1,9 +1,14 @@
+// --- HTML elements --- //
+//algemeen
 const $nav = document.querySelector('.navigation');
+const $body = document.querySelector('.body');
+const $main = document.querySelector('.main');
+const $navItem = document.querySelectorAll('.nav-select-js');
+
+//intro
 const $hero = document.querySelector('.hero');
 const $intro = document.querySelector('.intro');
-const $body = document.querySelector('.body');
 const $intro__img = document.querySelector('.intro__img');
-const $main = document.querySelector('.main');
 let heroCopy = document.createElement('div');
 
 let countBtnClickStart = 0;
@@ -37,14 +42,25 @@ const buttonClick = () => {
             console.log('klik');
             if (countBtnClickStart === 0) {
                 console.log('klik1');
-                countBtnClickStart ++;
+                countBtnClickStart++;
                 buttonClickStart();
             } else if (countBtnClickSecond === 1) {
-                countBtnClickSecond ++;
+                countBtnClickSecond++;
                 buttonClickSecond();
             }
         });
     });
+}
+
+const clickNav = () => {
+    if (countBtnClickStart === 0) {
+        console.log('klik1');
+        countBtnClickStart++;
+        buttonClickStart();
+    } else if (countBtnClickSecond === 1) {
+        countBtnClickSecond++;
+        buttonClickSecond();
+    }
 }
 
 const buttonClickStart = () => {
@@ -53,7 +69,7 @@ const buttonClickStart = () => {
             heroCopy.remove();
             $body.classList.remove('no-scroll');
             buttonClick();
-            countBtnClickSecond ++;
+            countBtnClickSecond++;
         }
     });
 
@@ -127,7 +143,7 @@ const animationLightOn = () => {
             opacity: 0,
             duration: 1.5,
             ease: "power1.out",
-        })
+        }, "<")
         .from($intro, {
             opacity: 0,
             duration: 1.5,
@@ -144,14 +160,15 @@ const scrollToIntro = () => {
 }
 
 export function header(element) {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(TextPlugin);
-
     $body.classList.add('no-scroll');
     scrollToIntro();
     copyHero();
     buttonClick();
     scaleButton();
+
+    $navItem.forEach(item => {
+        item.addEventListener('click', () => { clickNav() });
+    });
 
     window.addEventListener('unload', () => { scrollToIntro() });
 }

@@ -8,6 +8,11 @@
   --color-blue: #DDF6E6;
   --color-white: #FFFEF7;
 
+  --blue-hover: #E9F9EC;
+  --orange-hover: #EF8156;
+  --purple-hover: #9587BE;
+  --green-white-hover: #D4D8CD;
+
   /*--bg textures--*/
   --bg-green-30: url("/src/assets/bg-green-30.png");
   --bg-green-100: url("/src/assets/bg-green-100.png");
@@ -67,6 +72,7 @@
   --margin: 0 var(--sp-m);
 
   /*-- shadows --*/
+  --shadow-s: 0px 0px 16px 0px rgba(22, 33, 19, 0.25);
 
   /*-- rounded corners --*/
   /*code: r = rounded, n=not rounded leesrichting: tl - tr - bl - br */
@@ -105,7 +111,7 @@
 /*-- basic css --*/
 html {
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  scroll-behavior: instant;
 }
 
 html,
@@ -167,6 +173,10 @@ body {
   container-type: inline-size;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*---------- overall css ----------*/
 /*--- overlay ---*/
 .overlay-nav {
@@ -193,6 +203,74 @@ body {
   border: none;
   padding: var(--sp-2xs) var(--sp-s);
   border-radius: var(--rrrr-s);
+  box-shadow: var(--shadow-s);
+
+  transition:
+    box-shadow 0.3s,
+    background-image 0.3s,
+    background-color 0.3s,
+    rotate 2s;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.button.bleu {
+  background-color: var(--color-blue);
+  background-image: var(--bg-blue-100);
+  background-size: cover;
+}
+
+.button.green {
+  background-color: var(--color-green);
+  background-image: var(--bg-green-30);
+  background-size: cover;
+}
+
+.button.purple {
+  background-color: var(--color-purple);
+  background-image: var(--bg-purple-30);
+}
+
+.button.white {
+  background-color: var(--color-white);
+  background-image: var(--bg-white-100);
+}
+
+.button.orange {
+  background-color: var(--color-orange);
+  background-image: var(--bg-orange-50);
+}
+
+.no-shadow {
+  box-shadow: none;
+}
+
+@media (hover: hover) {
+  .button.bleu:hover {
+    background-color: var(--color-blue);
+  }
+
+  .button.green:hover {
+    background-color: var(--color-green);
+  }
+
+  .button.purple:hover {
+    background-color: var(--purple-hover);
+  }
+
+  .button.white:hover {
+    background-color: var(--green-white-hover);
+  }
+
+  .button.orange:hover {
+    background-color: var(--orange-hover);
+  }
+
+  .button:hover {
+    box-shadow: none;
+    background-image: none;
+  }
 }
 
 /*-- titles ---*/
@@ -273,13 +351,13 @@ body {
 
 .paper-border::before {
   position: absolute;
-  top: 0px;
+  top: 1px;
   padding: 0;
 }
 
 .paper-border::after {
   position: absolute;
-  bottom: 0px;
+  bottom: 1px;
   padding: 0;
 
   -webkit-transform: scaleY(-1);
@@ -549,7 +627,7 @@ body {
 .position-fixed {
   top: 0;
   position: fixed;
-  width: 100%;
+  width: min(100%, 90rem);
   z-index: 10;
 }
 

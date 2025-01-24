@@ -1,6 +1,10 @@
+import { outro } from './outro'
+
 const $body = document.querySelector('.body');
+const $navItems = document.querySelectorAll('.nav__item');
 let mm = gsap.matchMedia();
 
+// -------------------------- ID-card --------------------------//
 const handID = () => {
     const $section = document.querySelector('.intro');
     const $introImg = document.querySelector('.intro__img');
@@ -31,7 +35,25 @@ const handID = () => {
     });
 }
 
+// -------------------------- execute titles after use navigation --------------------------//
+// const executeHalfTimeLineTitles = (event, item) => {
+//     event.preventDefault();
+//     const targetId = item.closest('a').getAttribute('href'); //neemt href van link
+//     const targetElement = document.getElementById(targetId.substring(1)); //verwijdert #, om volledige element te krijgen
+//     const part = targetElement.classList[1]; //krijg corrrecte classlist om te gebruiken in de timelines
+
+//     const tlTitles = gsap.timeline({
+//         onComplete: () => {
+//             console.log('klaaar');
+//             window.location.hash = targetId; // verander URL hash
+//             targetElement.scrollIntoView({ behavior: 'instant' });
+//         }
+//     });
+// }
+
+// -------------------------- titles --------------------------//
 const titles = (part) => {
+    console.log(part);
     const $titles = document.querySelector(`.titles-${part}`);
     const $sectionTitle = document.querySelector(`.section__title-${part}`);
     const $sectionSubtitle = document.querySelector(`.section__subtitle-${part}`);
@@ -49,37 +71,41 @@ const titles = (part) => {
             end: "bottom 0%",
             pin: $titles,
             scrub: 1,
+
+            //markers: true
         }
     });
 
-    const tlTitle = gsap.timeline({});
+    const tlTitlePart1 = gsap.timeline({});
+    const tlTitlePart2 = gsap.timeline({});
     const tlGossip = gsap.timeline({});
     const tlGossipDesktop = gsap.timeline({});
 
 
 
     /* title tl */
-    tlTitle
+    tlTitlePart1
         .from($sectionTitle, {
             opacity: 30,
-            x: -getWitdhScreen() / 2 - $sectionTitle.clientWidth / 2,
+            x: -getWitdhScreen() / 2 - $sectionTitle.offsetWidth / 2,
             duration: 1,
         })
         .from($sectionSubtitle, {
             opacity: 30,
-            x: getWitdhScreen() / 2 + $sectionSubtitle.clientWidth / 2,
+            x: getWitdhScreen() / 2 + $sectionSubtitle.offsetWidth / 2,
             duration: 1,
-        }, "<")
+        }, "<");
 
+    tlTitlePart2
         .to($sectionTitle, {
             opacity: 30,
-            x: getWitdhScreen() / 2 + $sectionTitle.clientWidth / 2,
+            x: getWitdhScreen() / 2 + $sectionTitle.offsetWidth / 2,
             duration: 1,
-        }, 2)
+        })
 
         .to($sectionSubtitle, {
             opacity: 30,
-            x: -getWitdhScreen() / 2 - $sectionSubtitle.clientWidth / 2,
+            x: -getWitdhScreen() / 2 - $sectionSubtitle.offsetWidth / 2,
             duration: 1,
         }, "<");
 
@@ -174,7 +200,8 @@ const titles = (part) => {
         }, "<0.5");
 
     titlesTl
-        .add(tlTitle)
+        .add(tlTitlePart1)
+        .add(tlTitlePart2, "2")
         .add(tlGossip, "<2")
         .add(tlGossipDesktop, "<2");
 
@@ -244,16 +271,8 @@ const titles = (part) => {
     });
 }
 
-const getWitdhScreen = () => {
-    let width = screen.width;
 
-    if (width > 1440) {
-        width = 1440
-    }
-
-    return width
-}
-
+// -------------------------- Hammer --------------------------//
 const hammer = () => {
     const $section = document.querySelector('.hammer');
     const $hammer = document.querySelector('.hammer__img');
@@ -339,6 +358,7 @@ const hammer = () => {
         }, "<")
 }
 
+// -------------------------- poster --------------------------//
 const poster = () => {
     const $section = document.querySelector('.sale');
     const $posterText = document.querySelector('.poster__text');
@@ -373,13 +393,30 @@ const poster = () => {
     }, "<0.5");
 }
 
+// -------------------------- algemene functies --------------------------//
+const getWitdhScreen = () => {
+    let width = screen.width;
 
+    if (width > 1440) {
+        width = 1440
+    }
+
+    return width
+}
+
+// -------------------------- export functie --------------------------//
 export function animations(element) {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(TextPlugin);
+    // $navItems.forEach(item => {
+    //     item.addEventListener("click", (event) => { executeHalfTimeLineTitles(event, item) })
+    // });
 
     handID();
     titles('part1');
     hammer();
+    titles('part2');
+    titles('part3');
+    titles('part4');
+    titles('part5');
+    outro();
     // poster();
 }

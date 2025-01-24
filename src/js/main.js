@@ -1,8 +1,13 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Swiper from 'swiper';
 import { hamburgerMenu } from './hamburger-menu'
 import {animations} from './animations'
 import { header } from './header'
 import { auctionGame } from './auction-game'
 import { joinCompany } from './join-company-game'
+import { buttons } from './buttons'
+import {nav} from './nav'
 import '/src/css/reset.css'
 import '/src/css/style.css'
 import '/src/css/header.css'
@@ -25,8 +30,10 @@ const $body = document.querySelector('.body');
 $body.classList.add("has-js");
 
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(TextPlugin);
 
+
+buttons();
+nav();
 hamburgerMenu();
 header();
 animations();

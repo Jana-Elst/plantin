@@ -69,6 +69,7 @@
     /* max-width: 26rem; */
 
     justify-self: center;
+    box-shadow: var(--shadow-s);
 }
 
 .instruction__title {
@@ -79,6 +80,7 @@
 
 .instruction__description {
     font-size: var(--fs--1);
+    line-height: 110%;
 }
 
 @media (min-aspect-ratio: 0.70) {
@@ -121,7 +123,7 @@
         align-self: end;
         margin-bottom: var(--sp-s);
 
-        width: 50%;
+        width: 45%;
     }
 
     .hero__img {

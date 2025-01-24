@@ -25,27 +25,40 @@
     </svg>
 
     <nav class="navigation">
-      <img class="logo" src="/src/assets/logo.png" alt="">
+      <img class="logo nav-select-js" src="/src/assets/logo.png" alt="">
 
       <div class="nav__open">
         <ul class="nav__list">
-          <li class="nav__item nav__item--active"><span class="nav__item--year">1562</span><span
-              class="nav__item--description">Ketters in
-              de drukkerij</span></li>
-          <li class="nav__item"><span class="nav__item--year">1563</span><span class="nav__item--description">Het
-              faillisement</span></li>
-          <li class="nav__item"><span class="nav__item--year">1563</span><span class="nav__item--description">Een
-              nieuwe
-              start</span></li>
-          <li class="nav__item"><span class="nav__item--year">1566</span><span class="nav__item--description">In
-              dienst
-              van de koning</span></li>
+          <a href="#1562">
+            <li class="nav__item nav-select-js nav-1562"><span class="nav__item--year">1562</span><span
+                class="nav__item--description">Ketters in
+                de drukkerij</span></li>
+          </a>
+          <a href="#1563-1">
+            <li class="nav__item nav-select-js nav-1563-1"><span class="nav__item--year">1563</span><span
+                class="nav__item--description">Het
+                faillisement</span></li>
+          </a>
+          <a href="#1563-2">
+            <li class="nav__item nav-select-js nav-1563-2"><span class="nav__item--year">1563</span><span
+                class="nav__item--description">Een
+                nieuwe
+                start</span></li>
+          </a>
+          <a href="#1566">
+            <li class="nav__item nav-select-js nav-1566"><span class="nav__item--year">1566</span><span
+                class="nav__item--description">In
+                dienst
+                van de koning</span></li>
+          </a>
         </ul>
       </div>
 
-      <button class="button button--nav nav__open">tickets</button>
+      <a class="button button--nav nav__open orange nav-select-js"
+        href="https://ttk.recreatex.be/Exhibitions/Register?ID=193d593e-f57a-ed11-9592-a48785620fa0&refresh=y&language=nl"
+        target="_blank">tickets</a>
 
-      <button class="nav__button button hidden" aria-label="Navigation menu" aria-expanded="false"
+      <button class="nav__button button hidden orange" aria-label="Navigation menu" aria-expanded="false"
         aria-controls="nav__list">
         <svg role="img" aria-labelledby="svg-title" focusable="false">
           <title id="svg-title">Menu</title>
@@ -157,10 +170,10 @@
           </div>
         </div>
       </div>
-      <button class="intro__btn button">scroll</button>
+      <button class="intro__btn button no-shadow">scroll</button>
     </section>
 
-    <section class="part1">
+    <section class="part part1" id="1562">
       <div class="titles titles-part1" data-trigger="part1">
         <div class="titles__title purple">
           <h2 class="section__title section__title-part1">1562</h2>
@@ -389,35 +402,105 @@
       </div>
     </section>
 
-    <section class="part2">
-      <div class="titles">
+    <section class="part part2" id="1563-1">
+      <div class="titles titles-part2" data-trigger="part2">
         <div class="titles__title purple">
-          <h2 class="section__title">1562</h2>
-          <p class="section__subtitle">Ketters in de drukkerij</p>
+          <h2 class="section__title section__title-part2">1563</h2>
+          <p class="section__subtitle section__subtitle-part2">Het faillisement</p>
         </div>
         <div class="gossip">
-          <div class="container">
-            <div class="gossip__imgs">
-              <img class="gossip__img gossip__img--1" src="/src/assets/gossip-guy-1.png" alt="mannetje in pak">
-              <img class="gossip__img gossip__img--2" src="/src/assets/gossip-guy-2.png" alt="mannetje in pak">
-              <img class="gossip__img gossip__img--3" src="/src/assets/gossip-guy-3.png" alt="mannetje in pak">
-            </div>
-            <div class="gossip__content">
-              <p class="gossip__title purple">Heb je het nieuws gehoord?</p>
-              <p class="gossip__text gossip__text--sans-serif end orange">Ze zijn binnnengevallen bij Plantin.</p>
-              <p class="gossip__text gossip__text--sans-serif start orange">Duizenden Calvinsitische pamfletten
-                hebben
-                ze
-                gevonden!
-              </p>
-              <p class="gossip__text gossip__text--serif end purple">Die drukt toch voor de koning?</p>
-              <p class="gossip__text gossip__text--serif start purple">Fransmannen, niet te vertrouwen!</p>
-              <p class="gossip__text gossip__text--sans-serif end orange">Dat hij nog maar lang in Parijs blijft, de
-                ketter!
-              </p>
-            </div>
+          <div class="container ss-orange s-purple">
+
+            <img class="gossip__img gossip__img--1 gossip__img--1-part2" src="/src/assets/gossip-guy-1.png"
+              alt="mannetje in pak" width="496" height="414">
+            <img class="gossip__img gossip__img--2 gossip__img--2-part2" src="/src/assets/gossip-guy-2.png"
+              alt="mannetje in pak" width="478" height="394">
+            <img class="gossip__img gossip__img--3 gossip__img--3-part2" src="/src/assets/gossip-guy-3.png"
+              alt="mannetje in pak" width="426" height="619">
+
+
+            <p class="gossip__title gossip-title-part2 purple">Heb je het nieuws gehoord?</p>
+            <p class="gossip__text gossip__text-part2 gossip__text--sans-serif end desk-ss desk-tr orange">Ze zijn
+              binnnengevallen bij
+              Plantin.</p>
+            <p class="gossip__text gossip__text-part2 gossip__text--sans-serif start desk-s orange">Duizenden
+              Calvinsitische
+              pamfletten
+              hebben
+              ze
+              gevonden!
+            </p>
+            <p class="gossip__text gossip__text-part2 gossip__text--serif end desk-s purple">Die drukt toch voor de
+              koning?
+            </p>
+            <p class="gossip__text gossip__text-part2 gossip__text--serif start desk-ss desk-bl purple">Fransmannen,
+              niet te
+              vertrouwen!</p>
+            <p class="gossip__text gossip__text-part2 gossip__text--sans-serif end desk-ss desk-tl orange">Dat hij nog
+              maar lang in
+              Parijs blijft, de
+              ketter!
+            </p>
+
           </div>
         </div>
+        <aside class="extra-info hidden">
+          <div class="container">
+            <p class="aside__titleside">Filips II & de ketters</p>
+            <div class="text aside__text">
+              <p class="text__title aside__title">Filips II & de ketters</p>
+              <div class="text__content">
+                <p class="content__paragraph content__paragraph aside__content">Op het moment dat Plantijn zijn
+                  drukkerij opricht,
+                  proberen de vorsten eenheid van
+                  bestuur te creëren. Ze willen meer
+                  grip krijgen op het bestuur, de rechtspraak en de belastingen. Én heel het rijk moet in dezelfde
+                  godsdienst volgt.</p>
+                <p class="content__paragraph aside__content">
+                  Op hetzelfde moment klaagt Maarten Luther de werkwijze van de katholieke kerk aan. Mensen bang
+                  maken
+                  om
+                  te
+                  zorgen dat ze
+                  aflaten, relikwieën en gebeden kopen, zodat de kerk een rijk en machtig instituut blijft? Daarin
+                  willen
+                  Luther en zijn
+                  volgelingen niet geloven. De corrupte, rijke en machtswellustige kerkelijke leiders zijn
+                  overbodig:
+                  enkel
+                  de Bijbel
+                  heeft gezag. En de Bijbel moet in de eigen volkstaal gelezen kunnen worden.
+                </p>
+                <p class="content__paragraph aside__content">
+                  Al snel ontstonden er verschillende strekkingen in het protestantisme. Naast de lutheranen
+                  ontstaan
+                  de
+                  calvinisten. Zij
+                  beklemtonen dat God al vooraf heeft uitgemaakt wie gered zal worden en wie niet.
+                </p>
+                <p class="content__paragraph aside__content">
+                  Het opkomen van nieuwe geloofsovertuigingen. Dat valt niet in de smaak bij Filips II. Alles zal
+                  door
+                  hem
+                  gecontroleerd
+                  worden. De bevolking heeft geen inspraak en moet geloven in de katholieke kerk. Dit valt niet in
+                  goede
+                  aarde
+                  bij de
+                  plaatselijke machtshebbers en al snel treedt er protest op. Plantijn als drukker neemt de komende
+                  jaren
+                  als
+                  anonieme
+                  drukker de rol op zich om het nieuwe gedachtegoed snel door Antwerpen en de Nederlanden te kunnen
+                  laten
+                </p>
+                <p class="aside__source">
+                  naar Memoria 4.1 & 4.2 (Pelckmans)
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
       <div class="paper-border green container">
         <div class="text">
@@ -456,7 +539,7 @@
                 <p>De Gulden Passer, de drukkerij van Christoffel Plantin is failliet.</p>
                 <p>Een openbare verkoop zal worden georganiseerd zodat de eigenaar zijn schulden kan afbetalen.</p>
               </div>
-              <button class="button poster__btn">bied mee</button>
+              <button class="button bleu poster__btn">bied mee</button>
             </div>
           </div>
 
@@ -481,14 +564,14 @@
     <div class="game hidden">
       <div class="display-intro-auction hidden">
         <div class="sale__game">
-          <button class="button close-btn"><img src="/src/assets/close-btn.svg" alt=""></button>
+          <button class="button close-btn orange"><img src="/src/assets/close-btn.svg" alt=""></button>
           <div class="intro-auction__description">
             <p>Je kan 300 gulden uitgeven.</p>
             <p>De bieding gaat per 15 gulden naar boven.</p>
           </div>
-          <button class="button start-btn">
+          <button class="button start-btn no-shadow">
             <p class="show-desktop">Druk op <span>spatie</span> om te beginnen</p>
-            <div class="show-smartphone btn-smartphone">
+            <div class="show-smartphone btn-smartphone no-shadow">
               <p>starten</p>
               <img src="/src/assets/btn-auction.png" alt="">
             </div>
@@ -499,8 +582,8 @@
       <div class="display-auction hidden">
         <div class="sale__game">
           <canvas class="progressBar" width="1440" height="16"></canvas>
-          <button class="button close-btn"><img src="/src/assets/close-btn.svg" alt=""></button>
-          <button class="button info-btn"><img src="/src/assets/info-btn.svg" alt=""></button>
+          <button class="button close-btn orange"><img src="/src/assets/close-btn.svg" alt=""></button>
+          <button class="button info-btn bleu"><img src="/src/assets/info-btn.svg" alt=""></button>
           <div class="total-money">
             <img class="total-money__icon" src="/src/assets/money.svg" alt="">
             <p class="total-money__content"></p>
@@ -569,7 +652,7 @@
               <p class="board board--computer"></p>
             </div>
           </div>
-          <button class="button auction-btn">
+          <button class="button auction-btn no-shadow">
             <p class="show-desktop">Druk op <span>spatie</span> om te beginnen</p>
             <div class="show-smartphone btn-smartphone">
               <p>bieden</p>
@@ -582,7 +665,7 @@
 
       <div class="display-auction-end hidden">
         <div class="sale__game">
-          <button class="button close-btn"><img src="/src/assets/close-btn.svg" alt=""></button>
+          <button class="button orange close-btn"><img src="/src/assets/close-btn.svg" alt=""></button>
           <div class="end__content">
             <p class="end__title">Proficiat met je aankopen!</p>
             <p class="end__subtitle">De bieding is afgelopen.</p>
@@ -602,9 +685,9 @@
             </div>
           </div>
           <div class="buttons">
-            <button class="button again-btn"><img src="/src/assets/again-btn.svg" alt="">
+            <button class="button bleu again-btn"><img src="/src/assets/again-btn.svg" alt="">
             </button>
-            <button class="button close-end-btn"><img src="/src/assets/close-btn.svg" alt="">
+            <button class="button orange close-end-btn"><img src="/src/assets/close-btn.svg" alt="">
             </button>
           </div>
         </div>
@@ -614,43 +697,113 @@
         <div class="sale__game">
           <p>Wil je de veiling afsluiten?</p>
           <div>
-            <button class="button confirm-btn confirm-btn--overlay-close"><img src="/src/assets/confirm-btn.svg"
+            <button class="button confirm-btn confirm-btn--overlay-close bleu"><img src="/src/assets/confirm-btn.svg"
                 alt=""></button>
-            <button class="button close-btn--overlay"><img src="/src/assets/close-btn.svg" alt=""></button>
+            <button class="button close-btn--overlay orange"><img src="/src/assets/close-btn.svg" alt=""></button>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="part3">
-      <div class="titles">
+    <section class="part part3" id="1563-2">
+      <div class="titles titles-part3" data-trigger="part3">
         <div class="titles__title purple">
-          <h2 class="section__title">1562</h2>
-          <p class="section__subtitle">Ketters in de drukkerij</p>
+          <h2 class="section__title section__title-part3">1563</h2>
+          <p class="section__subtitle section__subtitle-part3">Een nieuwe start</p>
         </div>
         <div class="gossip">
-          <div class="container">
-            <div class="gossip__imgs">
-              <img class="gossip__img gossip__img--1" src="/src/assets/gossip-guy-1.png" alt="mannetje in pak">
-              <img class="gossip__img gossip__img--2" src="/src/assets/gossip-guy-2.png" alt="mannetje in pak">
-              <img class="gossip__img gossip__img--3" src="/src/assets/gossip-guy-3.png" alt="mannetje in pak">
-            </div>
-            <div class="gossip__content">
-              <p class="gossip__title purple">Heb je het nieuws gehoord?</p>
-              <p class="gossip__text gossip__text--sans-serif end orange">Ze zijn binnnengevallen bij Plantin.</p>
-              <p class="gossip__text gossip__text--sans-serif start orange">Duizenden Calvinsitische pamfletten
-                hebben
-                ze
-                gevonden!
-              </p>
-              <p class="gossip__text gossip__text--serif end purple">Die drukt toch voor de koning?</p>
-              <p class="gossip__text gossip__text--serif start purple">Fransmannen, niet te vertrouwen!</p>
-              <p class="gossip__text gossip__text--sans-serif end orange">Dat hij nog maar lang in Parijs blijft, de
-                ketter!
-              </p>
-            </div>
+          <div class="container ss-orange s-purple">
+
+            <img class="gossip__img gossip__img--1 gossip__img--1-part3" src="/src/assets/gossip-guy-1.png"
+              alt="mannetje in pak" width="496" height="414">
+            <img class="gossip__img gossip__img--2 gossip__img--2-part3" src="/src/assets/gossip-guy-2.png"
+              alt="mannetje in pak" width="478" height="394">
+            <img class="gossip__img gossip__img--3 gossip__img--3-part3" src="/src/assets/gossip-guy-3.png"
+              alt="mannetje in pak" width="426" height="619">
+
+
+            <p class="gossip__title gossip-title-part3 purple">Heb je het nieuws gehoord?</p>
+            <p class="gossip__text gossip__text-part3 gossip__text--sans-serif end desk-ss desk-tr orange">Ze zijn
+              binnnengevallen bij
+              Plantin.</p>
+            <p class="gossip__text gossip__text-part3 gossip__text--sans-serif start desk-s orange">Duizenden
+              Calvinsitische
+              pamfletten
+              hebben
+              ze
+              gevonden!
+            </p>
+            <p class="gossip__text gossip__text-part3 gossip__text--serif end desk-s purple">Die drukt toch voor de
+              koning?
+            </p>
+            <p class="gossip__text gossip__text-part3 gossip__text--serif start desk-ss desk-bl purple">Fransmannen,
+              niet te
+              vertrouwen!</p>
+            <p class="gossip__text gossip__text-part3 gossip__text--sans-serif end desk-ss desk-tl orange">Dat hij nog
+              maar lang in
+              Parijs blijft, de
+              ketter!
+            </p>
+
           </div>
         </div>
+        <aside class="extra-info hidden">
+          <div class="container">
+            <p class="aside__titleside">Filips II & de ketters</p>
+            <div class="text aside__text">
+              <p class="text__title aside__title">Filips II & de ketters</p>
+              <div class="text__content">
+                <p class="content__paragraph content__paragraph aside__content">Op het moment dat Plantijn zijn
+                  drukkerij opricht,
+                  proberen de vorsten eenheid van
+                  bestuur te creëren. Ze willen meer
+                  grip krijgen op het bestuur, de rechtspraak en de belastingen. Én heel het rijk moet in dezelfde
+                  godsdienst volgt.</p>
+                <p class="content__paragraph aside__content">
+                  Op hetzelfde moment klaagt Maarten Luther de werkwijze van de katholieke kerk aan. Mensen bang
+                  maken
+                  om
+                  te
+                  zorgen dat ze
+                  aflaten, relikwieën en gebeden kopen, zodat de kerk een rijk en machtig instituut blijft? Daarin
+                  willen
+                  Luther en zijn
+                  volgelingen niet geloven. De corrupte, rijke en machtswellustige kerkelijke leiders zijn
+                  overbodig:
+                  enkel
+                  de Bijbel
+                  heeft gezag. En de Bijbel moet in de eigen volkstaal gelezen kunnen worden.
+                </p>
+                <p class="content__paragraph aside__content">
+                  Al snel ontstonden er verschillende strekkingen in het protestantisme. Naast de lutheranen
+                  ontstaan
+                  de
+                  calvinisten. Zij
+                  beklemtonen dat God al vooraf heeft uitgemaakt wie gered zal worden en wie niet.
+                </p>
+                <p class="content__paragraph aside__content">
+                  Het opkomen van nieuwe geloofsovertuigingen. Dat valt niet in de smaak bij Filips II. Alles zal
+                  door
+                  hem
+                  gecontroleerd
+                  worden. De bevolking heeft geen inspraak en moet geloven in de katholieke kerk. Dit valt niet in
+                  goede
+                  aarde
+                  bij de
+                  plaatselijke machtshebbers en al snel treedt er protest op. Plantijn als drukker neemt de komende
+                  jaren
+                  als
+                  anonieme
+                  drukker de rol op zich om het nieuwe gedachtegoed snel door Antwerpen en de Nederlanden te kunnen
+                  laten
+                </p>
+                <p class="aside__source">
+                  naar Memoria 4.1 & 4.2 (Pelckmans)
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
 
       <div class="paper-border green">
@@ -726,16 +879,15 @@
             <img class="join-company__frame" src="/src/assets/frame-join-company.png" alt="">
             <div class="join-company__game">
               <div class="buttons join-company-btns">
-                <button
-                  class="button join-company-back frame-2 frame-3 frame-4 frame-5 frame-6"><img
-                    src="" alt=""></button>
-                <button class="button join-company-again frame-7 frame-hidden"><img
+                <button class="button join-company-back orange frame-2 frame-3 frame-4 frame-5 frame-6"><img src=""
+                    alt=""></button>
+                <button class="button join-company-again frame-7 frame-hidden orange"><img
                     src="/src/assets/again-btn.svg" alt=""></button>
               </div>
               <div class="frame-1 frame-hidden">
                 <div>
                   <p class="join-company__title">Stap mee in de vennootschap.</p>
-                  <button class="button join-company__btn">word vennoot</button>
+                  <button class="button join-company__btn purple">word vennoot</button>
                 </div>
               </div>
               <div class="frame-2 frame-hidden">
@@ -743,8 +895,6 @@
                   <p class="join-company__instruction">Kies een naam</p>
                   <!-- textlabel? -->
                   <input type="text" id="textInput" class="input_name" placeholder="je naam">
-
-                  <!-- <button class="button join-company__btn">word vennoot</button> -->
                 </div>
               </div>
               <div class="frame-3 frame-hidden">
@@ -773,8 +923,8 @@
                   <p class="join-company__name-sign"></p>
                   <div class="join-company__sign"></div>
                   <div class="join-company__buttons">
-                    <button class="button btn-remove"><img src="/src/assets/again-btn.svg" alt=""></button>
-                    <button class="button btn-confirm"><img src="/src/assets/btn-confirm.svg" alt=""></button>
+                    <button class="button btn-remove orange"><img src="/src/assets/again-btn.svg" alt=""></button>
+                    <button class="button btn-confirm green"><img src="/src/assets/btn-confirm.svg" alt=""></button>
                   </div>
                 </div>
               </div>
@@ -795,7 +945,8 @@
               </div>
 
               <div class="buttons join-company-btns">
-                <button class="button join-company__btn-next frame-2 frame-3 frame-4 frame-5 frame-6"><img src="" alt=""></button>
+                <button class="button orange join-company__btn-next frame-2 frame-3 frame-4 frame-5 frame-6"><img src=""
+                    alt=""></button>
               </div>
             </div>
           </div>
@@ -871,35 +1022,105 @@
       </div>
     </section>
 
-    <section class="part4">
-      <div class="titles">
+    <section class="part part4" id="1566">
+      <div class="titles titles-part4" data-trigger="part4">
         <div class="titles__title purple">
-          <h2 class="section__title">1562</h2>
-          <p class="section__subtitle">Ketters in de drukkerij</p>
+          <h2 class="section__title section__title-part4">1566</h2>
+          <p class="section__subtitle section__subtitle-part4">In dienst van de koning</p>
         </div>
         <div class="gossip">
-          <div class="container">
-            <div class="gossip__imgs">
-              <img class="gossip__img gossip__img--1" src="/src/assets/gossip-guy-1.png" alt="mannetje in pak">
-              <img class="gossip__img gossip__img--2" src="/src/assets/gossip-guy-2.png" alt="mannetje in pak">
-              <img class="gossip__img gossip__img--3" src="/src/assets/gossip-guy-3.png" alt="mannetje in pak">
-            </div>
-            <div class="gossip__content">
-              <p class="gossip__title purple">Heb je het nieuws gehoord?</p>
-              <p class="gossip__text gossip__text--sans-serif end orange">Ze zijn binnnengevallen bij Plantin.</p>
-              <p class="gossip__text gossip__text--sans-serif start orange">Duizenden Calvinsitische pamfletten
-                hebben
-                ze
-                gevonden!
-              </p>
-              <p class="gossip__text gossip__text--serif end purple">Die drukt toch voor de koning?</p>
-              <p class="gossip__text gossip__text--serif start purple">Fransmannen, niet te vertrouwen!</p>
-              <p class="gossip__text gossip__text--sans-serif end orange">Dat hij nog maar lang in Parijs blijft, de
-                ketter!
-              </p>
-            </div>
+          <div class="container ss-orange s-purple">
+
+            <img class="gossip__img gossip__img--1 gossip__img--1-part4" src="/src/assets/gossip-guy-1.png"
+              alt="mannetje in pak" width="496" height="414">
+            <img class="gossip__img gossip__img--2 gossip__img--2-part4" src="/src/assets/gossip-guy-2.png"
+              alt="mannetje in pak" width="478" height="394">
+            <img class="gossip__img gossip__img--3 gossip__img--3-part4" src="/src/assets/gossip-guy-3.png"
+              alt="mannetje in pak" width="426" height="619">
+
+
+            <p class="gossip__title gossip-title-part4 purple">Heb je het nieuws gehoord?</p>
+            <p class="gossip__text gossip__text-part4 gossip__text--sans-serif end desk-ss desk-tr orange">Ze zijn
+              binnnengevallen bij
+              Plantin.</p>
+            <p class="gossip__text gossip__text-part4 gossip__text--sans-serif start desk-s orange">Duizenden
+              Calvinsitische
+              pamfletten
+              hebben
+              ze
+              gevonden!
+            </p>
+            <p class="gossip__text gossip__text-part4 gossip__text--serif end desk-s purple">Die drukt toch voor de
+              koning?
+            </p>
+            <p class="gossip__text gossip__text-part4 gossip__text--serif start desk-ss desk-bl purple">Fransmannen,
+              niet te
+              vertrouwen!</p>
+            <p class="gossip__text gossip__text-part4 gossip__text--sans-serif end desk-ss desk-tl orange">Dat hij nog
+              maar lang in
+              Parijs blijft, de
+              ketter!
+            </p>
+
           </div>
         </div>
+        <aside class="extra-info hidden">
+          <div class="container">
+            <p class="aside__titleside">Filips II & de ketters</p>
+            <div class="text aside__text">
+              <p class="text__title aside__title">Filips II & de ketters</p>
+              <div class="text__content">
+                <p class="content__paragraph content__paragraph aside__content">Op het moment dat Plantijn zijn
+                  drukkerij opricht,
+                  proberen de vorsten eenheid van
+                  bestuur te creëren. Ze willen meer
+                  grip krijgen op het bestuur, de rechtspraak en de belastingen. Én heel het rijk moet in dezelfde
+                  godsdienst volgt.</p>
+                <p class="content__paragraph aside__content">
+                  Op hetzelfde moment klaagt Maarten Luther de werkwijze van de katholieke kerk aan. Mensen bang
+                  maken
+                  om
+                  te
+                  zorgen dat ze
+                  aflaten, relikwieën en gebeden kopen, zodat de kerk een rijk en machtig instituut blijft? Daarin
+                  willen
+                  Luther en zijn
+                  volgelingen niet geloven. De corrupte, rijke en machtswellustige kerkelijke leiders zijn
+                  overbodig:
+                  enkel
+                  de Bijbel
+                  heeft gezag. En de Bijbel moet in de eigen volkstaal gelezen kunnen worden.
+                </p>
+                <p class="content__paragraph aside__content">
+                  Al snel ontstonden er verschillende strekkingen in het protestantisme. Naast de lutheranen
+                  ontstaan
+                  de
+                  calvinisten. Zij
+                  beklemtonen dat God al vooraf heeft uitgemaakt wie gered zal worden en wie niet.
+                </p>
+                <p class="content__paragraph aside__content">
+                  Het opkomen van nieuwe geloofsovertuigingen. Dat valt niet in de smaak bij Filips II. Alles zal
+                  door
+                  hem
+                  gecontroleerd
+                  worden. De bevolking heeft geen inspraak en moet geloven in de katholieke kerk. Dit valt niet in
+                  goede
+                  aarde
+                  bij de
+                  plaatselijke machtshebbers en al snel treedt er protest op. Plantijn als drukker neemt de komende
+                  jaren
+                  als
+                  anonieme
+                  drukker de rol op zich om het nieuwe gedachtegoed snel door Antwerpen en de Nederlanden te kunnen
+                  laten
+                </p>
+                <p class="aside__source">
+                  naar Memoria 4.1 & 4.2 (Pelckmans)
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
       <div class="paper-border container purple">
         <div class="text">
@@ -1025,37 +1246,106 @@
       </div>
     </section>
 
-    <section class="part5">
-      <div class="titles">
+    <section class="part part5">
+      <div class="titles titles-part5" data-trigger="part5">
         <div class="titles__title purple">
-          <h2 class="section__title">1562</h2>
-          <p class="section__subtitle">Ketters in de drukkerij</p>
+          <h2 class="section__title section__title-part5">1562</h2>
+          <p class="section__subtitle section__subtitle-part5">Ketters in de drukkerij</p>
         </div>
         <div class="gossip">
-          <div class="container">
-            <div class="gossip__imgs">
-              <img class="gossip__img gossip__img--1" src="/src/assets/gossip-guy-1.png" alt="mannetje in pak">
-              <img class="gossip__img gossip__img--2" src="/src/assets/gossip-guy-2.png" alt="mannetje in pak">
-              <img class="gossip__img gossip__img--3" src="/src/assets/gossip-guy-3.png" alt="mannetje in pak">
-            </div>
-            <div class="gossip__content">
-              <p class="gossip__title purple">Heb je het nieuws gehoord?</p>
-              <p class="gossip__text gossip__text--sans-serif end orange">Ze zijn binnnengevallen bij Plantin.</p>
-              <p class="gossip__text gossip__text--sans-serif start orange">Duizenden Calvinsitische pamfletten
-                hebben
-                ze
-                gevonden!
-              </p>
-              <p class="gossip__text gossip__text--serif end purple">Die drukt toch voor de koning?</p>
-              <p class="gossip__text gossip__text--serif start purple">Fransmannen, niet te vertrouwen!</p>
-              <p class="gossip__text gossip__text--sans-serif end orange">Dat hij nog maar lang in Parijs blijft, de
-                ketter!
-              </p>
-            </div>
+          <div class="container ss-orange s-purple">
+
+            <img class="gossip__img gossip__img--1 gossip__img--1-part5" src="/src/assets/gossip-guy-1.png"
+              alt="mannetje in pak" width="496" height="414">
+            <img class="gossip__img gossip__img--2 gossip__img--2-part5" src="/src/assets/gossip-guy-2.png"
+              alt="mannetje in pak" width="478" height="394">
+            <img class="gossip__img gossip__img--3 gossip__img--3-part5" src="/src/assets/gossip-guy-3.png"
+              alt="mannetje in pak" width="426" height="619">
+
+
+            <p class="gossip__title gossip-title-part5 purple">Heb je het nieuws gehoord?</p>
+            <p class="gossip__text gossip__text-part5 gossip__text--sans-serif end desk-ss desk-tr orange">Ze zijn
+              binnnengevallen bij
+              Plantin.</p>
+            <p class="gossip__text gossip__text-part5 gossip__text--sans-serif start desk-s orange">Duizenden
+              Calvinsitische
+              pamfletten
+              hebben
+              ze
+              gevonden!
+            </p>
+            <p class="gossip__text gossip__text-part5 gossip__text--serif end desk-s purple">Die drukt toch voor de
+              koning?
+            </p>
+            <p class="gossip__text gossip__text-part5 gossip__text--serif start desk-ss desk-bl purple">Fransmannen,
+              niet te
+              vertrouwen!</p>
+            <p class="gossip__text gossip__text-part5 gossip__text--sans-serif end desk-ss desk-tl orange">Dat hij nog
+              maar lang in
+              Parijs blijft, de
+              ketter!
+            </p>
+
           </div>
         </div>
+        <aside class="extra-info hidden">
+          <div class="container">
+            <p class="aside__titleside">Filips II & de ketters</p>
+            <div class="text aside__text">
+              <p class="text__title aside__title">Filips II & de ketters</p>
+              <div class="text__content">
+                <p class="content__paragraph content__paragraph aside__content">Op het moment dat Plantijn zijn
+                  drukkerij opricht,
+                  proberen de vorsten eenheid van
+                  bestuur te creëren. Ze willen meer
+                  grip krijgen op het bestuur, de rechtspraak en de belastingen. Én heel het rijk moet in dezelfde
+                  godsdienst volgt.</p>
+                <p class="content__paragraph aside__content">
+                  Op hetzelfde moment klaagt Maarten Luther de werkwijze van de katholieke kerk aan. Mensen bang
+                  maken
+                  om
+                  te
+                  zorgen dat ze
+                  aflaten, relikwieën en gebeden kopen, zodat de kerk een rijk en machtig instituut blijft? Daarin
+                  willen
+                  Luther en zijn
+                  volgelingen niet geloven. De corrupte, rijke en machtswellustige kerkelijke leiders zijn
+                  overbodig:
+                  enkel
+                  de Bijbel
+                  heeft gezag. En de Bijbel moet in de eigen volkstaal gelezen kunnen worden.
+                </p>
+                <p class="content__paragraph aside__content">
+                  Al snel ontstonden er verschillende strekkingen in het protestantisme. Naast de lutheranen
+                  ontstaan
+                  de
+                  calvinisten. Zij
+                  beklemtonen dat God al vooraf heeft uitgemaakt wie gered zal worden en wie niet.
+                </p>
+                <p class="content__paragraph aside__content">
+                  Het opkomen van nieuwe geloofsovertuigingen. Dat valt niet in de smaak bij Filips II. Alles zal
+                  door
+                  hem
+                  gecontroleerd
+                  worden. De bevolking heeft geen inspraak en moet geloven in de katholieke kerk. Dit valt niet in
+                  goede
+                  aarde
+                  bij de
+                  plaatselijke machtshebbers en al snel treedt er protest op. Plantijn als drukker neemt de komende
+                  jaren
+                  als
+                  anonieme
+                  drukker de rol op zich om het nieuwe gedachtegoed snel door Antwerpen en de Nederlanden te kunnen
+                  laten
+                </p>
+                <p class="aside__source">
+                  naar Memoria 4.1 & 4.2 (Pelckmans)
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
-
       <aside class="extra-info hidden">
         <div class="container">
           <p class="aside__titleside">De Spaanse furie</p>
@@ -1076,9 +1366,10 @@
 
         <div class="outro__img">
           <div class="light-switch">
-            <img src="/src/assets/light-switch-outro.png" alt="">
-            <img src="/src/assets/lightswitch-btn-outro.png" alt="">
-            <img src="/src/assets/light-switch-icon-outro.svg" alt="">
+            <img src="/src/assets/light-switch.png" alt="">
+            <img class="light-switch__button" src="/src/assets/lightswitch-btn.png" alt="">
+            <img class="light-switch__icon" src="/src/assets/light-switch-icon.svg" alt="">
+            <img class="light-switch__button--transparant light-switch__button--transparant-end" src="/src/assets/lightswitch-btn.png" alt="">
           </div>
 
           <div class="hero__instruction">
@@ -1091,7 +1382,9 @@
       <div class="subsection outro outro--part2">
         <div class="outro__content">
           <p>Ontdek het volledige verhaal van de drukkerij in het museum.</p>
-          <button class="button button--outro">Boek een ticket</button>
+          <a class="button white button--outro"
+            href="https://ttk.recreatex.be/Exhibitions/Register?ID=193d593e-f57a-ed11-9592-a48785620fa0&refresh=y&language=nl"
+            target="_blank">tickets</a>
         </div>
       </div>
     </section>
@@ -1125,8 +1418,6 @@
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
   <script type="module" src="/src/js/main.js"></script>
 </body>
 
