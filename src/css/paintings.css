@@ -1,12 +1,12 @@
 /*---------- paintings ----------*/
-.paintings__list {
+/* .paintings__list {
     display: grid;
     grid-template-columns: repeat(3, 100%);
     overflow: scroll;
     padding: var(--sp-s) 0;
 
     position: relative;
-}
+} */
 
 .painting {
     padding: 0 var(--sp-l);
@@ -16,35 +16,59 @@
     justify-items: center;
 }
 
+.paintings-desktop {
+    display: none;
+}
+
+/*stylilng swiper*/
+.swiper.swiper-paintings-smartphone {
+    width: calc(100% - var(--sp-l));
+    height: 100%;
+    margin-top: var(--sp-m);
+}
+
+.swiper-button-next, .swiper-button-prev {
+    background-color: transparent;
+    border: none;
+    color: var(--color-orange);
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: -15px;
+}
+
 /* --- als er js ---*/
 
-.has-js .paintings__list {
+/* .has-js .paintings__list {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 1fr;
-}
+} */
 
-.has-js .paintings__list::before {
+/* .has-js .paintings__list::before {
     position: absolute;
     content: url("/src/assets/painting-arrow.svg");
     background-repeat: no-repeat;
     left: var(--sp-s);
     top: 50%;
-}
+} */
 
-.has-js .paintings__list::after {
+/* .has-js .paintings__list::after {
     position: absolute;
     content: url("/src/assets/painting-arrow.svg");
     background-repeat: no-repeat;
     right: var(--sp-s);
     top: 50%;
     transform: rotate(180deg);
-}
+} */
 
-.has-js .painting {
+/* .has-js .painting {
     grid-column: 1;
     grid-row: 1;
-}
+} */
 
 
 
@@ -140,17 +164,27 @@
 }
 
 @media (min-width: 62rem) {
-    .has-js .paintings__list::before, .has-js .paintings__list::after {
+    .paintings-desktop {
+        display: grid;
+    }
+
+    .swiper.swiper-paintings-smartphone{
+        display: none;
+    }
+
+    .has-js .paintings__list::before,
+    .has-js .paintings__list::after {
         content: none;
     }
-    
+
     .has-js .painting {
         grid-column: 1;
         grid-row: auto;
     }
 
     .paintings__list {
-        justify-items: start;
+        display: grid;
+        /* justify-items: start; */
     }
 
     .painting__img {

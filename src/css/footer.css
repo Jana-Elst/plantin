@@ -31,12 +31,26 @@
     padding: var(--sp-l) 0;
 }
 
-.stories__list {
+/* .stories__list {
     display: grid;
     grid-template-columns: repeat(5, 15rem);
     gap: var(--sp-s);
     max-width: calc(100vw - 2 * var(--sp-s));
     overflow: scroll;
+} */
+
+.swiper-container {
+    width: 16rem;
+    height: 15rem;
+}
+
+.swiper-slide {
+    display: grid;
+    justify-items: center;
+}
+
+.swiper-slide.swiper-slide-stories {
+    width: 16rem;
 }
 
 .stories__item {
@@ -45,6 +59,9 @@
     grid-template-rows: 1fr;
     align-items: end;
     border-radius: var(--rrrr);
+
+    width: 15rem;
+    height: 15rem;
 }
 
 .stories__item p {
