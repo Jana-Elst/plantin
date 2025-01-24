@@ -20,20 +20,17 @@
     grid-column: 1;
     z-index: 1;
     border-radius: var(--rrrr-s);
+    background-image: var(--bg-white-20);
+    background-size: contain;
 }
 
 .join-company__game {
     grid-row: 1;
     grid-column: 1;
-    background-image: var(--bg-white-20);
     border-radius: var(--rrrr);
 
     padding: var(--sp-xl);
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    align-items: center;
+    z-index: 10;
 }
 
 .join-company__title {
@@ -47,14 +44,17 @@
 }
 
 /* --- frame-1 */
-.join-company__game-1 {
+.frame-1 div {
     display: grid;
-    justify-items: center;
-    align-items: start;
 
+    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: min-content min-content;
-    row-gap: var(--sp-l);
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+
+    row-gap: var(--sp-m);
 }
 
 .join-company__btn {
@@ -68,13 +68,14 @@
     display: none;
 }
 
-.frame-1 .join-company__game-1,
-.frame-2 .join-company__game-2,
-.frame-3 .join-company__game-3,
-.frame-4 .join-company__game-4,
-.frame-5 .join-company__game-5,
-.frame-6 .join-company__game-6,
-.frame-7 .join-company__game-7 {
+.join-company__game-1 .frame-1,
+.join-company__game-2 .frame-2,
+.join-company__game-3 .frame-3,
+.join-company__game-4 .frame-4,
+.join-company__game-5 .frame-5,
+.join-company__game-6 .frame-6,
+.join-company__game-7 .frame-7 {
     display: grid;
     width: 100%;
+    height: 100%;
 }

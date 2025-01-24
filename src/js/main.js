@@ -2,6 +2,7 @@ import { hamburgerMenu } from './hamburger-menu'
 import {animations} from './animations'
 import { header } from './header'
 import { auctionGame } from './auction-game'
+import { joinCompany } from './join-company-game'
 import '/src/css/reset.css'
 import '/src/css/style.css'
 import '/src/css/header.css'
@@ -30,3 +31,4 @@ hamburgerMenu();
 //header();
 //animations();
 auctionGame();
+joinCompany();
