@@ -36,9 +36,22 @@ export function hamburgerMenu(element) {
         closeNavigation();
       });
     });
+
+    window.addEventListener('click', (e) => {
+      // Check if the click target is not the nav or a child of the nav
+      checkOutside(e)
+    });
+  }
+
+  const checkOutside = (e) => {
+    if (!$nav.contains(e.target)) {
+      closeNavigation();
+    }
   }
 
   const closeNavigation = () => {
+    window.removeEventListener('click', (e) => {checkOutside(e) });
+
     $navButton.setAttribute("aria-expanded", "false");
     $iconLink.setAttribute("xlink:href", "#navicon");
     $navList.classList.add("hidden-nav");
@@ -59,11 +72,11 @@ export function hamburgerMenu(element) {
   }
 
 
-  const handleBlur = () => {
-    //if (!event.relatedTarget || !$navList.contains(event.relatedTarget)) {
-    closeNavigation();
-    //}
-  }
+  // const handleBlur = () => {
+  //   //if (!event.relatedTarget || !$navList.contains(event.relatedTarget)) {
+  //   closeNavigation();
+  //   //}
+  // }
 
   $navButton.addEventListener("click", toggleNavigation);
 
@@ -74,13 +87,6 @@ export function hamburgerMenu(element) {
   window.addEventListener("keyup", (e) => {
     if (e.key === "Escape") {
       $navButton.focus();
-      closeNavigation();
-    }
-  });
-
-  window.addEventListener('click', (e) => {
-    // Check if the click target is not the nav or a child of the nav
-    if (!$nav.contains(e.target)) {
       closeNavigation();
     }
   });
