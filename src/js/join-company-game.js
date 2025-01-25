@@ -41,19 +41,14 @@ const ALL_STATES = [
 
 //--- setup ---//
 let state = STATE_1;
-let prevState;
 
 /* ---------------------------------- SHOW CORRECT STATE ----------------------------------*/
 // show correct state
 const setState = (value) => {
     console.log('setState', value);
-    prevState = state;
     state = value;
-
-    if (prevState) {
-        document.documentElement.classList.remove(prevState);
-    }
-
+    // $state.textContent = state;
+    document.documentElement.classList.remove(...ALL_STATES);
     document.documentElement.classList.add(state);
 };
 

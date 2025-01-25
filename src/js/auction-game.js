@@ -2,6 +2,7 @@
 //--- html selections ---//
 const $nav = document.querySelector('.navigation');
 const $overlayClose = document.querySelector('.display-auction-close');
+const $overlayInfo = document.querySelector('.display-auction-info');
 const $price = document.querySelectorAll('.article__price span');
 const $totalMoney = document.querySelector('.total-money__content');
 const $boards = document.querySelectorAll('.board--computer');
@@ -11,17 +12,19 @@ const $computerHands = document.querySelectorAll('.computer-hand');
 const $userHand = document.querySelector('.user-hand');
 const $body = document.querySelector('.body');
 const $articles = document.querySelectorAll('.article');
+const $aankopen = document.querySelectorAll('.aankopen__list');
 
 //--- buttons ---//
 const $btnStart = document.querySelector('.poster__btn');
 const $btnClose = document.querySelectorAll('.close-btn');
 const $btnCloseOverlay = document.querySelector('.close-btn--overlay');
 const $btnConfirmClose = document.querySelector('.confirm-btn--overlay-close');
-// const $btnInfo = document.querySelectorAll('.info-btn');
+const $btnInfo = document.querySelectorAll('.info-btn');
 const $btnIntro = document.querySelector('.start-btn');
 const $btnBid = document.querySelector('.auction-btn');
 const $btnAgain = document.querySelector('.again-btn');
 const $btnCloseEnd = document.querySelector('.close-end-btn');
+const $btnConfirmInfo = document.querySelector('.confirm-btn--overlay-info');
 
 
 //--- states ---//
@@ -47,7 +50,7 @@ let currentBoard = -1; //bordje van de computer dat getoond wordt
 //vars om het spel te runnen
 let currentBid = 0; //prijs van de bieding op dit moment
 let currentPrice = 0; //prijs die gevraagd wordt voor object (altijd 15 hoger dan laatste bieding);
-let currentItem = 0;
+let currentItem = -1;
 
 //vars user
 let money = 900; //totaal aantal geld user
@@ -55,29 +58,35 @@ let bidUser; //laatste bieding van de user
 
 //time
 let currentWidthCanvas = 0;
+let progressBarRunning = false;
 
 //--- saveScrollPos ---//
 let scrollPos = 0;
 
 //--- setup ---//
 let state = STATE_start;
-let prevState;
 
 /* ---------------------------------- SHOW CORRECT STATE ----------------------------------*/
 // show correct state
 const setState = (value) => {
     console.log('setState', value);
-    prevState = state;
     state = value;
-
-    if (prevState) {
-        document.documentElement.classList.remove(prevState);
-    }
-
+    // $state.textContent = state;
+    document.documentElement.classList.remove(...ALL_STATES);
     document.documentElement.classList.add(state);
 };
 
 /* ---------------------------------- FUNCTION / STATE ----------------------------------*/
+const backToStart = () => {
+    $overlayClose.classList.add('hidden');
+    $nav.classList.remove('hide-nav');
+    document.documentElement.classList.remove('no-scroll');
+    // document.documentElement.scrollTop = scrollPos;
+    document.documentElement.scrollTo({ top: scrollPos, behavior: "instant" });
+    $game.classList.add('hidden');
+    setState(STATE_start);
+}
+
 const intro = () => {
     setState(STATE_intro);
 
@@ -88,9 +97,49 @@ const intro = () => {
     $game.classList.remove('hidden');
 }
 
-const auction = () => {
+const auctionStart = () => {
+    $aankopen.forEach(aankoop => {
+        aankoop.innerHTML = '';
+    });
+
+    money = 900;
+    currentItem = 0;
+
+    $articles.forEach(article => {
+        article.classList.add('hidden');
+    });
+
+    $articles[currentItem].classList.remove('hidden');
+
+    console.log(currentItem);
     setState(STATE_auction);
-    auctionSetup();
+
+    auction();
+}
+
+const auction = () => {
+    bids = []; //aangemaakte biedingen door de computer
+    timeInBetweenBids = []; //tijd tussen de =! biedingen van de computer
+    totalBids = 0; //het aantal biedingen van de computer, check waar in de array je zit
+    currentBoard = -1; //bordje van de computer dat getoond wordt
+    console.log(timeInBetweenBids);
+    //vars om het spel te runnen
+    currentBid = 0; //prijs van de bieding op dit moment
+    currentPrice = 0; //prijs die gevraagd wordt voor object (altijd 15 hoger dan laatste bieding);
+
+    $computerHands.forEach(computerHand => {
+        computerHand.classList.add('hidden');
+    });
+
+    //vars user
+    bidUser = 0; //laatste bieding van de user
+
+    const participants = getRandomInt(3, 15);
+    createBids(participants);
+    setCurrentPrice();
+    totalMoney();
+    showNextBid();
+    progressBarRunning = true;
 }
 
 const setEnd = () => {
@@ -98,25 +147,36 @@ const setEnd = () => {
 }
 
 /* ---------------------------------- EXTRA FUNCTIONS STATE AUCTION ----------------------------------*/
-const auctionSetup = () => {
-    bids = []; //aangemaakte biedingen door de computer
-    timeInBetweenBids = []; //tijd tussen de =! biedingen van de computer
-    totalBids = 0; //het aantal biedingen van de computer, check waar in de array je zit
-    currentBoard = -1; //bordje van de computer dat getoond wordt
+//--- progresbar ---//
+const $canvas = document.querySelector('.progressBar');
+const ctx = $canvas.getContext('2d');
 
-    //vars om het spel te runnen
-    currentBid = 0; //prijs van de bieding op dit moment
-    currentPrice = 0; //prijs die gevraagd wordt voor object (altijd 15 hoger dan laatste bieding);
+$canvas.width = $body.offsetWidth + 16;
+$canvas.height = 8;
 
-    //vars user
-    bidUser; //laatste bieding van de user
+const duration = 6; // tijd in seconds
+const totalWidth = $canvas.width;
+const increment = totalWidth / (duration * 60); // Calculate increment per frame (approx 60 FPS)
 
-    const participants = getRandomInt(3, 15);
-    createBids(participants);
-    setCurrentPrice();
-    totalMoney();
-    showNextBid();
-    draw();
+const draw = () => {
+    ctx.fillStyle = "#FFFEF7";
+    ctx.fillRect(0, 0, $canvas.width, $canvas.height);
+
+    ctx.fillStyle = "#E73D00"; // Color of the filling rectangle
+    ctx.fillRect(0, 0, currentWidthCanvas, $canvas.height);
+
+    if (state === 'auction-auction') {
+        console.log(totalWidth);
+        //Update the current width
+        if (currentWidthCanvas < totalWidth && progressBarRunning) {
+            currentWidthCanvas += increment; // Increase the width
+        } else {
+            currentWidthCanvas = 0;
+            verkocht();
+        }
+    }
+
+    requestAnimationFrame(draw);
 }
 
 const createBids = (participants) => {
@@ -126,7 +186,7 @@ const createBids = (participants) => {
             bid = getRandomInt(1, 20) * 15; //gaat met stappen van 15
         }
 
-        const time = getRandomInt(1, 5);
+        const time = getRandomInt(2, 5);
         bids.push(bid);
         timeInBetweenBids.push(time);
     }
@@ -149,6 +209,7 @@ const totalMoney = () => {
 }
 
 const showNextBid = () => {
+    console.log('totaal aantal bids');
     if (totalBids < bids.length) {
         currentBid = bids[totalBids];
 
@@ -161,10 +222,18 @@ const showNextBid = () => {
 
             setCurrentPrice();
             currentWidthCanvas = 0;
-            setTimeout((showNextBid), timeInBetweenBids[totalBids - 1] * 1000);
+
+            console.log(bids.length);
+            console.log(totalBids);
+            if (totalBids === bids.length-1) {
+                console.log('nieuwe timeOut');
+                setTimeout((showNextBid), 6 * 1000);
+            } else {
+                setTimeout((showNextBid), timeInBetweenBids[totalBids - 1] * 1000);
+            }
         }
     } else {
-        checkHighstBid();
+        //verkocht();
     }
 }
 
@@ -186,12 +255,16 @@ const chooseBoard = (currentBid) => {
     currentBoard = newBoard;
 }
 
-const checkHighstBid = () => {
-    if (bidUser > currentBid) {
+const verkocht = () => {
+    if (bidUser === currentBid && bidUser < money) {
+        console.log('IK KOOP!');
         money = money - bidUser;
-        totalMoney();
         addAankoop();
     }
+
+    $userHand.classList.add('hidden');
+    nextItem();
+    auction();
 }
 
 const bied = () => {
@@ -209,17 +282,6 @@ const bied = () => {
     totalMoney();
 }
 
-const verkocht = () => {
-    if (bidUser === currentBid && bidUser < money) {
-        console.log('IK KOOP!');
-        addAankoop();
-    }
-
-    $userHand.classList.add('hidden');
-    nextItem();
-    auctionSetup();
-}
-
 const nextItem = () => {
     if (currentItem < $articles.length - 1) {
         console.log('next item');
@@ -234,7 +296,7 @@ const nextItem = () => {
 const getInfoLot = () => {
     const article = $articles[currentItem];
     const title = article.querySelector('.article__title').textContent;
-    const price = article.querySelector('.article__price span').textContent;
+    const price = currentBid;
     const imgSrc = article.querySelector('.article__img').src;
 
     return {
@@ -245,61 +307,37 @@ const getInfoLot = () => {
 const addAankoop = () => {
     console.log('ik word toegevoegd');
     const info = getInfoLot();
+    console.log(info);
 
-    const listItem = document.createElement('li');
-    listItem.className = 'container';
+    $aankopen.forEach(aankopen => {
+        const listItem = document.createElement('li');
+        listItem.className = 'container';
 
-    const aankoopItem = document.createElement('div');
-    aankoopItem.className = 'aankoop__item';
+        const aankoopItem = document.createElement('div');
+        aankoopItem.className = 'aankoop__item';
 
-    const aankoopName = document.createElement('p');
-    aankoopName.className = 'aankoop__name';
-    aankoopName.textContent = info.name;
+        const aankoopName = document.createElement('p');
+        aankoopName.className = 'aankoop__name';
+        aankoopName.textContent = info.name;
 
 
-    const aankoopPrice = document.createElement('p');
-    aankoopPrice.className = 'aankoop__price';
-    aankoopPrice.textContent = info.price;
+        const aankoopPrice = document.createElement('p');
+        aankoopPrice.className = 'aankoop__price';
+        aankoopPrice.textContent = info.price;
 
-    const aankoopImg = document.createElement('img');
-    aankoopImg.className = 'aankoop__img';
-    aankoopImg.src = info.imgSrc;
-    aankoopImg.alt = '';
+        const aankoopImg = document.createElement('img');
+        aankoopImg.className = 'aankoop__img';
+        aankoopImg.src = info.imgSrc;
+        aankoopImg.alt = '';
 
-    aankoopItem.appendChild(aankoopName);
-    aankoopItem.appendChild(aankoopPrice);
-    aankoopItem.appendChild(aankoopImg);
+        aankoopItem.appendChild(aankoopName);
+        aankoopItem.appendChild(aankoopPrice);
+        aankoopItem.appendChild(aankoopImg);
 
-    listItem.appendChild(aankoopItem);
-}
+        listItem.appendChild(aankoopItem);
 
-//--- progresbar ---//
-const $canvas = document.querySelector('.progressBar');
-const ctx = $canvas.getContext('2d');
-
-$canvas.width = $body.offsetWidth + 16;
-$canvas.height = 8;
-
-const duration = 10; // tijd in seconds
-const totalWidth = $canvas.width;
-const increment = totalWidth / (duration * 60); // Calculate increment per frame (approx 60 FPS)
-
-const draw = () => {
-    ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, $canvas.width, $canvas.height);
-
-    ctx.fillStyle = "blue"; // Color of the filling rectangle
-    ctx.fillRect(0, 0, currentWidthCanvas, $canvas.height);
-
-    //Update the current width
-    if (currentWidthCanvas < totalWidth) {
-        currentWidthCanvas += increment; // Increase the width
-
-        requestAnimationFrame(draw);
-    } else {
-        currentWidthCanvas = 0;
-        verkocht();
-    }
+        aankopen.appendChild(aankoopItem);
+    });
 }
 
 /* ---------------------------------- OVERLAYS ----------------------------------*/
@@ -307,18 +345,17 @@ const openOverlayClose = () => {
     $overlayClose.classList.remove('hidden');
 }
 
-const closeOverlayClose = () => {
-    $overlayClose.classList.add('hidden');
+const openOverlayInfo = () => {
+    console.log('open');
+    $overlayInfo.classList.remove('hidden');
 }
 
-const backToStart = () => {
+const closeOverlayInfo = () => {
+    $overlayInfo.classList.add('hidden');
+}
+
+const closeOverlayClose = () => {
     $overlayClose.classList.add('hidden');
-    $nav.classList.remove('hide-nav');
-    document.documentElement.classList.remove('no-scroll');
-    // document.documentElement.scrollTop = scrollPos;
-    document.documentElement.scrollTo({ top: scrollPos, behavior: "instant" });
-    $game.classList.add('hidden');
-    setState(STATE_start);
 }
 
 /* ------------------------------------------------------------------------*/
@@ -330,14 +367,20 @@ export function auctionGame(element) {
         btn.addEventListener('click', () => { openOverlayClose() });
     });
 
+    $btnInfo.forEach(btn => {
+        btn.addEventListener('click', () => { openOverlayInfo() });
+    });
+
     $btnCloseOverlay.addEventListener('click', () => { closeOverlayClose() });
     $btnConfirmClose.addEventListener('click', () => { backToStart() });
-    $btnIntro.addEventListener('click', () => { auction() });
+    $btnConfirmInfo.addEventListener('click', () => { closeOverlayInfo() });
+    $btnIntro.addEventListener('click', () => { auctionStart() });
     $btnBid.addEventListener('click', () => { bied() });
 
     // $btnInfo.addEventListener('click', event);
-    $btnAgain.addEventListener('click', () => { auction() });
+    $btnAgain.addEventListener('click', () => { auctionStart() });
     $btnCloseEnd.addEventListener('click', () => { backToStart() });
 
     setState(state);
+    draw();
 }

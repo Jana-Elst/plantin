@@ -4,7 +4,7 @@
 }
 
 .game,
-.display-auction-close {
+.display-auction-close, .display-auction-info {
     top: 0;
     position: fixed;
     width: 100%;
@@ -114,13 +114,13 @@
 }
 
 /*------------------ overlay-close ------------------*/
-.display-auction-close {
+.display-auction-close, .display-auction-info {
     background-image: none;
     height: 100%;
     z-index: 15;
 }
 
-.display-auction-close .sale__game {
+.display-auction-close .sale__game, .display-auction-info .sale__game {
     display: grid;
     grid-template-rows: auto min-content 3.5rem auto;
     height: 100%;
@@ -131,7 +131,7 @@
     gap: 0;
 }
 
-.display-auction-close p {
+.display-auction-close p, .display-auction-info p {
     padding: var(--sp-s);
     padding-bottom: calc(var(--sp-s) + 1.5rem);
     background-color: var(--color-white);
@@ -142,7 +142,7 @@
     grid-row: 2;
 }
 
-.display-auction-close div {
+.display-auction-close div, .display-auction-info div {
     grid-row: 3;
     height: 3.5rem;
     justify-self: center;
@@ -153,15 +153,66 @@
     margin-top: -1.5rem;
 }
 
-.display-auction-close button {
+.display-auction-close button, .display-auction-info button{
     padding: 0;
     margin: 0;
 }
 
-.display-auction-close button img {
+.display-auction-close button img, .display-auction-info button img {
     width: 3.5rem;
     height: auto;
 }
+
+/*------------------ aankopen ------------------*/
+.aankopen {
+    background-image: var(--bg-white-75);
+    box-shadow: var(--shadow-s);
+    padding: var(--sp-xs) 0;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+}
+
+.aankopen__title {
+    color: var(--color-white);
+    text-align: center;
+    font-family: var(--serif);
+    font-size: var(--sp-s);
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+
+    background-color: var(--color-purple);
+    padding: var(--sp-2xs);
+
+    writing-mode: vertical-rl;
+    transform: scale(-1);
+
+    border-radius: var(--rnrn);
+    box-shadow: var(--shadow-s);
+}
+
+
+
+.aankopen__list {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: var(--sp-xs);
+    margin: 0 var(--sp-s);
+    overflow: scroll;
+}
+
+.aankoop__item {
+    padding: var(--sp-2xs);
+    background-image: var(--bg-white-20);
+    background-size: cover;
+    background-position: bottom left;
+    border-radius: var(--rrrr-s);
+    box-shadow: var(--shadow-s);
+    width: 10vh;
+
+}
+
+.aankoop__price {}
 
 /*------------------ auction ------------------*/
 .display-auction {
@@ -240,31 +291,6 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-}
-
-.aankopen {
-    background-image: var(--bg-white-50);
-    box-shadow: var(--shadow-s);
-    padding: var(--sp-xs) 0;
-}
-
-.aankopen__title {
-    color: var(--color-white);
-    text-align: center;
-    font-family: var(--serif);
-    font-size: var(--sp-s);
-    font-style: italic;
-    font-weight: 700;
-    line-height: normal;
-
-    background-color: var(--color-purple);
-    padding: var(--sp-2xs);
-
-    writing-mode: vertical-rl;
-    transform: scale(-1);
-
-    border-radius: var(--rnrn);
-    box-shadow: var(--shadow-s);
 }
 
 .bidding-hands {
@@ -487,7 +513,8 @@
     column-gap: var(--sp-s);
 }
 
-.display-auction-end .again-btn, .display-auction-end .close-end-btn {
+.display-auction-end .again-btn,
+.display-auction-end .close-end-btn {
     padding: 0;
 }
 
