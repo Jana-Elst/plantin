@@ -306,6 +306,7 @@ a {
 
 /*--- part intro ---*/
 .has-js .titles {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -415,17 +416,21 @@ a {
 
 /*-- extra info --*/
 .extra-info {
-  height: calc(100vh);
+  height: 80dvh;
+  /* width: min(100%, 90rem); */
   display: grid;
   grid-template-rows: min-content 1fr;
-  overflow: hidden;
-  background-image: var(--bg-white-75);
+  grid-template-columns: 1fr;
+  /* overflow: hidden; */
+  /* background-image: var(--bg-white-75); */
   background-size: cover;
-}
 
-.extra-info .container {
   padding: var(--sp-s) 0;
   padding-right: var(--sp-s);
+
+  position: absolute;
+  z-index: 100;
+  overflow: hidden;
 }
 
 .aside__title {
@@ -442,6 +447,9 @@ a {
   text-align: center;
 
   background-image: var(--bg-orange-100);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   padding: var(--sp-2xs);
   border-radius: var(--nrnn);
@@ -462,6 +470,20 @@ a {
 
 .aside__title+.aside__content {
   margin-top: 0;
+}
+
+@media (min-width: 35rem) {
+  /* .extra-info {
+    grid-template-rows: 80dvh;
+    grid-template-columns: calc(100% - 4rem) 4rem;
+    padding: 0;
+  }
+
+  .aside__titleside {
+    writing-mode: vertical-lr;
+    grid-column: 2;
+    justify-self: center
+  } */
 }
 
 /*--- subsection ---*/

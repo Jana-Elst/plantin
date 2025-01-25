@@ -10,6 +10,7 @@ import { auctionGame } from './auction-game'
 import { joinCompany } from './join-company-game'
 import { buttons } from './buttons'
 import {nav} from './nav'
+import { extraInfo } from './revealExtraInfo'
 
 import '/src/css/reset.css'
 import '/src/css/style.css'
@@ -67,3 +68,4 @@ hamburgerMenu();
 //animations();
 auctionGame();
 joinCompany();
+extraInfo();
