@@ -1,9 +1,10 @@
 /*---------- openbare verkoop ----------*/
 /*-- poster --*/
 .sale {
-    /* min-height: 100vh; */
+    min-height: 100vh;
     display: grid;
     /* align-items: stretch; */
+    align-content: center;
 }
 
 .poster__sale {
@@ -130,11 +131,10 @@
         grid-template-columns: 50% 1fr;
         /* grid-template-rows: max-content; */
         /* grid-template-rows: minmax(80vh, auto); */
-        grid-template-rows: 80dvh;
+        grid-template-rows: 80vh;
     }
 
     .container__poster-text {
-        background-image: var(--bg-white-30);
         display: grid;
         align-items: center;
     }
@@ -162,11 +162,11 @@
         /* margin: auto 0; */
     }
 
-    .poster__sale .text {
+    .has-js .poster__sale .text {
         grid-row: 1;
         grid-column: 2;
         z-index: -1;
-        display: none
+        align-self: center;
     }
 
     .poster__img::after,

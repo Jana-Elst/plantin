@@ -5,12 +5,13 @@
     background-repeat: no-repeat;
 
     padding: var(--sp-s);
+    padding-bottom: calc((100vh - 100dvh) + var(--sp-s)); /*want anders kloppen alle latere scrolltriggers niet */
 
     display: grid;
     grid-template-rows: 5.5rem 1fr min-content;
     align-items: center;
 
-    height: 100dvh;
+    height: 100vh;
     overflow: hidden;
 }
 

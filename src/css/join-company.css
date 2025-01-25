@@ -10,12 +10,13 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 5rem;
     grid-template-rows: max-content;
-    padding: var(--sp-2xl) var(--sp-xl);
     align-items: stretch;
     justify-content: center;
     justify-items: center;
     width: min(calc(200vh/3), 100%);
     column-gap: var(--sp-xs);
+
+    justify-self: center;
 }
 
 .join-company__frame {

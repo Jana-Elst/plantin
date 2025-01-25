@@ -6,6 +6,23 @@
 
 .contract__container.left {
     display: none;
+    /* margin-top: -10rem; */
+}
+
+.bible-img {
+    width: min(80%, 70vh);
+}
+
+.bible {
+    padding: var(--sp-l);
+}
+
+.join-company {
+    padding: var(--sp-l) var(--sp-l);
+}
+
+.paper-border.green .text.hebrew-bible {
+    background-image: none;
 }
 
 @media (min-width: 61rem) {
@@ -14,7 +31,7 @@
     }
 
     .new-start {
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 40% 60%;
     }
 
     .new-company,
@@ -27,9 +44,16 @@
         grid-row: 1;
     }
 
+    .text__new-company {
+        padding-right: 0;
+    }
+
     .join-company {
         grid-row: 2;
         grid-column: 2;
+
+        padding: var(--sp-l) var(--sp-l);
+        padding-bottom: 0;
     }
 
     .hebrew-bible {
@@ -39,5 +63,32 @@
     .contract__container.left {
         grid-row: 2;
         grid-column: 1;
+    }
+
+    .has-js .new-start {
+        grid-template-rows: 100vh;
+        height: 100vh;
+    }
+
+    .has-js .contract-right {
+        grid-column: 2;
+    }
+
+    .has-js .container-left {
+        grid-column: 1;
+    }
+
+    .has-js .bible {
+        grid-column: 1;
+    }
+
+    .has-js .join-company,
+    .has-js .hebrew-bible,
+    .has-js .contract__container.left,
+    .has-js .text .new-company,
+    .has-js .new-start>div,
+    .has-js .contract-right,
+    .has-js .container-left {
+        grid-row: 1;
     }
 }

@@ -2,38 +2,8 @@ import { outro } from './outro'
 
 const $body = document.querySelector('.body');
 const $navItems = document.querySelectorAll('.nav__item');
+
 let mm = gsap.matchMedia();
-
-// -------------------------- ID-card --------------------------//
-const handID = () => {
-    const $section = document.querySelector('.intro');
-    const $introImg = document.querySelector('.intro__img');
-    const $introText = document.querySelector('.intro__text');
-
-    const tlIntro = gsap.timeline({
-        scrollTrigger: {
-            trigger: $introImg,
-            start: "top top",
-            end: "bottom 0%",
-            scrub: 1,
-        }
-    });
-
-    /*desktop*/
-    mm.add("(min-width: 80rem)", () => {
-        console.log('test');
-
-        tlIntro
-            .to($introText, {
-                x: 700,
-                duration: 0.8,
-            })
-            .to($introImg, {
-                x: - $introImg.offsetWidth,
-                duration: 0.5,
-            }, "<");
-    });
-}
 
 // -------------------------- execute titles after use navigation --------------------------//
 // const executeHalfTimeLineTitles = (event, item) => {
@@ -364,6 +334,10 @@ const poster = () => {
     const $posterText = document.querySelector('.poster__text');
     const $text = document.querySelector('.sale .text');
 
+    let xVar = 20;
+    let yVar = 100;
+    let rotVar = -90
+
     gsap.set($posterText, {
         transformOrigin: "top right",
     })
@@ -373,24 +347,148 @@ const poster = () => {
             trigger: $section,
             start: "top 0%",
             end: "bottom 0%",
-            scrub: 1,
+            scrub: 0.5,
             pin: $section,
 
-            // markers: true,
+            //markers: true,
         }
     });
 
+    mm.add("(min-width: 33rem)", () => {
+        gsap.set($posterText, {
+            transformOrigin: "bottom left",
+        })
+
+        rotVar = 90;
+    });
+
     tlPoster.to($posterText, {
-        rotation: -90,
+        rotation: rotVar,
         duration: 2,
-        y: 100,
-        x: 20,
+        y: yVar,
+        x: xVar,
     }, 1)
     tlPoster.from($text, {
         opacity: 0,
         duration: 1,
         y: 50,
     }, "<0.5");
+}
+
+const newCompany = () => {
+    // const $contract = document.querySelector('.contract__container');
+    const $handContract = document.querySelector('.hand--contract');
+    const $section = document.querySelector('.new-start');
+    const $sectionPrev = document.querySelector('.titles-part3');
+    const $bible = document.querySelector('.bible');
+    const $contractLeft = document.querySelector('.contract__container.left');
+    const $contractRight = document.querySelector('.contract-right');
+    const $textHebrewBible = document.querySelector('.hebrew-bible');
+    const $frame = document.querySelector('.join-company');
+    const $textNewCompany = document.querySelector('.text__new-company ');
+
+    // const $height
+    
+
+    mm.add("(min-width: 61rem)", () => {
+        console.log('test');
+        gsap.set($contractLeft, {
+            y: -($contractLeft.offsetHeight - screen.height)
+        });
+
+        const newCompanyTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: $section,
+                start: "top 0%",
+                end: "bottom -200%",
+                scrub: 1,
+                pin: $section,
+            }
+        });
+
+        newCompanyTl
+            .from($contractRight, {
+                duration: 5,
+                x: $contractRight.offsetWidth,
+                ease: "power1.out",
+            })
+            .to($contractRight, {
+                duration: 5,
+                y: -$contractRight.offsetHeight - 120,
+                opacity: 0,
+                ease: "power1.out",
+            },)
+            .from($frame, {
+                duration: 5,
+                y: $contractRight.offsetHeight + 120,
+                opacity: 0,
+                ease: "power1.out",
+            }, "<")
+            .to($textNewCompany, {
+                duration: 5,
+                y: $contractLeft.offsetHeight - 200,
+                opacity: 0, 
+                ease: "power1.out"
+            })
+            .from($contractLeft, {
+                duration: 5,
+                y: -$contractLeft.offsetHeight + 200,
+                opacity: 0,
+                ease: "power1.out",
+            }, "<")
+            .from($textHebrewBible, {
+                duration: 5,
+                y: $contractLeft.offsetHeight - 200,
+                opacity: 0,
+                ease: "power1.out",
+            })
+            .to($frame, {
+                duration: 5,
+                y: -$contractLeft.offsetHeight + 200,
+                opacity: 0,
+                ease: "power1.out"
+            }, "<")
+            .to($contractLeft, {
+                duration: 5,
+                y: -$contractLeft.offsetHeight + 200,
+                opacity: 0,
+                ease: "power1.out",
+            })
+            .from($bible, {
+                duration: 5,
+                y: $contractLeft.offsetHeight - 200,
+                opacity: 0,
+                ease: "power1.out",
+            }, "<")
+
+
+    });
+}
+
+const handContract = () => {
+    const $contract = document.querySelector('.contract__container');
+    const $handContract = document.querySelector('.hand--contract');
+    const $section = document.querySelector('.new-start');
+    const $sectionPrev = document.querySelector('.titles-part3');
+
+    const handContractTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: $sectionPrev,
+            start: "bottom 100%",
+            end: "bottom -100%",
+            scrub: 0.5,
+            markers: true,
+        }
+    });
+
+    handContractTl
+        .from($contract, {
+            y: -$handContract.offsetHeight + 40,
+
+        })
+        .to($contract, {
+            y: -$handContract.offsetHeight + 40,
+        })
 }
 
 // -------------------------- algemene functies --------------------------//
@@ -410,13 +508,15 @@ export function animations(element) {
     //     item.addEventListener("click", (event) => { executeHalfTimeLineTitles(event, item) })
     // });
 
-    handID();
-    titles('part1');
-    hammer();
-    titles('part2');
-    titles('part3');
-    titles('part4');
-    titles('part5');
-    outro();
-    // poster();
+    //handID();
+    //titles('part1');
+    //hammer();
+    //titles('part2');
+    //poster();
+    //titles('part3');
+    newCompany();
+    //handContract();
+    //titles('part4');
+    //titles('part5');
+    //outro();
 }
