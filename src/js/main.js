@@ -49,16 +49,15 @@ const swiperPaintings = new Swiper('.swiper-paintings-smartphone', {
     },
 });
 
-const swiperStories = new Swiper('.swiper-container', {
+const swiperStories = new Swiper('.stories-container', {
     direction: 'horizontal',
     loop: true,
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
 });
+
+// const swiperJoinCompany = new Swiper('.portraits-container', {
+//     direction: 'vertical',
+//     loop: true,
+// });
 
 
 buttons();

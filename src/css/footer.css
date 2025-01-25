@@ -39,7 +39,7 @@
     overflow: scroll;
 } */
 
-.swiper-container {
+.stories-container.swiper-container {
     width: 16rem;
     height: 15rem;
 }

@@ -1,14 +1,17 @@
 //--- html selections ---//
-const $inputName = document.querySelector('.input_name');
+const $inputName = document.querySelector('.input-name');
 const $portrets = document.querySelectorAll('.join-company__portret');
 const $frame4 = document.querySelector('.frame-4 div');
-const $frame = document.querySelector('.join-company__frame');
+const $frame = document.querySelector('.join-company__frame--background');
 const $frame7Name = document.querySelector('.frame-7__name');
+const $name = document.querySelectorAll('.input__name');
+const $money = document.querySelectorAll('.input__money');
 
 //--- btns ---//
 const $btnStart = document.querySelector('.join-company__btn');
 const $btnNext = document.querySelector('.join-company__btn-next');
-const $btnAgain = document.querySelector('.join-company-again');
+const $btnAgain = document.querySelector('.join-company__btn-again');
+const $btnBack = document.querySelector('.join-company__btn-back');
 
 //--- states ---//
 const STATE_1 = "join-company__game-1";
@@ -59,6 +62,12 @@ const nextframe = () => {
     functions[frame - 1]();
 }
 
+const prevframe = () => {
+    frame--;
+    const functions = [frame1, frame2, frame3, frame4, frame5, frame6, frame7];
+    functions[frame - 1]();
+}
+
 const frame1 = () => {
     frame = 1;
     setState(STATE_1);
@@ -73,7 +82,7 @@ const frame2 = () => {
         name = event.target.value;
     });
 
-    $inputName.addEventListener('blur', () => { submitName() });
+    // $inputName.addEventListener('blur', () => { submitName() });
     $inputName.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
             submitName(); // Call the submit function if Enter is pressed
@@ -109,6 +118,7 @@ const frame4 = () => {
     frame = 4;
     $frame.style.backgroundImage = `url(${portretImg})`;
     $frame4.addEventListener('click', () => { chooseMoney() });
+    $frame.style.opacity = 0.5;
 }
 
 const chooseMoney = () => {
@@ -148,5 +158,6 @@ const frame7 = () => {
 export function joinCompany(element) {
     $btnStart.addEventListener('click', () => { frame2() });
     $btnNext.addEventListener('click', () => { nextframe() });
+    $btnBack.addEventListener('click', () => { prevframe() });
     setState(state);
 }
