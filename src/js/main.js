@@ -63,7 +63,7 @@ const swiperStories = new Swiper('.stories-container', {
 buttons();
 nav();
 hamburgerMenu();
-//header();
+header();
 animations();
 auctionGame();
 joinCompany();

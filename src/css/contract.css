@@ -68,6 +68,13 @@
     justify-self: end;
 }
 
+.sign__name.input__name {
+    font-size: var(--fs-0);
+    color: var(--color-orange);
+    transform: rotate(7deg);
+    justify-self: end;
+}
+
 @container (min-width: 30rem) {
     /* .contract {
         margin: var(--sp-s) 12.5%;

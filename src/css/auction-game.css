@@ -4,10 +4,11 @@
 }
 
 .game,
-.display-auction-close, .display-auction-info {
+.display-auction-close,
+.display-auction-info {
     top: 0;
     position: fixed;
-    width: 100%;
+    width: min(100%, 90rem);
     z-index: 10;
     height: 100dvh;
     background-image: var(--bg-white-30);
@@ -61,6 +62,7 @@
 
 .btn-smartphone img {
     max-width: 75%;
+    max-height: 8rem;
 }
 
 .close-btn,
@@ -69,6 +71,10 @@
     background-image: var(--bg-orange-50);
     background-size: cover;
     box-shadow: var(--shadow-s);
+    padding: 1rem;
+}
+
+.info-btn {
     padding: 1rem;
 }
 
@@ -114,13 +120,15 @@
 }
 
 /*------------------ overlay-close ------------------*/
-.display-auction-close, .display-auction-info {
+.display-auction-close,
+.display-auction-info {
     background-image: none;
     height: 100%;
     z-index: 15;
 }
 
-.display-auction-close .sale__game, .display-auction-info .sale__game {
+.display-auction-close .sale__game,
+.display-auction-info .sale__game {
     display: grid;
     grid-template-rows: auto min-content 3.5rem auto;
     height: 100%;
@@ -131,7 +139,8 @@
     gap: 0;
 }
 
-.display-auction-close p, .display-auction-info p {
+.display-auction-close p,
+.display-auction-info p {
     padding: var(--sp-s);
     padding-bottom: calc(var(--sp-s) + 1.5rem);
     background-color: var(--color-white);
@@ -142,7 +151,8 @@
     grid-row: 2;
 }
 
-.display-auction-close div, .display-auction-info div {
+.display-auction-close div,
+.display-auction-info div {
     grid-row: 3;
     height: 3.5rem;
     justify-self: center;
@@ -153,12 +163,14 @@
     margin-top: -1.5rem;
 }
 
-.display-auction-close button, .display-auction-info button{
+.display-auction-close button,
+.display-auction-info button {
     padding: 0;
     margin: 0;
 }
 
-.display-auction-close button img, .display-auction-info button img {
+.display-auction-close button img,
+.display-auction-info button img {
     width: 3.5rem;
     height: auto;
 }
@@ -167,7 +179,7 @@
 .aankopen {
     background-image: var(--bg-white-75);
     box-shadow: var(--shadow-s);
-    padding: var(--sp-xs) 0;
+    padding: 1rem 0;
     display: grid;
     grid-template-columns: min-content 1fr;
 }
@@ -176,7 +188,7 @@
     color: var(--color-white);
     text-align: center;
     font-family: var(--serif);
-    font-size: var(--sp-s);
+    font-size: 1.5rem;
     font-style: italic;
     font-weight: 700;
     line-height: normal;
@@ -199,6 +211,8 @@
     gap: var(--sp-xs);
     margin: 0 var(--sp-s);
     overflow: scroll;
+
+
 }
 
 .aankoop__item {
@@ -208,11 +222,13 @@
     background-position: bottom left;
     border-radius: var(--rrrr-s);
     box-shadow: var(--shadow-s);
-    width: 10vh;
+    width: 8rem;
 
 }
 
-.aankoop__price {}
+.aankoop__price {
+    display: none;
+}
 
 /*------------------ auction ------------------*/
 .display-auction {
@@ -224,7 +240,7 @@
     display: grid;
     grid-template-rows: 1rem 5rem min-content 1fr max-content;
     grid-template-columns: 1fr 5rem calc(5rem + var(--sp-s));
-    gap: var(--sp-s);
+    column-gap: var(--sp-s);
 
     height: 100dvh;
     padding: 0;
@@ -253,6 +269,7 @@
 .container__aankopen {
     grid-row: 3;
     grid-column: 1 / 4;
+    padding: var(--sp-s) 0;
 }
 
 .article {
@@ -287,7 +304,7 @@
 
 .total-money__content {
     font-family: var(--serif);
-    font-size: var(--fs-5);
+    font-size: 2rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -518,7 +535,95 @@
     padding: 0;
 }
 
+@media (min-width: 35rem) {
+    .display-auction .sale__game {
+        grid-template-columns: 5rem 5rem 1fr min-content;
+        grid-template-rows: 1rem 5rem 1fr max-content;
+        padding-left: var(--sp-s);
 
+        column-gap: var(--sp-s);
+    }
+
+    .display-auction .close-btn {
+        grid-column: 1;
+        margin-right: 0;
+    }
+
+    .display-auction .info-btn {
+        grid-column: 2;
+    }
+
+    .total-money {
+        grid-row: 2;
+        grid-column: 4;
+    }
+
+
+    .display-auction .auction-btn {
+        grid-row: 5;
+        grid-column: 1 / 4;
+        padding: 0 var(--sp-s);
+    }
+
+
+    .display-auction .container__aankopen {
+        grid-row: 3 / 5;
+        grid-column: 4;
+        padding-top: var(--sp-s);
+        border-radius: var(--rnrn);
+    }
+
+    .display-auction .articles__list {
+        grid-row: 3 / 5;
+        grid-column: 1 / 4;
+        padding: var(--sp-s);
+    }
+
+    .article__img {
+        width: min(100%, 50dvh);
+    }
+
+    .display-auction .aankopen__title {
+        writing-mode: horizontal-tb;
+        transform: scale(1);
+        justify-self: center;
+        border-radius: var(--nnrr);
+    }
+
+    .display-auction .aankopen {
+        grid-template-rows: min-content 1fr;
+        grid-template-columns: auto;
+        align-self: stretch;
+        justify-self: stretch;
+
+        gap: 0;
+        padding-top: 0;
+        border-radius: var(--rnrn);
+    }
+
+    .display-auction .aankopen__list {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, max-content);
+        margin: 0;
+        gap: 0;
+        justify-items: center;
+    }
+
+    .display-auction .aankoop__item {
+        margin-top: var(--sp-s);
+    }
+
+    .bidding-hands {
+        grid-column: 1;
+    }
+}
+
+/* .display-auction .sale__game {
+    display: grid;
+    grid-template-rows: 1rem 5rem min-content 1fr max-content;
+    grid-template-columns: 1fr 5rem calc(5rem + var(--sp-s));
+    column-gap: var(--sp-s);
+} */
 
 
 
