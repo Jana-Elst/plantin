@@ -5,6 +5,7 @@
     display: grid;
     /* align-items: stretch; */
     align-content: center;
+    overflow: hidden;
 }
 
 .poster__sale {

@@ -424,7 +424,7 @@ const newCompany = () => {
             scrollTrigger: {
                 trigger: $section,
                 start: "top 0%",
-                end: "bottom -200%",
+                end: "bottom 0%",
                 scrub: 1,
                 pin: $section,
             }

@@ -55,6 +55,8 @@
 
 .join-company__btns-next {
     justify-self: start;
+    grid-column: 2;
+    grid-row: 2;
 }
 
 .join-company__btns-next .join-company-btn img {
@@ -108,12 +110,23 @@
 }
 
 /* --- frame-2 --- */
-.frame-2 div {
+.frame-2>div {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: min-content 1fr min-content;
 
     justify-items: stretch;
+}
+
+.frame-2 input,
+.join-company__input,
+.input__money--frame-6 {
+    font-family: var(--serif);
+    font-size: var(--fs-jc-1);
+    font-weight: 700;
+    line-height: normal;
+
+    position: relative;
 }
 
 .frame-2 input,
@@ -128,12 +141,6 @@
     text-align: center;
 
     color: var(--color-white);
-
-    font-family: var(--serif);
-    /* font-size: var(--fs-jc-2); */
-    font-weight: 700;
-    line-height: normal;
-
     position: relative;
 }
 
@@ -208,6 +215,57 @@
 .frame-4 div {
     grid-template-rows: min-content 1fr min-content;
     justify-items: stretch;
+}
+
+.frame-4__money {
+    position: relative;
+    /* background-color: pink; */
+    width: 100%;
+    height: 100%;
+    /* z-index: -1; */
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1 / 3;
+}
+
+.frame-4__money img {
+    width: 5rem;
+    transform: translate(-2.5rem, -2.5rem);
+}
+
+/* --- frame-5 --- */
+.frame-5>div {
+    display: grid;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+
+    row-gap: var(--sp-m);
+}
+
+.join-company__subtitle {
+    color: var(--color-purple);
+    text-align: center;
+    font-family: var(--serif);
+    font-size:var(--sp-s);
+    font-weight: 700;
+    line-height: 120%;
+    padding: 0 var(--sp-xs);
+}
+
+.frame-6>div {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 0;
+    justify-items: stretch;
+}
+
+.input__name--frame-6 {
+    grid-row: 2;
 }
 
 /* ------------------ show correct things ------------------*/
