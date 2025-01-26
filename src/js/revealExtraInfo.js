@@ -16,7 +16,7 @@ const openInfo = (title) => {
     const $title = title.querySelector('p');
     const $img = title.querySelector('img');
     $title.textContent = "sluit";
-    $img.src = "/plantin/src/assets/close-btn.svg";
+    $img.src = "/plantin/public/close-btn.svg";
 
     title.style.flexDirection = "row-reverse";
     $title.style.textDecoration = "underline";
