@@ -131,38 +131,6 @@ const animationHandID = () => {
     return (tlHandId);
 }
 
-// const animationHandIDhandID = () => {
-//     const $section = document.querySelector('.intro');
-//     const $introImg = document.querySelector('.intro__img');
-//     const $introText = document.querySelector('.intro__text');
-
-//     const tlIntro = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: $introImg,
-//             start: "top top",
-//             end: "bottom 0%",
-//             scrub: 1,
-//         }
-//     });
-
-//     /*desktop*/
-//     mm.add("(min-width: 80rem)", () => {
-//         console.log('test');
-
-//         tlIntro
-//             .to($introText, {
-//                 x: 700,
-//                 duration: 0.8,
-//             })
-//             .to($introImg, {
-//                 x: - $introImg.offsetWidth,
-//                 duration: 0.5,
-//             }, "<");
-//     });
-
-    
-// }
-
 const animationLightOn = () => {
     const tlLightOn = gsap.timeline({});
     tlLightOn

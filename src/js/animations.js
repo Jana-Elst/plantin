@@ -241,6 +241,38 @@ const titles = (part) => {
     });
 }
 
+const handID = () => {
+    const $section = document.querySelector('.intro');
+    const $introImg = document.querySelector('.intro__img');
+    const $introText = document.querySelector('.intro__text');
+
+    const tlIntro = gsap.timeline({
+        scrollTrigger: {
+            trigger: $introImg,
+            start: "top top",
+            end: "bottom 0%",
+            scrub: 1,
+        }
+    });
+
+    /*desktop*/
+    mm.add("(min-width: 80rem)", () => {
+        console.log('test');
+
+        tlIntro
+            .to($introText, {
+                x: 700,
+                duration: 0.8,
+            })
+            .to($introImg, {
+                x: - $introImg.offsetWidth,
+                duration: 0.5,
+            }, "<");
+    });
+
+
+}
+
 
 // -------------------------- Hammer --------------------------//
 const hammer = () => {
@@ -379,7 +411,7 @@ const newCompany = () => {
     // const $contract = document.querySelector('.contract__container');
     const $handContract = document.querySelector('.hand--contract');
     const $section = document.querySelector('.new-start');
-    const $sectionPrev = document.querySelector('.titles-part3');
+    //const $sectionPrev = document.querySelector('.titles-part3');
     const $bible = document.querySelector('.bible');
     const $contractLeft = document.querySelector('.contract__container.left');
     const $contractRight = document.querySelector('.contract-right');
@@ -387,8 +419,86 @@ const newCompany = () => {
     const $frame = document.querySelector('.join-company');
     const $textNewCompany = document.querySelector('.text__new-company ');
 
-    // const $height
-    
+    mm.add("(max-width: 61rem)", () => {
+        const newCompanySPTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: $section,
+                start: "top 0%",
+                end: "bottom -200%",
+                scrub: 1,
+                pin: $section,
+            }
+        });
+
+        gsap.set($contractRight, {
+            y: (-(screen.height - $contractRight.offsetHeight) / 2),
+        });
+
+        gsap.set($textNewCompany, {
+            y: (-(screen.height - $textNewCompany.offsetHeight) / 2) + ($contractRight.offsetHeight - $textNewCompany.offsetHeight) - 10,
+        })
+
+        gsap.set($bible, {
+            y: (-(screen.height - $frame.offsetHeight) / 2)
+        })
+
+        gsap.set($textHebrewBible, {
+            y: (-(screen.height - $frame.offsetHeight) / 2)
+        })
+
+
+        newCompanySPTl
+            .from($contractRight, {
+                duration: 1,
+                y: -($contractRight.offsetHeight - screen.height) - $contractRight.offsetHeight,
+                opacity: 0,
+                ease: "power1.out",
+            })
+            .from($textNewCompany, {
+                duration: 1,
+                opacity: 0,
+                ease: "power1.out",
+            })
+            .to($contractRight, {
+                duration: 1,
+                y: (-(screen.height - $contractRight.offsetHeight) / 2) - $textNewCompany.offsetHeight - 30,
+                opacity: 1,
+                ease: "power1.out",
+            }, "<")
+            .to($contractRight, {
+                duration: 1,
+                y: ((-(screen.height - $contractRight.offsetHeight) / 2) - $textNewCompany.offsetHeight - 30) - $textNewCompany.offsetHeight,
+                opacity: 1,
+                ease: "power1.out",
+            })
+            .to($textNewCompany, {
+                duration: 1,
+                y: 0,
+                ease: "power1.out",
+            }, "<")
+            .to($textNewCompany, {
+                duration: 1,
+                opacity: 0,
+                y: -(screen.height - $textNewCompany.offsetHeight) / 2,
+                ease: "power1.out",
+            }, "<0.9")
+            .from($frame, {
+                opacity: 0,
+                y: 100,
+                duration: 1,
+            }, "<0.9")
+            .to($frame, {
+                opacity: 0,
+                y: -100,
+                duration: 1,
+            }, "<0.9")
+            .from($bible, {
+                opacity: 0,
+                y: 100,
+            }, "<0.9")
+    });
+
+
 
     mm.add("(min-width: 61rem)", () => {
         console.log('test');
@@ -427,7 +537,7 @@ const newCompany = () => {
             .to($textNewCompany, {
                 duration: 5,
                 y: $contractLeft.offsetHeight - 200,
-                opacity: 0, 
+                opacity: 0,
                 ease: "power1.out"
             })
             .from($contractLeft, {
@@ -504,19 +614,18 @@ const getWitdhScreen = () => {
 
 // -------------------------- export functie --------------------------//
 export function animations(element) {
-    // $navItems.forEach(item => {
-    //     item.addEventListener("click", (event) => { executeHalfTimeLineTitles(event, item) })
-    // });
+    $navItems.forEach(item => {
+        item.addEventListener("click", (event) => { executeHalfTimeLineTitles(event, item) })
+    });
 
-    //handID();
-    //titles('part1');
-    //hammer();
-    //titles('part2');
-    //poster();
-    //titles('part3');
+    handID();
+    titles('part1');
+    hammer();
+    titles('part2');
+    poster();
+    titles('part3');
     newCompany();
-    //handContract();
-    //titles('part4');
-    //titles('part5');
-    //outro();
+    titles('part4');
+    titles('part5');
+    outro();
 }

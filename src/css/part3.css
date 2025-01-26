@@ -21,8 +21,44 @@
     padding: var(--sp-l) var(--sp-l);
 }
 
-.paper-border.green .text.hebrew-bible {
+.paper-border.green .text.hebrew-bible,
+.paper-border.green .text.new-company {
     background-image: none;
+}
+
+.has-js .new-start {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh;
+    justify-items: top;
+}
+
+.has-js .join-company,
+.has-js .contract__container.left,
+.has-js .text__new-company,
+.has-js .contract-right,
+.has-js .container-left
+ {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+/* .has-js .join-company,
+.has-js .hebrew-bible,
+.has-js .contract__container.left,
+.has-js .text__new-company,
+.has-js .contract-right,
+.has-js .container-left,
+.has-js .bible {
+    grid-row: 1;
+    grid-column: 1;
+} */
+
+.has-js .contract-right {
+    z-index: 100;
+}
+
+.has-js .text.new-company {
+    z-index: -100;
 }
 
 @media (min-width: 61rem) {
@@ -30,7 +66,8 @@
         display: grid;
     }
 
-    .new-start {
+    .new-start,
+    .has-js .new-start {
         grid-template-columns: 40% 60%;
     }
 
@@ -56,8 +93,9 @@
         padding-bottom: 0;
     }
 
-    .hebrew-bible {
-        grid-column: 2;
+    .hebrew-bible,
+    .has-js .hebrew-bible {
+        grid-column: 1;
     }
 
     .contract__container.left {
@@ -74,21 +112,28 @@
         grid-column: 2;
     }
 
-    .has-js .container-left {
-        grid-column: 1;
+    .has-js .join-company,
+    .has-js .hebrew-bible,
+    .has-js .contract__container.left,
+    .has-js .text .new-company,
+    .has-js .contract-right,
+    .has-js .container-left,
+    .has-js .bible {
+        grid-row: 1;
     }
 
+    .has-js .join-company,
+    .has-js .contract__container.left,
+    .has-js .text .new-company,
+    .has-js .contract-right,
+    .has-js .container-left,
     .has-js .bible {
         grid-column: 1;
     }
 
     .has-js .join-company,
     .has-js .hebrew-bible,
-    .has-js .contract__container.left,
-    .has-js .text .new-company,
-    .has-js .new-start>div,
-    .has-js .contract-right,
-    .has-js .container-left {
-        grid-row: 1;
+    .has-js .contract-right {
+        grid-column: 2;
     }
 }
