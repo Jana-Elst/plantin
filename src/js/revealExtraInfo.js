@@ -16,7 +16,8 @@ const openInfo = (title) => {
     const $title = title.querySelector('p');
     const $img = title.querySelector('img');
     $title.textContent = "sluit";
-    $img.src = "/plantin/public/close-btn.svg";
+    $img.classList.add('hidden');
+    // $img.src = "/plantin/public/close-btn.svg";
 
     title.style.flexDirection = "row-reverse";
     $title.style.textDecoration = "underline";
@@ -52,7 +53,7 @@ const closeInfo = (title) => {
     const $title = title.querySelector('p');
     const $img = title.querySelector('img');
     $title.textContent = "extra historische info";
-    $img.src = "/plantin/src/assets/book.svg";
+    $img.classList.remove('hidden');
     $title.style.textDecoration = "none";
 
     clickOutside = 0;
