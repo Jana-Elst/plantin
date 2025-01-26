@@ -363,12 +363,12 @@ const hammer = () => {
 // -------------------------- poster --------------------------//
 const poster = () => {
     const $section = document.querySelector('.sale');
-    const $posterText = document.querySelector('.poster__text');
+    const $posterText = document.querySelector('.container__poster-text');
     const $text = document.querySelector('.sale .text');
 
-    let xVar = 20;
+    let xVar = 50;
     let yVar = 100;
-    let rotVar = -90
+    let rotVar = -90;
 
     gsap.set($posterText, {
         transformOrigin: "top right",
@@ -392,6 +392,8 @@ const poster = () => {
         })
 
         rotVar = 90;
+        xVar = 300;
+        yVar = 400;
     });
 
     tlPoster.to($posterText, {
