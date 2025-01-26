@@ -67,6 +67,14 @@
     </nav>
   </header>
 
+  <div class="preloader">
+    <div>
+      Aan het laden
+      <span class="preloader__percentage"></span>
+    </div>
+    <div class="preloader__visual"></div>
+  </div>
+
   <main class="main">
     <div class="hero">
       <div class="hero__img">
@@ -80,6 +88,7 @@
           <p class="visually-hidden">Doe het licht aan.</p>
         </div>
         <div class="light-switch">
+          <!-- <img src="/src/assets/light-switch.png" alt=""> -->
           <picture>
             <source srcset="/src/assets/light-switch-45.avif 45w,
           /src/assets/light-switch-710.avif 710w,
@@ -88,9 +97,9 @@
           /src/assets/light-switch-1510.avif 1510w,
           /src/assets/light-switch-1710.avif 1710w,
           /src/assets/light-switch-1890.avif 1890w,
-          /src/assets/light-switch-2048.avif 2048w" type="image/avif" sizes="">
+          /src/assets/light-switch-2048.avif 2048w" type="image/avif">
 
-            <img sizes="" src="light-switch-2048.jpg" srcset="light-switch-45.jpg 45w,
+            <img src="/src/assets/light-switch-2048.jpg" srcset="light-switch-45.jpg 45w,
           /src/assets/light-switch-710.jpg 710w,
           /src/assets/light-switch-1004.jpg 1004w,
           /src/assets/light-switch-1280.jpg 1280w,
@@ -100,10 +109,52 @@
           /src/assets/light-switch-2048.jpg 2048w" alt="">
           </picture>
 
-          <!-- <img src="/src/assets/light-switch.png" alt=""> -->
-          <img class="light-switch__button" src="/src/assets/lightswitch-btn.png" alt="">
+          <!-- <img class="light-switch__button" src="/src/assets/lightswitch-btn.png" alt=""> -->
+          <picture class="light-switch__button">
+            <source srcset="lightswitch-btn-45.avif 45w,
+            /src/assets/lightswitch-btn-710.avif 710w,
+            /src/assets/lightswitch-btn-1004.avif 1004w,
+            /src/assets/lightswitch-btn-1280.avif 1280w,
+            /src/assets/lightswitch-btn-1510.avif 1510w,
+            /src/assets/lightswitch-btn-1710.avif 1710w,
+            /src/assets/lightswitch-btn-1890.avif 1890w,
+            /src/assets/lightswitch-btn-2048.avif 2048w" type="image/avif">
+
+            <img src="light-switch-2048.jpg" srcset="
+              /src/assets/lightswitch-btn-45.jpg 45w,
+              /src/assets/lightswitch-btn-710.jpg 710w,
+              /src/assets/lightswitch-btn-1004.jpg 1004w,
+              /src/assets/lightswitch-btn-1280.jpg 1280w,
+              /src/assets/lightswitch-btn-1510.jpg 1510w,
+              /src/assets/lightswitch-btn-1710.jpg 1710w,
+              /src/assets/lightswitch-btn-1890.jpg 1890w,
+              /src/assets/lightswitch-btn-2048.jpg 2048w" alt="">
+          </picture>
           <img class="light-switch__icon" src="/src/assets/light-switch-icon.svg" alt="">
-          <img class="light-switch__button--transparant" src="/src/assets/lightswitch-btn.png" alt="">
+          <!-- <img class="light-switch__button--transparant" src="/src/assets/lightswitch-btn.png" alt=""> -->
+          <picture class="light-switch__button--transparant">
+            <source srcset="  lightswitch-btn-45.avif 45w,
+                                /src/assets/lightswitch-btn-710.avif 710w,
+                                /src/assets/lightswitch-btn-1004.avif 1004w,
+                                /src/assets/lightswitch-btn-1280.avif 1280w,
+                                /src/assets/lightswitch-btn-1510.avif 1510w,
+                                /src/assets/lightswitch-btn-1710.avif 1710w,
+                                /src/assets/lightswitch-btn-1890.avif 1890w,
+                                /src/assets/lightswitch-btn-2048.avif 2048w" type="image/avif"
+              sizes="(min-width: 1180px) calc(55.88vw - 140px), (min-width: 360px) calc(45vw - 160px), calc(105vw - 155px)">
+
+            <img
+              sizes="(min-width: 1180px) calc(55.88vw - 140px), (min-width: 360px) calc(45vw - 160px), calc(105vw - 155px)"
+              src="/src/assets/lightswitch-btn-2048.jpg" srcset="
+                                  /src/assets/lightswitch-btn-45.jpg 45w,
+                                  /src/assets/lightswitch-btn-710.jpg 710w,
+                                  /src/assets/lightswitch-btn-1004.jpg 1004w,
+                                  /src/assets/lightswitch-btn-1280.jpg 1280w,
+                                  /src/assets/lightswitch-btn-1510.jpg 1510w,
+                                  /src/assets/lightswitch-btn-1710.jpg 1710w,
+                                  /src/assets/lightswitch-btn-1890.jpg 1890w,
+                                  /src/assets/lightswitch-btn-2048.jpg 2048w" alt="">
+          </picture>
         </div>
       </div>
       <div class="hero__instruction">
@@ -207,6 +258,42 @@
               alt="mannetje in pak" width="478" height="394">
             <img class="gossip__img gossip__img--3 gossip__img--3-part1" src="/src/assets/gossip-guy-3.png"
               alt="mannetje in pak" width="426" height="619">
+
+            <!-- <picture class="gossip__img gossip__img--1 gossip__img--1-part1">
+              <source srcset="
+                  /src/assets/gossip-guy-1-594.avif 594w,
+                  /src/assets/gossip-guy-1-804.avif 804w,
+                  /src/assets/gossip-guy-1-960.avif 960w,
+                  /src/assets/gossip-guy-1-1270.avif 1270w,
+                  /src/assets/gossip-guy-1-1520.avif 1520w,
+                  /src/assets/gossip-guy-1-1730.avif 1730w,
+                  /src/assets/gossip-guy-1-1920.avif 1920w" type="image/avif"
+                  width="478" height="394">
+
+              <img src="/src/assets/gossip-guy-1-1920.jpg" srcset="
+                                                          /src/assets/gossip-guy-1-594.jpg 594w,
+                                                          /src/assets/gossip-guy-1-804.jpg 804w,
+                                                          /src/assets/gossip-guy-1-960.jpg 960w,
+                                                          /src/assets/gossip-guy-1-1270.jpg 1270w,
+                                                          /src/assets/gossip-guy-1-1520.jpg 1520w,
+                                                          /src/assets/gossip-guy-1-1730.jpg 1730w,
+                                                          /src/assets/gossip-guy-1-1920.jpg 1920w" alt="">
+            </picture>
+            <picture class="gossip__img gossip__img--2 gossip__img--2-part1">
+              <source srcset="
+                      /src/assets/gossip-guy-2-496.avif,
+                      /src/assets/gossip-guy-2-570.avif,
+                      /src/assets/gossip-guy-2-910.avif,
+                      /src/assets/gossip-guy-2-1280.avif,
+                      /src/assets/gossip-guy-2-1810.avif" type="image/avif">
+
+              <img
+                src="/src/assets/gossip-guy-2-1810.jpg" srcset=" /src/assets/gossip-guy-2-496.jpg 496w,
+                      /src/assets/gossip-guy-2-910.jpg,
+                      /src/assets/gossip-guy-2-1280.jpg,
+                      /src/assets/gossip-guy-2-570.jpg,
+                      /src/assets/gossip-guy-2-1810.jpg" alt="">
+            </picture> -->
 
 
             <p class="gossip__title gossip-title-part1 purple">Heb je het nieuws gehoord?</p>
@@ -615,7 +702,31 @@
 
       <div class="subsection sale">
         <div class="poster__sale display-start-auction">
-          <div class="poster__img"><img src="/src/assets/stockverkoop.png" alt=""></div>
+          <div class="poster__img">
+            <img src="/src/assets/stockverkoop.png" alt="">
+            <!-- <picture>
+              <source srcset="
+              /src/assets/stockverkoop-177.avif 177w,
+              /src/assets/stockverkoop-770.avif 770w,
+              /src/assets/stockverkoop-1280.avif 1280w,
+              /src/assets/stockverkoop-1510.avif 1510w,
+              /src/assets/stockverkoop-1710.avif 1710w,
+              /src/assets/stockverkoop-992.avif 992w,
+              /src/assets/stockverkoop-1890.avif 1890w,
+              /src/assets/stockverkoop-2048.avif 2048w" type="image/avif" sizes="16.26vw">
+
+              <img src="/src/assets/stockverkoop-2048.jpg" srcset="
+              /src/assets/stockverkoop-177.jpg 177w,
+              /src/assets/stockverkoop-770.jpg 770w,
+              /src/assets/stockverkoop-992.jpg 992w,
+              /src/assets/stockverkoop-1280.jpg 1280w,
+              /src/assets/stockverkoop-1510.jpg 1510w,
+              /src/assets/stockverkoop-1710.jpg 1710w,
+              /src/assets/stockverkoop-1890.jpg 1890w,
+              /src/assets/stockverkoop-2048.jpg 2048w"
+ alt="" sizes="16.26vw">
+            </picture> -->
+          </div>
           <div class="container__poster-text">
             <div class="poster__text">
               <div class="poster__title">
@@ -757,13 +868,6 @@
             <div class="aankopen">
               <p class="aankopen__title">aankopen</p>
               <ul class="aankopen__list">
-                <li class="container">
-                  <div class="aankoop__item">
-                    <p class="aankoop__name"></p>
-                    <p class="aankoop__price"></p>
-                    <img class="aankoop__img" src="" alt="">
-                  </div>
-                </li>
               </ul>
             </div>
           </div>
@@ -1017,7 +1121,6 @@
                 <div>
                   <p class="join-company__instruction">Klik je inbreng in de vennootschap</p>
                   <ul class="join-company__money">
-                    <li class="join-company__money"><img src="" alt=""></li>
                   </ul>
                   <p class="join-company__input input__money">0 gulden</p>
                 </div>
@@ -1527,6 +1630,7 @@
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- <script type="module" src="/src/js/preloader.js"></script> -->
   <script type="module" src="/src/js/main.js"></script>
 </body>
 

@@ -12,6 +12,7 @@
     "vite": "^6.0.5"
   },
   "dependencies": {
+    "delay": "^6.0.0",
     "gsap": "^3.12.7",
     "swiper": "^11.2.1"
   }

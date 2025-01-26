@@ -1,8 +1,7 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-import Swiper from 'swiper/bundle';
-
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Swiper from 'swiper/bundle'
+// import { preloader } from './preloader.js'
 import { hamburgerMenu } from './hamburger-menu'
 import {animations} from './animations'
 import { header } from './header'
@@ -14,7 +13,8 @@ import { extraInfo } from './revealExtraInfo.js'
 
 import '/src/css/reset.css'
 import '/src/css/style.css'
-import 'swiper/css/bundle';
+import '/src/css/preloader.css'
+import 'swiper/css/bundle'
 import '/src/css/header.css'
 import '/src/css/navigation.css'
 import '/src/css/intro.css'
@@ -30,11 +30,14 @@ import '/src/css/outro.css'
 import '/src/css/footer.css'
 import '/src/css/auction-game.css'
 
-
 const $body = document.querySelector('.body');
 $body.classList.add("has-js");
 
 gsap.registerPlugin(ScrollTrigger);
+
+//--------------------------------------------//
+// await preloader();
+//------------------------------//
 
 const swiperPaintings = new Swiper('.swiper-paintings-smartphone', {
     // modules: [Navigation, Pagination],
