@@ -50,7 +50,7 @@
 }
 
 .btn-smartphone p,
-.btn-smartphone img {
+.btn-smartphone img, .btn-smartphone picture {
     grid-column: 1;
     grid-row: 1;
 }
@@ -60,7 +60,7 @@
     margin-bottom: var(--sp-s);
 }
 
-.btn-smartphone img {
+.btn-smartphone img, .btn-smartphone picture{
     max-width: 75%;
     max-height: 8rem;
 }
@@ -170,7 +170,8 @@
 }
 
 .display-auction-close button img,
-.display-auction-info button img {
+.display-auction-info button img, .display-auction-close button picture,
+.display-auction-info button picture {
     width: 3.5rem;
     height: auto;
 }

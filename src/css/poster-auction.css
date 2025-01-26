@@ -55,7 +55,7 @@
     border-radius: var(--rrnn);
 }
 
-.poster__img img {
+.poster__img img, .poster__img picture {
     height: 30vh;
     width: auto;
     /* width: min(40vh, 100%); */

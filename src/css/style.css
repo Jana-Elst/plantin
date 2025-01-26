@@ -125,7 +125,7 @@ body {
   box-sizing: inherit;
 }
 
-img {
+img, picture {
   max-inline-size: 100%;
   block-size: auto;
   display: block;
@@ -466,7 +466,7 @@ a {
   box-shadow: var(--shadow-s);
 }
 
-.aside__titleside img{
+.aside__titleside img, .aside__titleside picture{
   height: min(var(--fs-5), 3rem);
 }
 
